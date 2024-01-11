@@ -3,7 +3,9 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 from os import system, name
+import random
 import keyboard
+
 
 def print_ascii(filename):
     '''Opens ascii images and print them'''
@@ -53,14 +55,30 @@ def get_ready_page():
     keyboard.wait('s')
     
 
+def create_apple(snake, window):
+    # -2 is used to not get the food to close to the egdese of the scren 
+    sh, sw = 20, 40
+    apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
+
+    while apple in snake:
+        apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
+
+    window.addch(apple[0], apple[1], "O")
+
+    return apple
+
+def main_game():
+    
+
 def main():
     start_page()
     clear_screen()
     rules_page()
     clear_screen()
     get_ready_page()
+    clear_screen()
 
 
 main()
 
-print("The next function")
+create_apple(snake, window)
