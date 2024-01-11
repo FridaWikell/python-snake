@@ -2,6 +2,8 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+import keyboard
+
 def print_ascii(filename):
     '''Opens ascii images and print them'''
 
@@ -34,11 +36,19 @@ def rules_page():
     enter_name()
 
 
+def get_ready_page():
+    
+    print("So, there is only one thing left to ask...\n"
+          "Are you ready? If so, please press 's'")
+    keyboard.wait('s')
+    
+
 def main():
     start_page()
     rules_page()
+    get_ready_page()
 
 
 main()
 
-
+print("The next function")
