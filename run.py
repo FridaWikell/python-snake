@@ -3,26 +3,16 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 # Start view
-print("""\
-      _    _
-   ,-(|)--(|)-.
-   \_   ..   _/
-     \______/
-       V  V                                  ____
-       `.^^`.                               /^,--`
-         \^^^\                             (^^)
-         |^^^|                  _,-._       \^^)
-        (^^^^\      __      _,-'^^^^^`.    _,'^^)
-         \^^^^`._,-'^^`-._.'^^^^__^^^^ `--'^^^_/
-          \^^^^^ ^^^_^^^^^^^_,-'  `.^^^^^^^^_/ 
-           `.____,-' `-.__.'        `-.___.'   
-""")
-print("""\
-      
-. . .     |                            |             ,---.          |         |
-| | |,---.|    ,---.,---.,-.-.,---.    |--- ,---.    `---.,---.,---.|__/ ,---.|
-| | ||---'|    |    |   || | ||---'    |    |   |        ||   |,---||  \ |---' 
-`-'-'`---'`---'`---'`---'` ' '`---'    `---'`---'    `---'`   '`---^`   ``---'o
-      """)
-input("Press Enter to continue...")
 
+def print_ascii(filename):
+    file = open(filename, 'r')
+    print(''.join([line for line in file]))
+
+def enter_name():
+    player_name = input("Please enter your name: ")
+  
+
+print_ascii("snake-ascii.txt")
+print_ascii("welcome-ascii.txt")
+input("Press Enter to continue...")
+enter_name()
