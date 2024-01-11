@@ -21,13 +21,12 @@ def start_page():
 
 
 def clear_screen():
-    # for Windows
-    if name == 'nt':
-        _ = system('cls')
+    ''' Clear the screen for Windows respectively Mac/linux '''
 
-    # for Mac and linux
+    if name == 'nt':
+        system('cls')
     else:
-        _ = system('clear')
+        system('clear')
 
 
 def enter_name():
