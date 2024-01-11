@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+from os import system, name
 import keyboard
 
 def print_ascii(filename):
@@ -17,6 +18,16 @@ def start_page():
     print_ascii("snake-ascii.txt")
     print_ascii("welcome-ascii.txt")
     input("Press Enter to continue...")
+
+
+def clear_screen():
+    # for Windows
+    if name == 'nt':
+        _ = system('cls')
+
+    # for Mac and linux
+    else:
+        _ = system('clear')
 
 
 def enter_name():
@@ -37,15 +48,17 @@ def rules_page():
 
 
 def get_ready_page():
-    
-    print("So, there is only one thing left to ask...\n"
+    print_ascii("snake-ascii.txt")
+    print("\nSo, there is only one thing left to ask...\n\n"
           "Are you ready? If so, please press 's'")
     keyboard.wait('s')
     
 
 def main():
     start_page()
+    clear_screen()
     rules_page()
+    clear_screen()
     get_ready_page()
 
 
