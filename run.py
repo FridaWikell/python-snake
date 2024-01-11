@@ -56,7 +56,7 @@ def get_ready_page():
     keyboard.wait('s')
     
 
-def create_apple(snake, window):
+def create_apple(snake, play_area):
     # -2 is used to not get the food to close to the egdese of the scren 
     sh, sw = 20, 40
     apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
@@ -68,6 +68,7 @@ def create_apple(snake, window):
 
     return apple
 
+
 def main_game(stdscr):
     # the timeout is set for getch in milliseconds
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
@@ -76,9 +77,23 @@ def main_game(stdscr):
 
     stdscr.timeout(100)
 
+    sh, sw = 20, 40
     play_area = curses.newwin(20, 40, 4, 20)
     play_area.keypad(1)
     play_area.timeout(100)
+
+
+    # To make sure the snake starts in the middle
+    snake = [
+        [sh//2, sw//2+1],
+        [sh//2, sw//2],
+        [sh//2, sw//2-1]
+    ]
+
+    apple = create_apple(snake, play_area)
+
+    # Makes the snake start to the right
+    direction = curses.KEY_RIGHT
 
 def main():
     start_page()
