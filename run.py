@@ -3,10 +3,10 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 # Start view
-
 def print_ascii(filename):
-    file = open(filename, 'r')
+    file = open(filename, "r")
     print(''.join([line for line in file]))
+
 
 def enter_name():
     player_name = input("Please enter your name: ")
