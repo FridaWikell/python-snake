@@ -4,6 +4,7 @@
 
 from os import system, name
 import random
+import curses
 import keyboard
 
 
@@ -67,8 +68,17 @@ def create_apple(snake, window):
 
     return apple
 
-def main_game():
-    
+def main_game(stdscr):
+    # the timeout is set for getch in milliseconds
+    # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
+    #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
+    #win = curses.newwin(height, width, begin_y, begin_x)
+
+    stdscr.timeout(100)
+
+    play_area = curses.newwin(20, 40, 4, 20)
+    play_area.keypad(1)
+    play_area.timeout(100)
 
 def main():
     start_page()
