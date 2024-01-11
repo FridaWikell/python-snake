@@ -64,7 +64,7 @@ def create_apple(snake, play_area):
     while apple in snake:
         apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
 
-    window.addch(apple[0], apple[1], "O")
+    play_area.addch(apple[0], apple[1], "O")
 
     return apple
 
@@ -95,6 +95,46 @@ def main_game(stdscr):
     # Makes the snake start to the right
     direction = curses.KEY_RIGHT
 
+# skriva ut direction = 
+    # vad gör första if?
+    while True:
+        next_direction = play_area.getch()
+        direction = direction if next_direction == -1 else next_direction
+
+        if (
+            direction in [curses.KEY_RIGHT, curses.KEY_LEFT, curses.KEY_DOWN, curses.KEY_UP] and
+            (direction == curses.KEY_RIGHT and snake[0][1] < sw -1) or
+            (direction == curses.KEY_LEFT and snake[0][1] > 0) or
+            (direction == curses.KEY_DOWN and snake[0][0] < sh-1) or
+            (direction == curses.KEY_UP and snake[0][0] > 0)
+        ):
+            snake_new_head = [snake[0][0], snake[0][1]]
+
+            if direction == curses.KEY_RIGHT:
+                snake_new_head[1] += 1
+            elif direction == curses.KEY_LEFT:
+                snake_new_head[1] -= 1
+            elif direction == curses.KEY_DOWN:
+                snake_new_head[0] += 1
+            elif direction == curses.KEY_UP:
+                snake_new_head -= 1
+
+            snake.insert(0, snake_new_head)
+
+            if snake[0] == apple:
+                apple = create_apple(snake, play_area)
+            else:
+                snake_tail = snake.pop()
+                play_area.addch(snake_tail[0], snake_tail[1], ' ')
+
+            play_area.addch(snake[0][0], snake[0][1], "X")
+
+        else:
+            msg = "Game over"
+            break
+
+
+
 def main():
     start_page()
     clear_screen()
@@ -105,5 +145,4 @@ def main():
 
 
 main()
-
-create_apple(snake, window)
+main_game()
