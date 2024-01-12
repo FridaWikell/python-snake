@@ -152,6 +152,8 @@ def main_game(stdscr):
 
 
 
+
+
 def main():
     start_page()
     clear_screen()
