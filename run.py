@@ -83,7 +83,7 @@ def create_apple(snake, play_area):
     return apple
 
 
-def main_game():
+def main_game(stdscr):
     # the timeout is set for getch in milliseconds
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
