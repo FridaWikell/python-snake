@@ -20,6 +20,9 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('snake_highscore')
 
+# Global variables
+score = 0
+player_name = []
 
 def print_ascii(filename):
     '''Opens ascii images and print them'''
@@ -88,7 +91,7 @@ def main_game(stdscr):
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
     #win = curses.newwin(height, width, begin_y, begin_x)
-
+    global score    
 
     stdscr.timeout(100)
 
@@ -138,6 +141,7 @@ def main_game(stdscr):
 
             if snake[0] == apple:
                 apple = create_apple(snake, play_area)
+                score += 1
             else:
                 snake_tail = snake.pop()
                 play_area.addch(snake_tail[0], snake_tail[1], ' ')
@@ -145,7 +149,6 @@ def main_game(stdscr):
             play_area.addch(snake[0][0], snake[0][1], "X")
 
         else:
-            msg = "Game over"
             break
 
     curses.endwin()
@@ -155,7 +158,7 @@ def wait_for_answer():
     yes = {"yes","y", "ye", "", "ja"}
     no = {"no", "n", "nej"}
 
-    play_again_answer = input("Do you want to play again? ").lower()
+    play_again_answer = input("Do you want to play again? \n").lower()
     if play_again_answer in yes:
         #return True
         print("Yeah!")
@@ -169,7 +172,7 @@ def wait_for_answer():
 def game_over():
     print_ascii("dead-snake-ascii.txt")
     print("Well... That was... Well played? "
-          "Come on NAME, you can do better than XX points... "
+          f"Come on {player_name}, you can do better than {score} points... "
           "Take a look at the highscore below, take a deep breath "
           "and shoot for the stars!")
     # HIGHSCORE
@@ -193,4 +196,4 @@ def main():
 #    except curses.error as e:
 #        print(f"Curses error: {e}")
     
-wait_for_answer()
+game_over()
