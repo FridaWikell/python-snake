@@ -151,6 +151,30 @@ def main_game(stdscr):
     curses.endwin()
 
 
+def wait_for_answer():
+    yes = {"yes","y", "ye", "", "ja"}
+    no = {"no", "n", "nej"}
+
+    play_again_answer = input("Do you want to play again? ").lower()
+    if play_again_answer in yes:
+        #return True
+        print("Yeah!")
+    elif play_again_answer in no:
+        # return False
+        print("noooo...")
+    else:
+        print("Please answer yes or no")
+
+
+def game_over():
+    print_ascii("dead-snake-ascii.txt")
+    print("Well... That was... Well played? "
+          "Come on NAME, you can do better than XX points... "
+          "Take a look at the highscore below, take a deep breath "
+          "and shoot for the stars!")
+    # HIGHSCORE
+
+    wait_for_answer()
 
 
 
@@ -162,9 +186,11 @@ def main():
     get_ready_page()
     clear_screen()
 
-main()
-if __name__ == "__main__":
-    try:
-        curses.wrapper(main_game)
-    except curses.error as e:
-        print(f"Curses error: {e}")
+#main()
+#if __name__ == "__main__":
+#    try:
+#        curses.wrapper(main_game)
+#    except curses.error as e:
+#        print(f"Curses error: {e}")
+    
+wait_for_answer()
