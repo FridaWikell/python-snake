@@ -176,8 +176,6 @@ def game_over():
           "Take a look at the highscore below, take a deep breath "
           "and shoot for the stars!")
 
-    update_highscore()
-
     print("Name:     Points:\n")
     
     highscore = SHEET.worksheet("highscore")
