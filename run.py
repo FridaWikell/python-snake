@@ -89,8 +89,7 @@ def main_game(stdscr):
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
     #win = curses.newwin(height, width, begin_y, begin_x)
 
-    stdscr = curses.initscr()
-    curses.curs_set(0)
+
     stdscr.timeout(100)
 
     sh, sw = stdscr.getmaxyx()
@@ -160,8 +159,10 @@ def main():
     clear_screen()
     get_ready_page()
     clear_screen()
-    curses.wrapper(main_game)
 
-
+main()
 if __name__ == "__main__":
-    main()
+    try:
+        curses.wrapper(main_game)
+    except curses.error as e:
+        print(f"Curses error: {e}")
