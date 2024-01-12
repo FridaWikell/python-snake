@@ -15,10 +15,10 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
-CREDS = Credentials.from_service_account_file('creds.json')
+CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('snake_highscore')
+SHEET = GSPREAD_CLIENT.open("snake_highscore")
 
 # Global variables
 score = 0
@@ -169,13 +169,30 @@ def wait_for_answer():
         print("Please answer yes or no")
 
 
-def game_over():
+def update_highscore():
+        
+    highscore = SHEET.worksheet("highscore")
+
+    # Sortera highscore och visa top fem
+
+    highscore.sort((2, "des"))
+    highscore_names = highscore.col_values(1)[:5]
+    highscore_points = highscore.col_values(2)[:5]
+
+    present_highscore = "\n".join("{:<15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
+    return present_highscore
+
+def game_over(present_highscore):
     print_ascii("dead-snake-ascii.txt")
     print("Well... That was... Well played? "
           f"Come on {player_name}, you can do better than {score} points... "
           "Take a look at the highscore below, take a deep breath "
           "and shoot for the stars!")
-    # HIGHSCORE
+
+    update_highscore()
+
+    print("Name:     Points:")
+    print(present_highscore)
 
     wait_for_answer()
 
@@ -189,11 +206,12 @@ def main():
     get_ready_page()
     clear_screen()
 
-#main()
-#if __name__ == "__main__":
-#    try:
-#        curses.wrapper(main_game)
-#    except curses.error as e:
-#        print(f"Curses error: {e}")
+main()
+if __name__ == "__main__":
+    try:
+        curses.wrapper(main_game)
+    except curses.error as e:
+        print(f"Curses error: {e}")
     
 game_over()
+    
