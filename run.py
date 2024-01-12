@@ -180,9 +180,12 @@ def update_highscore():
     highscore_points = highscore.col_values(2)[:5]
 
     present_highscore = "\n".join("{:<15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
-    return present_highscore
 
-def game_over(present_highscore):
+    print("Name:     Points:")
+    print(present_highscore)
+
+
+def game_over():
     print_ascii("dead-snake-ascii.txt")
     print("Well... That was... Well played? "
           f"Come on {player_name}, you can do better than {score} points... "
@@ -190,10 +193,6 @@ def game_over(present_highscore):
           "and shoot for the stars!")
 
     update_highscore()
-
-    print("Name:     Points:")
-    print(present_highscore)
-
     wait_for_answer()
 
 
