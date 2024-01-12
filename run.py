@@ -183,11 +183,10 @@ def update_highscore():
 
     present_highscore = "\n".join("{:<15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
 
-    print("Name:     Points:")
-    print(present_highscore)
+    return present_highscore
 
 
-def game_over():
+def game_over(present_highscore):
     print_ascii("dead-snake-ascii.txt")
     print("Well... That was... Well played? "
           f"Come on {player_name}, you can do better than {score} points... "
@@ -195,6 +194,9 @@ def game_over():
           "and shoot for the stars!")
 
     update_highscore()
+
+    print("Name:     Points:\n")
+    print(present_highscore)
     wait_for_answer()
 
 
@@ -214,5 +216,6 @@ if __name__ == "__main__":
     except curses.error as e:
         print(f"Curses error: {e}")
     
-game_over()
+    present_highscore = update_highscore()
+    game_over(present_highscore)
     
