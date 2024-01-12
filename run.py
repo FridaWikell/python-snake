@@ -71,9 +71,7 @@ def get_ready_page():
     print_ascii("snake-ascii.txt")
     print("\nSo, there is only one thing left to ask...\n\n")
     input("Are you ready? If so, please press Enter\n")
-  #  keyboard.wait('s')
-
-    
+   
 
 def create_apple(snake, play_area):
     # -2 is used to not get the food to close to the egdese of the scren 
@@ -171,8 +169,17 @@ def wait_for_answer():
         print("Please answer yes or no")
 
 
-def update_highscore():
-        
+def game_over():
+    print_ascii("dead-snake-ascii.txt")
+    print("Well... That was... Well played? "
+          f"Come on {player_name}, you can do better than {score} points... "
+          "Take a look at the highscore below, take a deep breath "
+          "and shoot for the stars!")
+
+    update_highscore()
+
+    print("Name:     Points:\n")
+    
     highscore = SHEET.worksheet("highscore")
 
     # Sortera highscore och visa top fem
@@ -183,20 +190,8 @@ def update_highscore():
 
     present_highscore = "\n".join("{:<15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
 
-    return present_highscore
-
-
-def game_over(present_highscore):
-    print_ascii("dead-snake-ascii.txt")
-    print("Well... That was... Well played? "
-          f"Come on {player_name}, you can do better than {score} points... "
-          "Take a look at the highscore below, take a deep breath "
-          "and shoot for the stars!")
-
-    update_highscore()
-
-    print("Name:     Points:\n")
     print(present_highscore)
+
     wait_for_answer()
 
 
@@ -216,6 +211,5 @@ if __name__ == "__main__":
     except curses.error as e:
         print(f"Curses error: {e}")
     
-    present_highscore = update_highscore()
-    game_over(present_highscore)
+game_over()
     
