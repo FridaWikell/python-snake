@@ -2,10 +2,24 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+import gspread
+from google.oauth2.service_account import Credentials
 from os import system, name
 import random
 import curses
 import keyboard
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('love_sandwiches')
+
 
 def print_ascii(filename):
     '''Opens ascii images and print them'''
@@ -32,7 +46,7 @@ def clear_screen():
 
 
 def enter_name():
-    player_name = input("Please enter your name: ")
+    player_name = input("Please enter your name: \n")
 
 
 def rules_page():
@@ -51,7 +65,7 @@ def rules_page():
 def get_ready_page():
     print_ascii("snake-ascii.txt")
     print("\nSo, there is only one thing left to ask...\n\n")
-    input("Are you ready? If so, please press Enter")
+    input("Are you ready? If so, please press Enter\n")
   #  keyboard.wait('s')
 
     
