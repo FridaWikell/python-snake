@@ -175,7 +175,7 @@ def update_highscore():
 
     # Sortera highscore och visa top fem
 
-    highscore.sort((2, "des"))
+    highscore.sort(("des", 2))
     highscore_names = highscore.col_values(1)[:5]
     highscore_points = highscore.col_values(2)[:5]
 
