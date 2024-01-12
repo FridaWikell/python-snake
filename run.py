@@ -51,6 +51,8 @@ def clear_screen():
 def enter_name():
     player_name = input("Please enter your name: \n")
 
+    return player_name
+
 
 def rules_page():
     print("Rules:\n")
