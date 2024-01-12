@@ -7,7 +7,6 @@ import random
 import curses
 import keyboard
 
-
 def print_ascii(filename):
     '''Opens ascii images and print them'''
 
@@ -51,14 +50,15 @@ def rules_page():
 
 def get_ready_page():
     print_ascii("snake-ascii.txt")
-    print("\nSo, there is only one thing left to ask...\n\n"
-          "Are you ready? If so, please press 's'")
-    keyboard.wait('s')
+    print("\nSo, there is only one thing left to ask...\n\n")
+    input("Are you ready? If so, please press Enter")
+  #  keyboard.wait('s')
+
     
 
 def create_apple(snake, play_area):
     # -2 is used to not get the food to close to the egdese of the scren 
-    sh, sw = 20, 40
+    sh, sw = play_area.getmaxyx()
     apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
 
     while apple in snake:
@@ -69,16 +69,18 @@ def create_apple(snake, play_area):
     return apple
 
 
-def main_game(stdscr):
+def main_game():
     # the timeout is set for getch in milliseconds
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
     #win = curses.newwin(height, width, begin_y, begin_x)
 
+    stdscr = curses.initscr()
+    curses.curs_set(0)
     stdscr.timeout(100)
 
-    sh, sw = 20, 40
-    play_area = curses.newwin(20, 40, 4, 20)
+    sh, sw = stdscr.getmaxyx()
+    play_area = curses.newwin(sh, sw, 0, 0)
     play_area.keypad(1)
     play_area.timeout(100)
 
@@ -117,7 +119,7 @@ def main_game(stdscr):
             elif direction == curses.KEY_DOWN:
                 snake_new_head[0] += 1
             elif direction == curses.KEY_UP:
-                snake_new_head -= 1
+                snake_new_head[0] -= 1
 
             snake.insert(0, snake_new_head)
 
@@ -133,6 +135,8 @@ def main_game(stdscr):
             msg = "Game over"
             break
 
+    curses.endwin()
+
 
 
 def main():
@@ -142,7 +146,8 @@ def main():
     clear_screen()
     get_ready_page()
     clear_screen()
+    curses.wrapper(main_game)
 
 
-main()
-main_game()
+if __name__ == "__main__":
+    main()
