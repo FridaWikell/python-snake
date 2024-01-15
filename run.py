@@ -209,9 +209,9 @@ def main():
     start_page()
     clear_screen()
     rules_page()
-    clear_screen()
 
     while True:
+        clear_screen()
         get_ready_page()
         clear_screen()
         curses.wrapper(main_game)
