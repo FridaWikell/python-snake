@@ -164,8 +164,7 @@ def wait_for_answer():
         #return True
         print("Yeah!")
     elif play_again_answer in no:
-        # return False
-        print("noooo...")
+        thanks_for_playing()
     else:
         print("Please answer yes or no")
 
@@ -194,6 +193,12 @@ def game_over():
 
     wait_for_answer()
 
+
+def thanks_for_playing():
+    print("So you don't want to play anymore?"
+          "Well, it's up to you. You know where"
+          "to find us when you want to conquer the highscore!"
+          "For now, so long and thank you for the fish!")
 
 
 def main():
