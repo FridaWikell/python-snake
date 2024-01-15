@@ -169,6 +169,10 @@ def wait_for_answer():
         print("Please answer yes or no")
 
 
+def add_to_highscore():
+    SHEET.worksheet("highscore").append_row(score, player_name)
+
+
 def game_over():
     global player_name
 
@@ -212,6 +216,7 @@ if __name__ == "__main__":
         curses.wrapper(main_game)
     except curses.error as e:
         print(f"Curses error: {e}")
-    
+
+add_to_highscore()    
 game_over()
     
