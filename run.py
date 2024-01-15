@@ -195,8 +195,6 @@ def game_over():
     for entry in top_five:
         print("{:15} {:<5}".format(entry['Name'], entry['Points']))
 
-    wait_for_answer()
-
 
 def thanks_for_playing():
     clear_screen()
@@ -220,6 +218,7 @@ def main():
         curses.wrapper(main_game)
         add_to_highscore()    
         game_over()
+        wait_for_answer()
 
         if not wait_for_answer():
             break
