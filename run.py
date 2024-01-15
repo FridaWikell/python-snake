@@ -210,14 +210,12 @@ def main():
     get_ready_page()
     clear_screen()
 
-#main()
-#if __name__ == "__main__":
-#    try:
-#        curses.wrapper(main_game)
-#        add_to_highscore()    
-#        game_over()
-#    except curses.error as e:
-#        print(f"Curses error: {e}")
+main()
+if __name__ == "__main__":
+    try:
+        curses.wrapper(main_game)
+        add_to_highscore()    
+        game_over()
+    except curses.error as e:
+        print(f"Curses error: {e}")
 
-game_over()
-    
