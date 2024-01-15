@@ -172,7 +172,7 @@ def wait_for_answer():
 
 def add_to_highscore():
     global score
-    SHEET.worksheet("highscore").append_row({'score': score, 'player_name': player_name})
+    SHEET.worksheet("highscore").append_row([str(score), player_name])
 
 
 def game_over():
@@ -191,8 +191,8 @@ def game_over():
     highscore_records = highscore.get_all_records()
     sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
 
-    highscore_names = [entry['player_name'] for entry in sorted_highscore[:5]]
-    highscore_points = [entry['score'] for entry in sorted_highscore[:5]]
+    highscore_names = sorted_highscore.col_values(2)[:5]
+    highscore_points = sorted_highscore.col_values(1)[:5]
 
     present_highscore = "\n".join("{:15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
 
