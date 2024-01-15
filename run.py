@@ -165,8 +165,7 @@ def wait_for_answer():
 
     play_again_answer = input("\nDo you want to play again? \n").lower()
     if play_again_answer in yes:
-        #return True
-        print("Yeah!")
+        return True     
     elif play_again_answer in no:
         return False
     else:
