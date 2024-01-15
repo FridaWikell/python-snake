@@ -218,12 +218,11 @@ def main():
         curses.wrapper(main_game)
         add_to_highscore()    
         game_over()
-        wait_for_answer()
-
-        if not wait_for_answer():
+        
+        if not wait_for_answer(): 
             break
 
-    thanks_for_playing()
+        thanks_for_playing()
     
 
 main()
