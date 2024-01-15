@@ -69,7 +69,7 @@ def enter_name():
     global player_name
 
     while True:
-        player_name = input("Please enter yout name (3-13 letters): \n").capitalize()
+        player_name = input("Please enter your name (3-13 letters): \n").capitalize()
         if validate_input(player_name):
             break
 
