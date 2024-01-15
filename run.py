@@ -7,7 +7,7 @@ from google.oauth2.service_account import Credentials
 from os import system, name
 import random
 import curses
-import keyboard
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
