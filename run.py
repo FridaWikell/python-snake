@@ -59,9 +59,9 @@ def validate_input(input_string):
         if letters_only.match(input_string):
             return True
         else:
-            print("Your name should only containts letters")
+            print("Your name should only contain letters. Please try again.")
     else:
-        print("Your name should be between 3 and 13 letters")
+        print("Your name should be between 3 and 13 letters. Please try again.")
 
 
 def enter_name():
@@ -72,8 +72,6 @@ def enter_name():
         player_name = input("Please enter yout name (3-13 letters): \n")
         if validate_input(player_name):
             break
-        else:
-            print("Invalid input. Please try again.")
 
     return player_name
 
