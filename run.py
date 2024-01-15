@@ -182,7 +182,7 @@ def game_over():
           "Take a look at the highscore below, take a deep breath "
           "and shoot for the stars!\n")
 
-    print("{:15}".format("Name:"), "{:5}".format("Points:"))
+    #print("{:15}".format("Name:"), "{:5}".format("Points:"))
     
     highscore = SHEET.worksheet("highscore")
 
@@ -193,6 +193,10 @@ def game_over():
     top_five = sorted_highscore[:5]
 
     print(top_five)
+
+    print("{:15} {:5}".format("Name", "Points"))
+    for entry in top_five:
+        print("{:15} {:5}".format(entry['Name'], entry['Points']))
 
     #highscore_names = [entry['player_name'] for entry in top_five]
     #highscore_points = [entry['score'] for entry in top_five]
