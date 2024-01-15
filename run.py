@@ -195,9 +195,11 @@ def game_over():
 
 
 def thanks_for_playing():
-    print("So you don't want to play anymore?"
-          "Well, it's up to you. You know where"
-          "to find us when you want to conquer the highscore!"
+    clear_screen()
+    
+    print("So you don't want to play anymore? "
+          "Well, it's up to you. You know where "
+          "to find us when you want to conquer the highscore! "
           "For now, so long and thank you for the fish!")
 
 
