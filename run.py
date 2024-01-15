@@ -190,9 +190,10 @@ def game_over():
 
     highscore_records = highscore.get_all_records()
     sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
+    top_five = sorted_highscore[:5]
 
-    highscore_names = sorted_highscore[1].slice(1,7)
-    highscore_points = sorted_highscore[0].slice(1,7)
+    highscore_names = [entry['player_name'] for entry in top_five]
+    highscore_points = [entry['score'] for entry in top_five]
 
     present_highscore = "\n".join("{:15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
 
