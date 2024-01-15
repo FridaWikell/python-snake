@@ -1,5 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 import gspread
@@ -22,9 +20,12 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("snake_highscore")
 
+
 # Global varibles
 score = 0
 
+
+# Functions 
 
 def print_ascii(filename):
     '''Opens ascii images and print them'''
@@ -65,6 +66,8 @@ def validate_input(input_string):
 
 
 def enter_name():
+    ''' Makes the user to input their name '''
+
     cursor.show()
     global player_name
 
@@ -77,6 +80,8 @@ def enter_name():
 
 
 def rules_page():
+    ''' Present the rules for the user '''
+
     print("Rules:\n")
     print("The rules are simple. You are the snake. So far, so good. Right? "
           "You control the snake with your arrow keys. Up make the snake to"
@@ -90,6 +95,8 @@ def rules_page():
 
 
 def get_ready_page():
+    ''' Let the user to press enter when they're ready to play '''
+
     cursor.hide()
     print_ascii("snake-ascii.txt")
     print("\nSo, there is only one thing left to ask...\n\n")
@@ -97,7 +104,9 @@ def get_ready_page():
    
 
 def create_apple(snake, play_area):
-    # -2 is used to not get the food to close to the egdese of the scren 
+    ''' Create the apples which the snake is hunting for
+    -2 is used to not get the apples to close to the edges '''
+
     sh, sw = play_area.getmaxyx()
     apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
 
@@ -110,6 +119,10 @@ def create_apple(snake, play_area):
 
 
 def main_game(stdscr):
+    ''' The main game loop. It sets the playboard, 
+     make sure the snake starts in the middle, controls the snake, 
+      insert a new X when an apple is eaten '''
+
     # the timeout is set for getch in milliseconds
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
@@ -136,7 +149,7 @@ def main_game(stdscr):
     # Makes the snake start to the right
     direction = curses.KEY_RIGHT
 
-# skriva ut direction = 
+
     # vad gör första if?
     while True:
         next_direction = play_area.getch()
@@ -178,6 +191,8 @@ def main_game(stdscr):
 
 
 def wait_for_answer():
+    ''' Makes the user decide if they want to play again '''
+
     yes = {"yes","y", "ye", "", "ja"}
     no = {"no", "n", "nej"}
 
@@ -193,11 +208,15 @@ def wait_for_answer():
 
 
 def add_to_highscore():
+    ''' Add the players result to the highscore '''
+
     global score, player_name
     SHEET.worksheet("highscore").append_row([score, player_name])
 
 
 def game_over():
+    ''' Present the top 5 highscore to the user '''
+
     highscore = SHEET.worksheet("highscore")
     
     highscore_records = highscore.get_all_records()
@@ -216,6 +235,8 @@ def game_over():
 
 
 def thanks_for_playing():
+    ''' The end screen, thanking the user for the game '''
+
     clear_screen()
     cursor.hide()
 
@@ -226,6 +247,8 @@ def thanks_for_playing():
 
 
 def main():
+    ''' The entire program loop'''
+
     start_page()
     clear_screen()
     rules_page()
