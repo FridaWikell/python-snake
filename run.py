@@ -168,7 +168,7 @@ def wait_for_answer():
         #return True
         print("Yeah!")
     elif play_again_answer in no:
-        thanks_for_playing()
+        return False
     else:
         print("Please answer yes or no")
 
@@ -213,10 +213,18 @@ def main():
     clear_screen()
     rules_page()
     clear_screen()
-    get_ready_page()
-    clear_screen()
-    curses.wrapper(main_game)
-    add_to_highscore()    
-    game_over()
+
+    while True:
+        get_ready_page()
+        clear_screen()
+        curses.wrapper(main_game)
+        add_to_highscore()    
+        game_over()
+
+        if not wait_for_answer():
+            break
+
+    thanks_for_playing()
+    
 
 main()
