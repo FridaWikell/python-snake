@@ -192,10 +192,12 @@ def game_over():
     sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
     top_five = sorted_highscore[:5]
 
-    highscore_names = [entry['player_name'] for entry in top_five]
-    highscore_points = [entry['score'] for entry in top_five]
+    print(top_five)
 
-    present_highscore = "\n".join("{:15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
+    #highscore_names = [entry['player_name'] for entry in top_five]
+    #highscore_points = [entry['score'] for entry in top_five]
+
+    #present_highscore = "\n".join("{:15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
 
     print(present_highscore)
 
