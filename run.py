@@ -8,6 +8,7 @@ from os import system, name
 import random
 import curses
 import cursor
+import re
 
 
 SCOPE = [
@@ -50,11 +51,29 @@ def clear_screen():
         system('clear')
 
 
+def validate_input(input_string):
+    ''' Validate the input to be only letters, between 3 and 13 letters '''
+    letters_only = re.compile(r'^[a-zA-Z]+$')
+
+    if 3 <= len(input_string) <= 13:
+        if letters_only.match(input_string):
+            return True
+        else:
+            print("Your name should only containts letters")
+    else:
+        print("Your name should be between 3 and 13 letters")
+
+
 def enter_name():
     cursor.show()
-    
-    global player_name 
-    player_name = input("Please enter your name: \n")
+    global player_name
+
+    while True:
+        player_name = input("Please enter yout name (3-13 letters): \n")
+        if validate_input(player_name):
+            break
+        else:
+            print("Invalid input. Please try again.")
 
     return player_name
 
