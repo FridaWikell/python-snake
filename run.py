@@ -222,7 +222,7 @@ def main():
         if not wait_for_answer(): 
             break
 
-        thanks_for_playing()
+    thanks_for_playing()
     
 
 main()
