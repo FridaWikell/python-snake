@@ -182,7 +182,7 @@ def game_over():
 
     # Sortera highscore och visa top fem
 
-    highscore.sort(reverse=True)
+    highscore.sort(key=game_over, reverse=True)
     highscore_names = highscore.col_values(2)[:5]
     highscore_points = highscore.col_values(1)[:5]
 
