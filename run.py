@@ -20,9 +20,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("snake_highscore")
 
-# Global variables
-score = 0
-player_name = []
 
 def print_ascii(filename):
     '''Opens ascii images and print them'''
@@ -49,6 +46,7 @@ def clear_screen():
 
 
 def enter_name():
+    global player_name 
     player_name = input("Please enter your name: \n")
 
     return player_name
@@ -170,12 +168,10 @@ def wait_for_answer():
 
 
 def add_to_highscore():
-    SHEET.worksheet("highscore").append_row(score, player_name)
+    SHEET.worksheet("highscore").append_row([score, player_name])
 
 
 def game_over():
-    global player_name
-
     print_ascii("dead-snake-ascii.txt")
     print("Well... That was... Well played? "
           f"Come on {player_name}, you can do better than {score} points... "
@@ -214,9 +210,10 @@ main()
 if __name__ == "__main__":
     try:
         curses.wrapper(main_game)
+        add_to_highscore()    
+        game_over()
     except curses.error as e:
         print(f"Curses error: {e}")
 
-add_to_highscore()    
-game_over()
+
     
