@@ -171,8 +171,8 @@ def wait_for_answer():
 
 
 def add_to_highscore():
-    global score
-    SHEET.worksheet("highscore").append_row([str(score), player_name])
+    global score, player_name
+    SHEET.worksheet("highscore").append_row([score, player_name])
 
 
 def game_over():
