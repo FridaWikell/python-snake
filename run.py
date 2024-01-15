@@ -35,6 +35,7 @@ def print_ascii(filename):
 def start_page():
     '''Views the start page with ascii images'''
 
+    cursor.hide()
     print_ascii("snake-ascii.txt")
     print_ascii("welcome-ascii.txt")
     input("Press Enter to continue...")
@@ -50,6 +51,8 @@ def clear_screen():
 
 
 def enter_name():
+    cursor.show()
+    
     global player_name 
     player_name = input("Please enter your name: \n")
 
