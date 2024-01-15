@@ -158,7 +158,7 @@ def wait_for_answer():
     yes = {"yes","y", "ye", "", "ja"}
     no = {"no", "n", "nej"}
 
-    play_again_answer = input("Do you want to play again? \n").lower()
+    play_again_answer = input("\nDo you want to play again? \n").lower()
     if play_again_answer in yes:
         #return True
         print("Yeah!")
@@ -170,13 +170,15 @@ def wait_for_answer():
 
 
 def game_over():
+    global player_name
+
     print_ascii("dead-snake-ascii.txt")
     print("Well... That was... Well played? "
           f"Come on {player_name}, you can do better than {score} points... "
           "Take a look at the highscore below, take a deep breath "
-          "and shoot for the stars!")
+          "and shoot for the stars!\n")
 
-    print("Name:     Points:\n")
+    print("Name:     Points:")
     
     highscore = SHEET.worksheet("highscore")
 
