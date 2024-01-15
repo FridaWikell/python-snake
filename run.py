@@ -191,8 +191,8 @@ def game_over():
     highscore_records = highscore.get_all_records()
     sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
 
-    highscore_names = highscore.col_values(2)[:5]
-    highscore_points = highscore.col_values(1)[:5]
+    highscore_names = sorted_highscore[1].slice(1,7)
+    highscore_points = sorted_highscore[0].slice(1,7)
 
     present_highscore = "\n".join("{:15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
 
@@ -210,14 +210,14 @@ def main():
     get_ready_page()
     clear_screen()
 
-main()
-if __name__ == "__main__":
-    try:
-        curses.wrapper(main_game)
-        add_to_highscore()    
-        game_over()
-    except curses.error as e:
-        print(f"Curses error: {e}")
+#main()
+#if __name__ == "__main__":
+#    try:
+#        curses.wrapper(main_game)
+#        add_to_highscore()    
+#        game_over()
+#    except curses.error as e:
+#        print(f"Curses error: {e}")
 
-
+game_over()
     
