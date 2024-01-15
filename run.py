@@ -200,7 +200,7 @@ def game_over():
 
 def thanks_for_playing():
     clear_screen()
-    cursor.show()
+    cursor.hide()
 
     print("So you don't want to play anymore? "
           "Well, it's up to you. You know where "
