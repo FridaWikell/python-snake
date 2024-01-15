@@ -182,7 +182,7 @@ def game_over():
     sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
     top_five = sorted_highscore[:5]
     
-    print_ascii("dead-snake-ascii.txt")
+    print_ascii("game-over-ascii.txt")
     print("Well... That was... Well played? "
           f"Come on {player_name}, you can do better than {score} points... "
           "Take a look at the highscore below, take a deep breath "
