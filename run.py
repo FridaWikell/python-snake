@@ -7,6 +7,7 @@ from google.oauth2.service_account import Credentials
 from os import system, name
 import random
 import curses
+import cursor
 
 
 SCOPE = [
@@ -69,6 +70,7 @@ def rules_page():
 
 
 def get_ready_page():
+    cursor.hide()
     print_ascii("snake-ascii.txt")
     print("\nSo, there is only one thing left to ask...\n\n")
     input("Are you ready? If so, please press Enter\n")
@@ -159,6 +161,8 @@ def wait_for_answer():
     yes = {"yes","y", "ye", "", "ja"}
     no = {"no", "n", "nej"}
 
+    cursor.show()
+
     play_again_answer = input("\nDo you want to play again? \n").lower()
     if play_again_answer in yes:
         #return True
@@ -196,7 +200,8 @@ def game_over():
 
 def thanks_for_playing():
     clear_screen()
-    
+    cursor.show()
+
     print("So you don't want to play anymore? "
           "Well, it's up to you. You know where "
           "to find us when you want to conquer the highscore! "
