@@ -20,6 +20,9 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("snake_highscore")
 
+# Global varibles
+score = 0
+
 
 def print_ascii(filename):
     '''Opens ascii images and print them'''
@@ -168,7 +171,8 @@ def wait_for_answer():
 
 
 def add_to_highscore():
-    SHEET.worksheet("highscore").append_row([score, player_name])
+    global score
+    SHEET.worksheet("highscore").append_row({'score': score, 'player_name': player_name})
 
 
 def game_over():
@@ -187,8 +191,8 @@ def game_over():
     highscore_records = highscore.get_all_records()
     sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
 
-    highscore_names = [entry['Name'] for entry in sorted_highscore[:5]]
-    highscore_points = [entry['Points'] for entry in sorted_highscore[:5]]
+    highscore_names = [entry['player_name'] for entry in sorted_highscore[:5]]
+    highscore_points = [entry['score'] for entry in sorted_highscore[:5]]
 
     present_highscore = "\n".join("{:15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
 
