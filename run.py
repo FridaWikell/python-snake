@@ -176,34 +176,21 @@ def add_to_highscore():
 
 
 def game_over():
+    highscore = SHEET.worksheet("highscore")
+    
+    highscore_records = highscore.get_all_records()
+    sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
+    top_five = sorted_highscore[:5]
+    
     print_ascii("dead-snake-ascii.txt")
     print("Well... That was... Well played? "
           f"Come on {player_name}, you can do better than {score} points... "
           "Take a look at the highscore below, take a deep breath "
           "and shoot for the stars!\n")
-
-    #print("{:15}".format("Name:"), "{:5}".format("Points:"))
     
-    highscore = SHEET.worksheet("highscore")
-
-    # Sortera highscore och visa top fem
-
-    highscore_records = highscore.get_all_records()
-    sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
-    top_five = sorted_highscore[:5]
-
-    print(top_five)
-
     print("{:15} {:5}".format("Name", "Points"))
     for entry in top_five:
-        print("{:15} {:5}".format(entry['Name'], entry['Points']))
-
-    #highscore_names = [entry['player_name'] for entry in top_five]
-    #highscore_points = [entry['score'] for entry in top_five]
-
-    #present_highscore = "\n".join("{:15} {:5}".format(x, y) for x, y in zip(highscore_names, highscore_points))
-
-    print(present_highscore)
+        print("{:15} {:<5}".format(entry['Name'], entry['Points']))
 
     wait_for_answer()
 
@@ -216,13 +203,8 @@ def main():
     clear_screen()
     get_ready_page()
     clear_screen()
+    curses.wrapper(main_game)
+    add_to_highscore()    
+    game_over()
 
 main()
-if __name__ == "__main__":
-    try:
-        curses.wrapper(main_game)
-        add_to_highscore()    
-        game_over()
-    except curses.error as e:
-        print(f"Curses error: {e}")
-
