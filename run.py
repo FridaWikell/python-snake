@@ -60,13 +60,12 @@ def snake_ascii():
         \^^^^^ ^^^_^^^^^^^_,-'  `.^^^^^^^^_/ 
          `.____,-' `-.__.'        `-.___.' 
 """
-    , (0, 17), style="green")
+    , (0, 15), style="green")
     console.print(ascii)
 
 
 def welcome_ascii():
     ascii = Padding(r"""
-
 . . .     |                           |            ,---.          |         |
 | | |,---.|    ,---.,---.,-.-.,---.   |--- ,---.   `---.,---.,---.|__/ ,---.|
 | | ||---'|    |    |   || | ||---'   |    |   |       ||   |,---||  \ |---' 
@@ -328,9 +327,4 @@ def main():
     thanks_for_playing()
     
 
-#main()
-
-
-
-
-start_page()
+main()
