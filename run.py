@@ -221,13 +221,22 @@ def wait_for_answer():
 
     cursor.show()
 
-    play_again_answer = input("\nDo you want to play again? \n").lower()
-    if play_again_answer in yes:
-        return True     
-    elif play_again_answer in no:
-        return False
-    else:
-        print("Please answer yes or no")
+  #  play_again_answer = input("\nDo you want to play again? \n").lower()
+   # if play_again_answer in yes:
+    #    return True     
+   # elif play_again_answer in no:
+    #    return False
+    #else:
+    #    print("Please answer yes or no")
+
+    while True:
+        play_again_answer = input("\nDo you want to play again? \n").lower()
+        if play_again_answer in yes:
+            return True     
+        elif play_again_answer in no:
+            return False
+        else:
+            print("Please answer yes or no")
 
 
 def add_to_highscore():
@@ -261,7 +270,7 @@ def game_over():
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
     console.print(highscore_list)
-    
+
     wait_for_answer()        
 
 
