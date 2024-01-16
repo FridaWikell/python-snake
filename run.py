@@ -225,8 +225,7 @@ def wait_for_answer():
     if play_again_answer in yes:
         return True     
     elif play_again_answer in no:
-        #return False
-        print(play_again_answer)
+        return False
     else:
         print("Please answer yes or no")
 
@@ -261,7 +260,9 @@ def game_over():
     for entry in top_five:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
-    console.print(highscore_list)        
+    console.print(highscore_list)
+    
+    wait_for_answer()        
 
 
 def thanks_for_playing():
