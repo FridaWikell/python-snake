@@ -113,7 +113,7 @@ def rules_page():
         than before.\n\
         Beware of yourself! Don't collide into yourself!
         Beware of the walls! Don't collide into the walls!
-        Easy peasy lemon squeezy! Right?\n""", (2,4))
+        Easy peasy lemon squeezy! Right?\n""", (2,2,1,2))
 
     console.print(rules_text)
     enter_name()
@@ -249,13 +249,13 @@ def game_over():
     sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
     top_five = sorted_highscore[:5]
     
-    print_ascii("game-over-ascii.txt", style="welcome")
+
     highscore_text = Padding(f"""Well... That was... Well played?
           Come on {player_name}, you can do better than {score} points...
           Take a look at the highscore below, take a deep breath
-          and shoot for the stars!""", (0, 4))
+          and shoot for the stars!""", (0, 2))
 
-    print(highscore_text)
+    console.print(highscore_text)
     
 
     highscore_list = Table()
@@ -265,7 +265,8 @@ def game_over():
     for entry in top_five:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
-    console.print(highscore_list)   
+    padded_highscore = Padding(highscore_list, (0, 2))
+    console.print(padded_highscore)   
 
 
 def thanks_for_playing():
@@ -274,10 +275,14 @@ def thanks_for_playing():
     clear_screen()
     cursor.hide()
 
-    print("So you don't want to play anymore? "
-          "Well, it's up to you. You know where "
-          "to find us when you want to conquer the highscore! "
-          "For now, so long and thank you for the fish!")
+    thanks_text = """
+        So you don't want to play anymore?
+        Well, it's up to you. You know where
+        to find us when you want to conquer the highscore!
+        
+        For now, so long and thank you for the fish!"""
+
+    console.print(thanks_text)
 
 
 def main():
