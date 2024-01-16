@@ -134,7 +134,7 @@ def main_game(stdscr):
 
     sh, sw = 20, 40
     play_area = curses.newwin(sh, sw, 4, 20)
-    play_area.border("|", "-")
+    play_area.box("|", "-")
     play_area.keypad(1)
     play_area.timeout(100)
     
