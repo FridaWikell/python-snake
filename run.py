@@ -283,9 +283,4 @@ def main():
     thanks_for_playing()
     
 
-#main()
-highscore_list = Table(title="Top five highscore", show_header=False)
-   
-highscore_list.add_column("Name", style="cyan", width=15)
-highscore_list.add_column("Points", style="green", width=5)
-print(highscore_list)
+main()
