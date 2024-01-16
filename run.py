@@ -8,7 +8,7 @@ import curses
 import cursor
 import re
 import rich
-from rich.console import Console
+from rich import print as print
 from rich.table import Table
 
 
