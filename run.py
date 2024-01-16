@@ -54,6 +54,19 @@ def print_ascii(filename, style=None):
         console.print(ascii_art)
 
 
+def print_centered_aligned(text):
+
+    # Calculate padding and center the text
+    terminal_width = console.width
+    padding_top = 2
+    padding_sides = 4
+    available_width = terminal_width - 2 * padding_sides
+    padded_text = f"{' ' * padding_sides}{text.center(available_width)}{' ' * padding_sides}"
+
+    # Print the centered and padded text
+    console.print("\n" * padding_top + padded_text)
+
+
 def start_page():
     '''Views the start page with ascii images'''
 
@@ -102,15 +115,16 @@ def enter_name():
 def rules_page():
     ''' Present the rules for the user '''
 
-    print("Rules:\n")
-    print("The rules are simple. You are the snake. So far, so good. Right? "
-          "You control the snake with your arrow keys. Up make the snake to"
-          "turn up, right makes the snake to turn right. Well, you get the picture."
-          "The goal is to eat as many of the lovely apples (o) as you can. "
-          "When you eat an apple, you grow and get one apple longer than before.\n"
-          "Beware of yourself! Don't collide into yourself!\n"
-          "Beware of the walls! Don't collide into the walls!\n"
-          "Easy peasy lemon squeezy! Right?\n")
+    print_centered_aligned("\nRules:\n"
+        "The rules are simple. You are the snake. So far, so good. Right? "
+        "You control the snake with your arrow keys. Up make the snake to"
+        "turn up, right makes the snake to turn right. Well, you get the picture."
+        "The goal is to eat as many of the lovely apples (o) as you can. "
+        "When you eat an apple, you grow and get one apple longer than before.\n\n"
+        "Beware of yourself! Don't collide into yourself!\n"
+        "Beware of the walls! Don't collide into the walls!\n"
+        "Easy peasy lemon squeezy! Right?\n")
+
     enter_name()
 
 
@@ -294,7 +308,7 @@ def main():
     thanks_for_playing()
     
 
-main()
+#main()
 
-
+rules_page()
 
