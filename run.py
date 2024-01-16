@@ -127,6 +127,7 @@ def create_apple(snake, play_area):
     ''' Create the apples which the snake is hunting for
     -2 is used to not get the apples to close to the edges '''
     red_apple = f"[apple]\u25cf[/]"
+    redtest = console.print("\u25cf", style="apple")
 
     sh, sw = 20, 40
     apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
@@ -134,7 +135,7 @@ def create_apple(snake, play_area):
     while apple in snake:
         apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
 
-    play_area.addch(apple[0], apple[1], red_apple)
+    play_area.addch(apple[0], apple[1], redtest)
 
     return apple
 
@@ -205,7 +206,7 @@ def main_game(stdscr):
                 snake_tail = snake.pop()
                 play_area.addch(snake_tail[0], snake_tail[1], ' ')
 
-            play_area.addch(snake[0][0], snake[0][1], "\u25a0", style="snake")
+            play_area.addch(snake[0][0], snake[0][1], "\u25a0")
 
         else:
             break
@@ -295,4 +296,7 @@ def main():
     thanks_for_playing()
     
 
-main()
+# main()
+
+redtest = console.print("\u25cf", style="apple")
+
