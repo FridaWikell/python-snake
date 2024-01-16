@@ -52,7 +52,7 @@ def start_page():
     '''Views the start page with ascii images'''
 
     cursor.hide()
-    print_ascii("snake-ascii.txt", style="snake")
+    console.print_ascii("snake-ascii.txt", style="snake")
     print_ascii("welcome-ascii.txt")
     input("Press Enter to continue...")
 
@@ -253,7 +253,7 @@ def game_over():
     for entry in top_five:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
-    print(highscore_list)        
+    console.print(highscore_list)        
 
 
 def thanks_for_playing():
