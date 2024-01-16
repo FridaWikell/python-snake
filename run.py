@@ -8,6 +8,8 @@ import curses
 import cursor
 import re
 import rich
+from rich.console import Console
+from rich.table import Table
 
 
 SCOPE = [
@@ -232,9 +234,20 @@ def game_over():
           "Take a look at the highscore below, take a deep breath "
           "and shoot for the stars!\n")
     
-    print("{:15} {:5}".format("Name", "Points"))
+
+    highscore_list = Table(title="Top five highscore", show_header=False)
+    highscore_list.add_column("Name", width=15)
+    highscore_list.add_column("Points", width=5)
+
+    # print("{:15} {:5}".format("Name", "Points"))
+    
+    #for entry in top_five:
+     #   print("{:15} {:<5}".format(entry['Name'], entry['Points']))
+
     for entry in top_five:
-        print("{:15} {:<5}".format(entry['Name'], entry['Points']))
+        highscore_list.add_row(entry['Name'], str(entry['Points']))
+
+    print(highscore_list)        
 
 
 def thanks_for_playing():
@@ -271,5 +284,8 @@ def main():
     
 
 #main()
-    
-print("\u25a0")
+highscore_list = Table(title="Top five highscore", show_header=False)
+   
+highscore_list.add_column("Name", style="cyan", width=15)
+highscore_list.add_column("Points", style="green", width=5)
+print(highscore_list)
