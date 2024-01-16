@@ -10,6 +10,8 @@ import re
 import rich
 from rich import print as print
 from rich.table import Table
+from rich.console import Console
+from rich.theme import Theme
 
 
 SCOPE = [
@@ -26,6 +28,15 @@ SHEET = GSPREAD_CLIENT.open("snake_highscore")
 
 # Global varibles
 score = 0
+console = Console()
+
+
+# Styling
+theme = Theme(
+    {
+        "snake": "green", "apple": "red"
+    }
+)
 
 
 # Functions 
@@ -41,7 +52,7 @@ def start_page():
     '''Views the start page with ascii images'''
 
     cursor.hide()
-    print_ascii("snake-ascii.txt")
+    print_ascii("snake-ascii.txt", style="snake")
     print_ascii("welcome-ascii.txt")
     input("Press Enter to continue...")
 
