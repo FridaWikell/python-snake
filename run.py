@@ -119,7 +119,7 @@ def get_ready_page():
     ''' Let the user to press enter when they're ready to play '''
 
     cursor.hide()
-    print_ascii("snake-ascii.txt")
+    print_ascii("snake-ascii.txt", style="snake")
     print("\nSo, there is only one thing left to ask...\n\n")
     input("Are you ready? If so, please press Enter\n")
    
