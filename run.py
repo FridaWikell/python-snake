@@ -43,19 +43,24 @@ console = Console(theme=custom_theme)
 
 # Functions 
 
-def print_ascii(filename, style):
+def print_ascii(filename, style=None):
     '''Opens ascii images and print them'''
 
-    file = open(filename, "r")
-    console.print(''.join([line for line in file]), style=None)
+    with open(filename, "r") as file:
+        ascii_art = ''.join([line for line in file])
+
+    if style:
+        console.print(ascii_art, style=style)
+    else:
+        console.print(ascii_art)
 
 
 def start_page():
     '''Views the start page with ascii images'''
 
     cursor.hide()
-    print_ascii("snake-ascii.txt", "snake")
-    print_ascii("welcome-ascii.txt", None)
+    print_ascii("snake-ascii.txt", style="snake")
+    print_ascii("welcome-ascii.txt", style=None)
     input("Press Enter to continue...")
 
 
