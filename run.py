@@ -235,14 +235,9 @@ def game_over():
           "and shoot for the stars!\n")
     
 
-    highscore_list = Table(title="Top five highscore", show_header=False)
+    highscore_list = Table
     highscore_list.add_column("Name", width=15)
     highscore_list.add_column("Points", width=5)
-
-    # print("{:15} {:5}".format("Name", "Points"))
-    
-    #for entry in top_five:
-     #   print("{:15} {:<5}".format(entry['Name'], entry['Points']))
 
     for entry in top_five:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
