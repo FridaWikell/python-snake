@@ -103,17 +103,16 @@ def enter_name():
 def rules_page():
     ''' Present the rules for the user '''
 
-    rules_text = Padding("""
-        Rules:\n
-        The rules are simple. You are the snake. So far, so good. Right?
-        You control the snake with your arrow keys. Up make the snake to
-        turn up, right makes the snake to turn right. Well, you get the 
-        picture. The goal is to eat as many of the lovely apples (o) as 
-        you can. When you eat an apple, you grow and get one apple longer
-        than before.\n\
-        Beware of yourself! Don't collide into yourself!
-        Beware of the walls! Don't collide into the walls!
-        Easy peasy lemon squeezy! Right?\n""", (2,2,1,2))
+    rules_text = Padding("""Rules:
+    The rules are simple. You are the snake. So far, so good. Right?
+    You control the snake with your arrow keys. Up make the snake to
+    turn up, right makes the snake to turn right. Well, you get the 
+    picture. The goal is to eat as many of the lovely apples (o) as 
+    you can. When you eat an apple, you grow and get one apple longer
+    than before.\n\
+    Beware of yourself! Don't collide into yourself!
+    Beware of the walls! Don't collide into the walls!
+    Easy peasy lemon squeezy! Right?\n""", (4,4))
 
     console.print(rules_text)
     enter_name()
@@ -251,9 +250,9 @@ def game_over():
     
 
     highscore_text = Padding(f"""Well... That was... Well played?
-          Come on {player_name}, you can do better than {score} points...
-          Take a look at the highscore below, take a deep breath
-          and shoot for the stars!""", (0, 2))
+    Come on {player_name}, you can do better than {score} points...
+    Take a look at the highscore below, take a deep breath
+    and shoot for the stars!""", (4, 4))
 
     console.print(highscore_text)
     
@@ -265,7 +264,7 @@ def game_over():
     for entry in top_five:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
-    padded_highscore = Padding(highscore_list, (0, 2))
+    padded_highscore = Padding(highscore_list, (4, 4))
     console.print(padded_highscore)   
 
 
@@ -275,12 +274,11 @@ def thanks_for_playing():
     clear_screen()
     cursor.hide()
 
-    thanks_text = """
-        So you don't want to play anymore?
-        Well, it's up to you. You know where
-        to find us when you want to conquer the highscore!
-        
-        For now, so long and thank you for the fish!"""
+    thanks_text = Padding("""So you don't want to play anymore?
+    Well, it's up to you. You know where
+    to find us when you want to conquer the highscore!
+     
+    For now, so long and thank you for the fish!""", (4, 4))
 
     console.print(thanks_text)
 
