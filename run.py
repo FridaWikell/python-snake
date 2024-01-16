@@ -34,7 +34,7 @@ console = Console()
 # Styling
 custom_theme = Theme(
     {
-        "snake": "green", "apple": "red"
+        "snake": "green", "apple": "red", "welcome": "white"
     }
 )
 
@@ -60,7 +60,7 @@ def start_page():
 
     cursor.hide()
     print_ascii("snake-ascii.txt", style="snake")
-    print_ascii("welcome-ascii.txt", style=None)
+    print_ascii("welcome-ascii.txt", style="white")
     input("Press Enter to continue...")
 
 
