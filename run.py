@@ -125,7 +125,8 @@ def enter_name():
 def rules_page():
     ''' Present the rules for the user '''
 
-    rules_text = Padding("""Rules:
+    rules_text = Padding("""
+    Rules:
     The rules are simple. You are the snake. So far, so good. Right?
     You control the snake with your arrow keys. Up make the snake to
     turn up, right makes the snake to turn right. Well, you get the 
@@ -144,7 +145,7 @@ def get_ready_page():
     ''' Let the user to press enter when they're ready to play '''
 
     cursor.hide()
-    print_ascii("snake-ascii.txt", style="snake")
+    snake_ascii()
     print("\nSo, there is only one thing left to ask...\n\n")
     input("Are you ready? If so, please press Enter\n")
    
