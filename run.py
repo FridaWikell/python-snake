@@ -60,7 +60,7 @@ def start_page():
 
     cursor.hide()
     print_ascii("snake-ascii.txt", style="snake")
-    print_ascii("welcome-ascii.txt", style="white")
+    print_ascii("welcome-ascii.txt", style="welcome")
     input("Press Enter to continue...")
 
 
@@ -255,7 +255,7 @@ def game_over():
     sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
     top_five = sorted_highscore[:5]
     
-    print_ascii("game-over-ascii.txt")
+    print_ascii("game-over-ascii.txt", style="welcome")
     print("Well... That was... Well played? "
           f"Come on {player_name}, you can do better than {score} points... "
           "Take a look at the highscore below, take a deep breath "
