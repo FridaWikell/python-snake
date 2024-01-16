@@ -130,7 +130,7 @@ def main_game(stdscr):
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
     #win = curses.newwin(height, width, begin_y, begin_x)
-    global score    
+    score = 0    
 
     stdscr.timeout(100)
 
