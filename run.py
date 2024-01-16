@@ -269,9 +269,7 @@ def game_over():
     for entry in top_five:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
-    console.print(highscore_list)
-
-    wait_for_answer()        
+    console.print(highscore_list)   
 
 
 def thanks_for_playing():
