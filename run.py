@@ -11,6 +11,7 @@ import rich
 from rich.table import Table
 from rich.console import Console
 from rich.theme import Theme
+from rich.padding import Padding
 
 
 SCOPE = [
@@ -54,26 +55,6 @@ def print_ascii(filename, style=None):
         console.print(ascii_art)
 
 
-def print_centered_text(text, padding_top=1, padding_sides=6):
-    # Create padded text
-    padded_text = "\n" * padding_top + " " * padding_sides + text.replace("\n", "\n" + " " * padding_sides)
-
-    # Print padded text
-    print(padded_text)
-
-
-def print_padding_sides(text, padding_sides=6):
-    padded_text = " " * padding_sides + text.replace("\n", "\n" + " " * padding_sides)
-
-    print(padded_text)
-
-
-def input_with_padding(message):
-    padding = 6
-    user_input = input(" " * padding + message + " " * padding).strip()
-    return user_input
-
-
 def start_page():
     '''Views the start page with ascii images'''
 
@@ -112,7 +93,7 @@ def enter_name():
     global player_name
 
     while True:
-        player_name = input_with_padding("Please enter your name (3-13 letters): \n").capitalize()
+        player_name = input("Please enter your name (3-13 letters): \n").capitalize()
         if validate_input(player_name):
             break
 
@@ -122,18 +103,19 @@ def enter_name():
 def rules_page():
     ''' Present the rules for the user '''
 
-    print_centered_text(("\nRules:\n"
-    "The rules are simple. You are the snake. So far, so good. Right?\n"
-    "You control the snake with your arrow keys. Up make the snake to\n"
-    "turn up, right makes the snake to turn right. Well, you get the \n"
-    "picture. The goal is to eat as many of the lovely apples (o) as \n"
-    "you can. When you eat an apple, you grow and get one apple longer\n"
-    "than before.\n\n"
-    "Beware of yourself! Don't collide into yourself!\n"
-    "Beware of the walls! Don't collide into the walls!\n"
-    "Easy peasy lemon squeezy! Right?\n"
-))
+    rules_text = Padding("""
+        Rules:\n
+        The rules are simple. You are the snake. So far, so good. Right?
+        You control the snake with your arrow keys. Up make the snake to
+        turn up, right makes the snake to turn right. Well, you get the 
+        picture. The goal is to eat as many of the lovely apples (o) as 
+        you can. When you eat an apple, you grow and get one apple longer
+        than before.\n\
+        Beware of yourself! Don't collide into yourself!
+        Beware of the walls! Don't collide into the walls!
+        Easy peasy lemon squeezy! Right?\n""", (2,4))
 
+    console.print(rules_text)
     enter_name()
 
 
@@ -268,10 +250,12 @@ def game_over():
     top_five = sorted_highscore[:5]
     
     print_ascii("game-over-ascii.txt", style="welcome")
-    print_centered_text(("Well... That was... Well played?\n"
-          f"Come on {player_name}, you can do better than {score} points...\n"
-          "Take a look at the highscore below, take a deep breath\n"
-          "and shoot for the stars!\n"))
+    highscore_text = Padding(f"""Well... That was... Well played?
+          Come on {player_name}, you can do better than {score} points...
+          Take a look at the highscore below, take a deep breath
+          and shoot for the stars!""", (0, 4))
+
+    print(highscore_text)
     
 
     highscore_list = Table()
