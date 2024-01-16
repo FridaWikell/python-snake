@@ -134,7 +134,7 @@ def create_apple(snake, play_area):
     while apple in snake:
         apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
 
-    play_area.addch(apple[0], apple[1], "\u25cf")
+    play_area.addch(apple[0], apple[1], "\u25cf", style="apple")
 
     return apple
 
@@ -205,7 +205,7 @@ def main_game(stdscr):
                 snake_tail = snake.pop()
                 play_area.addch(snake_tail[0], snake_tail[1], ' ')
 
-            play_area.addch(snake[0][0], snake[0][1], "\u25a0")
+            play_area.addch(snake[0][0], snake[0][1], "\u25a0", style="snake")
 
         else:
             break
@@ -218,16 +218,6 @@ def wait_for_answer():
 
     yes = {"yes","y", "ye", "", "ja"}
     no = {"no", "n", "nej"}
-
-    cursor.show()
-
-  #  play_again_answer = input("\nDo you want to play again? \n").lower()
-   # if play_again_answer in yes:
-    #    return True     
-   # elif play_again_answer in no:
-    #    return False
-    #else:
-    #    print("Please answer yes or no")
 
     while True:
         play_again_answer = input("\nDo you want to play again? \n").lower()
