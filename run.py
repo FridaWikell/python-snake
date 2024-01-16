@@ -54,8 +54,8 @@ def start_page():
     '''Views the start page with ascii images'''
 
     cursor.hide()
-    print_ascii("snake-ascii.txt", style="snake")
-    print_ascii("welcome-ascii.txt", style=None)
+    print_ascii("snake-ascii.txt", "snake")
+    print_ascii("welcome-ascii.txt", None)
     input("Press Enter to continue...")
 
 
