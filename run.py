@@ -41,11 +41,11 @@ theme = Theme(
 
 # Functions 
 
-def print_ascii(filename):
+def print_ascii(filename, style):
     '''Opens ascii images and print them'''
 
     file = open(filename, "r")
-    console.print(''.join([line for line in file]))
+    console.print(''.join([line for line in file]), style=None)
 
 
 def start_page():
