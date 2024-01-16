@@ -45,14 +45,14 @@ def print_ascii(filename):
     '''Opens ascii images and print them'''
 
     file = open(filename, "r")
-    print(''.join([line for line in file]))
+    console.print(''.join([line for line in file]))
 
 
 def start_page():
     '''Views the start page with ascii images'''
 
     cursor.hide()
-    console.print_ascii("snake-ascii.txt", style="snake")
+    print_ascii("snake-ascii.txt", style="snake")
     print_ascii("welcome-ascii.txt")
     input("Press Enter to continue...")
 
