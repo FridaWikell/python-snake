@@ -7,6 +7,7 @@ import random
 import curses
 import cursor
 import re
+import rich
 
 
 SCOPE = [
@@ -135,7 +136,7 @@ def main_game(stdscr):
     play_area = curses.newwin(sh, sw, 4, 20)
     play_area.keypad(1)
     play_area.timeout(100)
-
+    rich.Panel.fit.play_area
 
     # To make sure the snake starts in the middle
     snake = [
@@ -145,6 +146,7 @@ def main_game(stdscr):
     ]
 
     apple = create_apple(snake, play_area)
+
 
     # Makes the snake start to the right
     direction = curses.KEY_RIGHT
