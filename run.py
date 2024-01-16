@@ -31,16 +31,6 @@ score = 0
 console = Console()
 
 
-# Styling
-custom_theme = Theme(
-    {
-        "snake": "green", "apple": "red", "welcome": "white"
-    }
-)
-
-console = Console(theme=custom_theme)
-
-
 # Functions 
 
 def print_ascii(filename, style=None):
@@ -55,12 +45,44 @@ def print_ascii(filename, style=None):
         console.print(ascii_art)
 
 
+def snake_ascii():
+    ascii = Padding(r"""
+   _    _
+,-(|)--(|)-.
+\_   ..   _/
+  \______/
+    V  V                                  ____
+    `.^^`.                               (^,--`
+      \^^^\                             (^^)
+      |^^^|                  _,-._       \^^)
+      (^^^^\      __      _,-'^^^^^`.    _,'^^)
+       \^^^^`._,-'^^`-._.'^^^^__^^^^ `--'^^^_/
+        \^^^^^ ^^^_^^^^^^^_,-'  `.^^^^^^^^_/ 
+         `.____,-' `-.__.'        `-.___.' 
+"""
+    , (0, 17), style="green")
+    console.print(ascii)
+
+
+def welcome_ascii():
+    ascii = Padding(r"""
+
+. . .     |                           |            ,---.          |         |
+| | |,---.|    ,---.,---.,-.-.,---.   |--- ,---.   `---.,---.,---.|__/ ,---.|
+| | ||---'|    |    |   || | ||---'   |    |   |       ||   |,---||  \ |---' 
+`-'-'`---'`---'`---'`---'` ' '`---'   `---'`---'   `---'`   '`---^`   ``---'o"""
+    , (0, 1), style="green")
+
+    console.print(ascii)
+
+
+
 def start_page():
     '''Views the start page with ascii images'''
 
     cursor.hide()
-    print_ascii("snake-ascii.txt", style="snake")
-    print_ascii("welcome-ascii.txt", style="welcome")
+    snake_ascii()
+    welcome_ascii()
     input("Press Enter to continue...")
 
 
@@ -306,4 +328,9 @@ def main():
     thanks_for_playing()
     
 
-main()
+#main()
+
+
+
+
+start_page()
