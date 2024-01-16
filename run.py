@@ -8,7 +8,6 @@ import curses
 import cursor
 import re
 import rich
-from rich import print as print
 from rich.table import Table
 from rich.console import Console
 from rich.theme import Theme
@@ -127,6 +126,7 @@ def get_ready_page():
 def create_apple(snake, play_area):
     ''' Create the apples which the snake is hunting for
     -2 is used to not get the apples to close to the edges '''
+    red_apple = f"[apple]\u25cf[/]"
 
     sh, sw = 20, 40
     apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
@@ -134,7 +134,7 @@ def create_apple(snake, play_area):
     while apple in snake:
         apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
 
-    play_area.addch(apple[0], apple[1], "\u25cf", style="apple")
+    play_area.addch(apple[0], apple[1], red_apple)
 
     return apple
 
@@ -295,4 +295,6 @@ def main():
     thanks_for_playing()
     
 
-main()
+#main()
+
+print(f"[apple]\u25cf[/]")
