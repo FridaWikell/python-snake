@@ -125,9 +125,10 @@ def rules_page():
     print_centered_text(("\nRules:\n"
     "The rules are simple. You are the snake. So far, so good. Right?\n"
     "You control the snake with your arrow keys. Up make the snake to\n"
-    "turn up, right makes the snake to turn right. Well, you get the picture.\n"
-    "The goal is to eat as many of the lovely apples (o) as you can.\n"
-    "When you eat an apple, you grow and get one apple longer than before.\n\n"
+    "turn up, right makes the snake to turn right. Well, you get the \n"
+    "picture. The goal is to eat as many of the lovely apples (o) as \n"
+    "you can. When you eat an apple, you grow and get one apple longer\n"
+    "than before.\n\n"
     "Beware of yourself! Don't collide into yourself!\n"
     "Beware of the walls! Don't collide into the walls!\n"
     "Easy peasy lemon squeezy! Right?\n"
@@ -267,10 +268,10 @@ def game_over():
     top_five = sorted_highscore[:5]
     
     print_ascii("game-over-ascii.txt", style="welcome")
-    print("Well... That was... Well played? "
-          f"Come on {player_name}, you can do better than {score} points... "
-          "Take a look at the highscore below, take a deep breath "
-          "and shoot for the stars!\n")
+    print_centered_text(("Well... That was... Well played?\n"
+          f"Come on {player_name}, you can do better than {score} points...\n"
+          "Take a look at the highscore below, take a deep breath\n"
+          "and shoot for the stars!\n"))
     
 
     highscore_list = Table()
