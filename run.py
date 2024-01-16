@@ -12,6 +12,7 @@ from rich.table import Table
 from rich.console import Console
 from rich.theme import Theme
 from rich.padding import Padding
+from rich.panel import Panel
 
 
 SCOPE = [
@@ -178,7 +179,8 @@ def main_game(stdscr):
 
     sh, sw = 20, 40
     play_area = curses.newwin(sh, sw, 4, 20)
-    play_area.box("|", "-")
+    console.print(Panel(play_area))
+    #play_area.box("|", "-")
     play_area.keypad(1)
     play_area.timeout(100)
     
