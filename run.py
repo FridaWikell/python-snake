@@ -296,7 +296,7 @@ def main():
     thanks_for_playing()
     
 
-# main()
+main()
 
-redtest = console.print("\u25cf", style="apple")
+
 
