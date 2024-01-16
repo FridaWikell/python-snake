@@ -62,6 +62,18 @@ def print_centered_text(text, padding_top=1, padding_sides=6):
     print(padded_text)
 
 
+def print_padding_sides(text, padding_sides=6):
+    padded_text = " " * padding_sides + text.replace("\n", "\n" + " " * padding_sides)
+
+    print(padded_text)
+
+
+def input_with_padding(message):
+    padding = 6
+    user_input = input(" " * padding + message + " " * padding).strip()
+    return user_input
+
+
 def start_page():
     '''Views the start page with ascii images'''
 
@@ -100,7 +112,7 @@ def enter_name():
     global player_name
 
     while True:
-        player_name = input("Please enter your name (3-13 letters): \n").capitalize()
+        player_name = input_with_padding("Please enter your name (3-13 letters): \n").capitalize()
         if validate_input(player_name):
             break
 
@@ -110,17 +122,16 @@ def enter_name():
 def rules_page():
     ''' Present the rules for the user '''
 
-    rules_text = "\nRules:\n"
-    "The rules are simple. You are the snake. So far, so good. Right? "
-    "You control the snake with your arrow keys. Up make the snake to"
-    "turn up, right makes the snake to turn right. Well, you get the picture."
-    "The goal is to eat as many of the lovely apples (o) as you can. "
+    print_centered_text(("\nRules:\n"
+    "The rules are simple. You are the snake. So far, so good. Right?\n"
+    "You control the snake with your arrow keys. Up make the snake to\n"
+    "turn up, right makes the snake to turn right. Well, you get the picture.\n"
+    "The goal is to eat as many of the lovely apples (o) as you can.\n"
     "When you eat an apple, you grow and get one apple longer than before.\n\n"
     "Beware of yourself! Don't collide into yourself!\n"
     "Beware of the walls! Don't collide into the walls!\n"
     "Easy peasy lemon squeezy! Right?\n"
-
-    print_centered_text(rules_text)
+))
 
     enter_name()
 
@@ -305,7 +316,4 @@ def main():
     thanks_for_playing()
     
 
-#main()
-
-rules_page()
-
+main()
