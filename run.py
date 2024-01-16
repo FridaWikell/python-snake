@@ -246,7 +246,7 @@ def game_over():
           "and shoot for the stars!\n")
     
 
-    highscore_list = Table
+    highscore_list = Table()
     highscore_list.add_column("Name", width=15)
     highscore_list.add_column("Points", width=5)
 
