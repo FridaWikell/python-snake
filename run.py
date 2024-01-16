@@ -109,10 +109,10 @@ def rules_page():
     turn up, right makes the snake to turn right. Well, you get the 
     picture. The goal is to eat as many of the lovely apples (o) as 
     you can. When you eat an apple, you grow and get one apple longer
-    than before.\n\
+    than before.
     Beware of yourself! Don't collide into yourself!
     Beware of the walls! Don't collide into the walls!
-    Easy peasy lemon squeezy! Right?\n""", (4,4))
+    Easy peasy lemon squeezy! Right?\n""", (2,4))
 
     console.print(rules_text)
     enter_name()
@@ -249,10 +249,11 @@ def game_over():
     top_five = sorted_highscore[:5]
     
 
-    highscore_text = Padding(f"""Well... That was... Well played?
+    highscore_text = Padding(f"""
+    Well... That was... Well played?
     Come on {player_name}, you can do better than {score} points...
     Take a look at the highscore below, take a deep breath
-    and shoot for the stars!""", (4, 4))
+    and shoot for the stars!""", (2, 6))
 
     console.print(highscore_text)
     
@@ -264,7 +265,7 @@ def game_over():
     for entry in top_five:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
-    padded_highscore = Padding(highscore_list, (4, 4))
+    padded_highscore = Padding(highscore_list, (2, 6))
     console.print(padded_highscore)   
 
 
