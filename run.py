@@ -107,7 +107,7 @@ def create_apple(snake, play_area):
     ''' Create the apples which the snake is hunting for
     -2 is used to not get the apples to close to the edges '''
 
-    sh, sw = play_area.getmaxyx()
+    sh, sw = 20, 40
     apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
 
     while apple in snake:
@@ -131,7 +131,7 @@ def main_game(stdscr):
 
     stdscr.timeout(100)
 
-    sh, sw = stdscr.getmaxyx()
+    sh, sw = 20, 40
     play_area = curses.newwin(sh, sw, 0, 0)
     play_area.keypad(1)
     play_area.timeout(100)
