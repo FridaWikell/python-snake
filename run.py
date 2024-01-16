@@ -265,7 +265,7 @@ def game_over():
     for entry in top_five:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
-    padded_highscore = Padding(highscore_list, (2, 6))
+    padded_highscore = Padding(highscore_list, (0, 26))
     console.print(padded_highscore)   
 
 
@@ -275,11 +275,12 @@ def thanks_for_playing():
     clear_screen()
     cursor.hide()
 
-    thanks_text = Padding("""So you don't want to play anymore?
+    thanks_text = Padding("""
+    So you don't want to play anymore?
     Well, it's up to you. You know where
     to find us when you want to conquer the highscore!
      
-    For now, so long and thank you for the fish!""", (4, 4))
+    For now, so long and thank you for the fish!""", (4, 8))
 
     console.print(thanks_text)
 
