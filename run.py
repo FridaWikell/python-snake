@@ -136,7 +136,7 @@ def main_game(stdscr):
     play_area = curses.newwin(sh, sw, 4, 20)
     play_area.keypad(1)
     play_area.timeout(100)
-    rich.Panel.fit.play_area
+    rich.panel.Panel.fit.play_area
 
     # To make sure the snake starts in the middle
     snake = [
