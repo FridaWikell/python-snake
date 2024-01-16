@@ -295,6 +295,4 @@ def main():
     thanks_for_playing()
     
 
-#main()
-
-print(f"[apple]\u25cf[/]")
+main()
