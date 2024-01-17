@@ -136,8 +136,10 @@ def take_me_back_logic(and_now):
 
         if and_now == "p":
             game_loop()
+            break
         elif and_now == "s":
             start_page()
+            break
         else:
             print("Please make a choice; 'p' or 's', and press Enter")
 
@@ -193,7 +195,7 @@ def create_apple(snake, play_area):
     return apple
 
 
-def main_game(stdscr):
+def main_game(stdscr, score):
     ''' The main game loop. It sets the playboard, 
      make sure the snake starts in the middle, controls the snake, 
       insert a new dot when an apple is eaten '''
@@ -202,8 +204,7 @@ def main_game(stdscr):
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
     #win = curses.newwin(height, width, begin_y, begin_x)
-
-    global score    
+   
     console.print(f"Score: {score}")
 
     stdscr.timeout(100)
@@ -372,12 +373,13 @@ def thanks_for_playing():
     console.print(thanks_text)
 
 def game_loop():
+    global score, player_name
 
     while True:
         clear_screen()
         get_ready_page()
         clear_screen()
-        curses.wrapper(main_game)
+        curses.wrapper(main_game, score=score)
         add_to_highscore()    
         game_over()
         global score
@@ -396,4 +398,5 @@ def main():
     game_loop()
     
 
-main()
+if __name__ = "__main__":
+    main()
