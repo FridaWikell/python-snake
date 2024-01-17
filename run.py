@@ -253,7 +253,7 @@ def wait_for_answer():
 
     while True:
         margin = 10
-        play_again_answer = input(" " * margin + "Do you want to play again? \n").lower()
+        play_again_answer = input(" " * margin + "Do you want to play again?\n" + " " * margin).lower()
         if play_again_answer in yes:
             return True     
         elif play_again_answer in no:
@@ -296,7 +296,7 @@ def game_over():
     for entry in top_five:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
-    padded_highscore = Padding(highscore_list, (0, 26, 1, 0))
+    padded_highscore = Padding(highscore_list, (0, 0, 1, 26))
     console.print(padded_highscore)   
 
 
