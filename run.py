@@ -126,7 +126,7 @@ def enter_name():
             nice_to_see = Padding(f"Nice to see you {player_name}", (0, 20))
             console.print(nice_to_see)
 
-        return player_name
+        #return player_name
 
 
 def rules_page():
@@ -192,13 +192,14 @@ def create_apple(snake, play_area):
 def main_game(stdscr):
     ''' The main game loop. It sets the playboard, 
      make sure the snake starts in the middle, controls the snake, 
-      insert a new X when an apple is eaten '''
+      insert a new dot when an apple is eaten '''
 
     # the timeout is set for getch in milliseconds
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
     #win = curses.newwin(height, width, begin_y, begin_x)
-       
+    
+    console.print(f"Score: {score}")
 
     stdscr.timeout(100)
 
@@ -229,8 +230,6 @@ def main_game(stdscr):
     while True:
         play_area.clear()
         play_area.box("|", "-")
-        score_str = f"Score: {score}"
-        play_area.addstr(0, max(sw // 2 - len(score_str) // 2, 0), score_str)
         next_direction = play_area.getch()
         direction = direction if next_direction == -1 else next_direction
 
