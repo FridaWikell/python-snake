@@ -208,8 +208,8 @@ def main_game(stdscr):
 
     stdscr.timeout(100)
 
-    sh, sw = 20, 40
-    play_area = curses.newwin(sh, sw, 4, 20)
+    sh, sw = 24, 48
+    play_area = curses.newwin(sh, sw, 2, 16)
     play_area.box("|", "-")
     play_area.keypad(1)
     play_area.timeout(100)
