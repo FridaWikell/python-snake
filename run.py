@@ -77,7 +77,7 @@ def start_menu():
     console.print(Padding(highscore, (0, 30)))
 
 
-def start_menu_logic(stdscr):
+def start_menu_logic():
 
     while True:
         if keyboard.is_pressed('s'):
@@ -90,9 +90,7 @@ def start_menu_logic(stdscr):
             #top_ten()
             print("You pressed h")
         else:
-            console.print("Please make a choice, 's', 'r' or 'h'")            
-
-
+            console.print("Please make a choice, 's', 'r' or 'h'")
 
 
 def start_page():
@@ -101,7 +99,7 @@ def start_page():
     cursor.hide()
     snake_ascii()
     start_menu()
-    curses.wrapper(start_menu_logic)
+    start_menu_logic()
 
 
 def clear_screen():
