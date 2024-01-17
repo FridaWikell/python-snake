@@ -229,7 +229,8 @@ def main_game(stdscr):
     while True:
         play_area.clear()
         play_area.box("|", "-")
-        play_area.addstr(0, sw + 3, f"Score: {score}")
+        score_str = f"Score: {score}"
+        play_area.addstr(0, max(sw // 2 - len(score_str) // 2, 0), score_str)
         next_direction = play_area.getch()
         direction = direction if next_direction == -1 else next_direction
 
@@ -339,7 +340,7 @@ def top_ten():
     highscore_list.add_column("Name", width=15)
     highscore_list.add_column("Points", width=6)
 
-    for entry in top_five:
+    for entry in top_ten:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
     padded_highscore = Padding(highscore_list, (0, 0, 1, 26))
