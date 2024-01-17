@@ -129,6 +129,18 @@ def enter_name():
         #return player_name
 
 
+def take_me_back_logic(and_now):
+    while True:
+        and_now = input().lower()
+
+        if and_now == "p":
+            game_loop()
+        elif and_now == "s":
+            start_page()
+        else:
+            print("Please make a choice; 'p' or 's', and press Enter")
+
+
 def rules_page():
     ''' Present the rules for the user '''
     clear_screen()
@@ -149,16 +161,7 @@ def rules_page():
     at the start page, press 's'.""", (2,2))
 
     console.print(rules_text)
-
-    while True:
-        and_now = input().lower()
-
-        if and_now == "p":
-            game_loop()
-        elif and_now == "s":
-            start_page()
-        else:
-            print("Please make a choice; 'p' or 's', and press Enter")
+    take_me_back_logic()
 
 
 def get_ready_page():
@@ -344,6 +347,14 @@ def top_ten():
 
     padded_highscore = Padding(highscore_list, (0, 0, 1, 26))
     console.print(padded_highscore)   
+
+    take_me_back = Padding("""
+    To get to the game, press 'p'.
+    If you want to go back and look at the beautiful snake
+    at the start page, press 's'.""", (2,2))
+    console.print(take_me_back)
+
+    take_me_back_logic()
 
 
 def thanks_for_playing():
