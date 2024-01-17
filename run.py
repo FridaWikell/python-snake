@@ -28,7 +28,6 @@ SHEET = GSPREAD_CLIENT.open("snake_highscore")
 
 
 # Global varibles
-score = 0
 console = Console()
 
 
@@ -340,3 +339,4 @@ def main():
     
 
 main()
+
