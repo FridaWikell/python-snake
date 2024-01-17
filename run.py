@@ -209,7 +209,7 @@ def main_game(stdscr, score):
 
     sh, sw = 20, 40
     play_area = curses.newwin(sh, sw, 0, 20)
-    
+    play_area.box("|", "-")
     play_area.keypad(1)
     play_area.timeout(100)
     
@@ -231,15 +231,12 @@ def main_game(stdscr, score):
         next_direction = play_area.getch()
         direction = direction if next_direction == -1 else next_direction
 
-        play_area.box("|", "-")
-
         if (
             direction in [curses.KEY_RIGHT, curses.KEY_LEFT, curses.KEY_DOWN, curses.KEY_UP] and
             (direction == curses.KEY_RIGHT and snake[0][1] < sw -1) or
             (direction == curses.KEY_LEFT and snake[0][1] > 0) or
             (direction == curses.KEY_DOWN and snake[0][0] < sh-1) or
-            (direction == curses.KEY_UP and snake[0][0] > 0) or
-            (snake[0] in snake[1:])
+            (direction == curses.KEY_UP and snake[0][0] > 0)
         ):
             snake_new_head = [snake[0][0], snake[0][1]]
 
