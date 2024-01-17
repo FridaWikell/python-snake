@@ -382,7 +382,6 @@ def game_loop():
         curses.wrapper(main_game, score=score)
         add_to_highscore()    
         game_over()
-        global score
         score = 0
         
         if not wait_for_answer(): 
