@@ -76,12 +76,34 @@ def start_menu():
     console.print(Padding(highscore, (0, 30)))
 
 
+def start_menu_logic(stdscr):
+
+    stdscr.refresh()
+
+    while True:
+        key = stdscr.getch()
+
+        if key == ord('s') or key == ord('S'):
+            #get_ready_page()
+            print("You pressed s")
+        elif key == ord('r') or key == ord('R'):
+            #rules_page()
+            print("You pressed r")
+        elif key == ord('h') or key == ord('H'):
+            #top_ten()
+            print("You pressed h")
+        else:
+            console.print("Please make a choice, 's', 'r' or 'h'")
+
+
+
 def start_page():
     '''Views the start page with ascii images'''
 
     cursor.hide()
     snake_ascii()
     start_menu()
+    curses.wrapper(start_menu_logic)
 
 
 def clear_screen():
