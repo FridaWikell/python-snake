@@ -83,7 +83,8 @@ def start_page():
     cursor.hide()
     snake_ascii()
     welcome_ascii()
-    input("Press Enter to continue...")
+    margin = 20
+    input(" " * margin + "Press Enter to continue...")
 
 
 def clear_screen():
@@ -103,9 +104,11 @@ def validate_input(input_string):
         if letters_only.match(input_string):
             return True
         else:
-            print("Your name should only contain letters. Please try again.")
+            contain_only_letters = Padding("Your name should only contain letters. Please try again.", (0, 4))
+            console.print(contain_only_letters)
     else:
-        print("Your name should be between 3 and 13 letters. Please try again.")
+        between_three = Padding("Your name should be between 3 and 13 letters. Please try again.", (0, 4))
+        console.print(between_three)
 
 
 def enter_name():
@@ -115,7 +118,8 @@ def enter_name():
     global player_name
 
     while True:
-        player_name = input("Please enter your name (3-13 letters): \n").capitalize()
+        margin = 4
+        player_name = input(" " * margin + "Please enter your name (3-13 letters): \n").capitalize()
         if validate_input(player_name):
             break
 
@@ -147,7 +151,8 @@ def get_ready_page():
     cursor.hide()
     snake_ascii()
     print("\nSo, there is only one thing left to ask...\n\n")
-    input("Are you ready? If so, please press Enter\n")
+    margin = 6
+    input(" " * margin + "Are you ready? If so, please press Enter\n")
    
 
 def create_apple(snake, play_area):
@@ -246,13 +251,15 @@ def wait_for_answer():
     no = {"no", "n", "nej"}
 
     while True:
-        play_again_answer = input("\nDo you want to play again? \n").lower()
+        margin = 6
+        play_again_answer = input(" " * margin + "\nDo you want to play again? \n").lower()
         if play_again_answer in yes:
             return True     
         elif play_again_answer in no:
             return False
         else:
-            print("Please answer yes or no")
+            yes_or_no = Padding("Please answer yes or no", (0, 6))
+            console.print(yes_or_no)
 
 
 def add_to_highscore():
