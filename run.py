@@ -216,7 +216,7 @@ def main_game(stdscr):
     play_area.border
 
     score = 0
-    play_area.addstr(int(sw * 0.8), "Score: {}".format(score))
+    play_area.addstr(0, 50, "Score: {}".format(score))
     
     # To make sure the snake starts in the middle
     snake = [
