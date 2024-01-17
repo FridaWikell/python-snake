@@ -138,12 +138,13 @@ def enter_name():
     global player_name
 
     while True:
-        margin = 6
+        margin = 20
         player_name = input(" " * margin + "Please enter your name (3-13 letters): \n" + " " * margin).capitalize()
         if validate_input(player_name):
-            break
+            nice_to_see = Padding(f"Nice to see you {player_name}", (0, 20))
+            print(nice_to_see)
 
-    return player_name
+        return player_name
 
 
 def rules_page():
@@ -162,7 +163,6 @@ def rules_page():
     Easy peasy lemon squeezy! Right?\n""", (2,2))
 
     console.print(rules_text)
-    enter_name()
 
 
 def get_ready_page():
@@ -170,6 +170,8 @@ def get_ready_page():
 
     cursor.hide()
     snake_ascii()
+    enter_name()
+
     only_one = Padding("So, there is only one thing left to ask...", (1, 19, 2, 19))
     console.print(only_one)
     margin = 20
