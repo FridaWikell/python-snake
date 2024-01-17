@@ -199,14 +199,9 @@ def main_game(stdscr):
     ''' The main game loop. It sets the playboard,
     make sure the snake starts in the middle, controls the snake, 
     insert a new X when an apple is eaten '''
-
-    # the timeout is set for getch in milliseconds
-    # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
-    #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
-    #win = curses.newwin(height, width, begin_y, begin_x)
        
-
     stdscr.timeout(100)
+    curses.curs_set(0)
 
     sh, sw = 24, 48
     play_area = curses.newwin(sh, sw, 0, 16)
