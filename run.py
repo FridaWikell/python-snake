@@ -248,6 +248,8 @@ def main_game(stdscr):
 def wait_for_answer():
     ''' Makes the user decide if they want to play again '''
 
+    cursor.show()
+
     yes = {"yes","y", "ye", "", "ja"}
     no = {"no", "n", "nej"}
 
