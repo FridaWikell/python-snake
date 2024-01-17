@@ -195,25 +195,26 @@ def create_apple(snake, play_area):
     return apple
 
 
-def main_game(stdscr, score):
-    ''' The main game loop. It sets the playboard, 
-     make sure the snake starts in the middle, controls the snake, 
-      insert a new dot when an apple is eaten '''
+def main_game(stdscr):
+    ''' The main game loop. It sets the playboard,
+    make sure the snake starts in the middle, controls the snake, 
+    insert a new X when an apple is eaten '''
 
     # the timeout is set for getch in milliseconds
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
     #win = curses.newwin(height, width, begin_y, begin_x)
+       
 
     stdscr.timeout(100)
 
     sh, sw = 20, 40
-    play_area = curses.newwin(sh, sw, 0, 20)
+    play_area = curses.newwin(sh, sw, 4, 20)
     play_area.box("|", "-")
     play_area.keypad(1)
     play_area.timeout(100)
     
-    
+
     # To make sure the snake starts in the middle
     snake = [
         [sh//2, sw//2+1],
@@ -225,6 +226,8 @@ def main_game(stdscr, score):
 
     # Makes the snake start to the right
     direction = curses.KEY_RIGHT
+
+    global score
 
     # vad gör första if?
     while True:
@@ -259,13 +262,12 @@ def main_game(stdscr, score):
                 play_area.addch(snake_tail[0], snake_tail[1], ' ')
 
             play_area.addch(snake[0][0], snake[0][1], "\u25a0")
-            play_area.refresh()
 
         else:
             break
-    
+
     curses.endwin()
-    return score
+
 
 
 def wait_for_answer():
@@ -368,16 +370,17 @@ def thanks_for_playing():
 
     console.print(thanks_text)
 
-def game_loop():
-    global score, player_name
 
+def game_loop():
+    
     while True:
         clear_screen()
         get_ready_page()
         clear_screen()
-        curses.wrapper(main_game, score=score)
+        curses.wrapper(main_game)
         add_to_highscore()    
         game_over()
+        global score
         score = 0
         
         if not wait_for_answer(): 
