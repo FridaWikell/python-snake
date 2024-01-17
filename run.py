@@ -64,16 +64,16 @@ def snake_ascii():
     console.print(ascii)
 
 
-def welcome_ascii():
-    ascii = Padding(r"""
-. . .     |                           |            ,---.          |         |
-| | |,---.|    ,---.,---.,-.-.,---.   |--- ,---.   `---.,---.,---.|__/ ,---.|
-| | ||---'|    |    |   || | ||---'   |    |   |       ||   |,---||  \ |---' 
-`-'-'`---'`---'`---'`---'` ' '`---'   `---'`---'   `---'`   '`---^`   ``---'o"""
-    , (0, 1), style="green")
+def start_menu():
 
-    console.print(ascii)
+    play_game = Panel("Play Game (p)", width=19, padding=(0,2))
+    console.print(Padding(play_game, (0, 30)))
 
+    rules = Panel("Rules (r)", width=19, padding=(0,4))
+    console.print(Padding(rules, (0, 30)))
+
+    highscore = Panel("Highscore (h)", width=19, padding=(0,2))
+    console.print(Padding(highscore, (0, 30)))
 
 
 def start_page():
@@ -81,9 +81,7 @@ def start_page():
 
     cursor.hide()
     snake_ascii()
-    welcome_ascii()
-    margin = 27
-    input(" " * margin + "Press Enter to continue...")
+    start_menu()
 
 
 def clear_screen():
@@ -342,5 +340,6 @@ def main():
     thanks_for_playing()
     
 
-main()
+# main()
 
+start_page()
