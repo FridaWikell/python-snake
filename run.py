@@ -213,6 +213,10 @@ def main_game(stdscr):
     
     play_area.keypad(1)
     play_area.timeout(100)
+    play_area.border
+
+    score = 0
+    play_area.addstr(int(sw * 0.8), "Score: {}".format(score))
     
     # To make sure the snake starts in the middle
     snake = [
@@ -228,7 +232,6 @@ def main_game(stdscr):
 
     # vad gör första if?
     while True:
-        play_area.box("|", "-")
         next_direction = play_area.getch()
         direction = direction if next_direction == -1 else next_direction
 
