@@ -208,11 +208,11 @@ def main_game(stdscr, score):
     stdscr.timeout(100)
 
     sh, sw = 20, 40
-    play_area = curses.newwin(sh, sw, 4, 20)
+    play_area = curses.newwin(sh, sw, 0, 20)
     
     play_area.keypad(1)
     play_area.timeout(100)
-    play_area.border
+    
     
     # To make sure the snake starts in the middle
     snake = [
@@ -230,6 +230,8 @@ def main_game(stdscr, score):
     while True:
         next_direction = play_area.getch()
         direction = direction if next_direction == -1 else next_direction
+
+        play_area.box("|", "-")
 
         if (
             direction in [curses.KEY_RIGHT, curses.KEY_LEFT, curses.KEY_DOWN, curses.KEY_UP] and
