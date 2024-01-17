@@ -341,7 +341,7 @@ def top_ten():
     for entry in top_ten:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
-    padded_highscore = Padding(highscore_list, (0, 0, 1, 26))
+    padded_highscore = Padding(highscore_list, (1, 0, 0, 26))
     console.print(padded_highscore)   
 
     take_me_back = Padding("""
