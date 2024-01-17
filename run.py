@@ -130,7 +130,7 @@ def enter_name():
         return player_name
 
 
-def take_me_back_logic(and_now):
+def take_me_back_logic():
     while True:
         and_now = input().lower()
 
@@ -330,6 +330,8 @@ def game_over():
 def top_ten():
     ''' Present the top 10 highscore to the user '''
 
+    clear_screen()
+
     highscore = SHEET.worksheet("highscore")
     
     highscore_records = highscore.get_all_records()
@@ -349,7 +351,7 @@ def top_ten():
     take_me_back = Padding("""
     To get to the game, press 'p'.
     If you want to go back and look at the beautiful snake
-    at the start page, press 's'.""", (2,2))
+    at the start page, press 's'.""", (2,0))
     console.print(take_me_back)
 
     take_me_back_logic()
