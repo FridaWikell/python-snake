@@ -33,18 +33,6 @@ score = 0
 
 # Functions 
 
-def print_ascii(filename, style=None):
-    '''Opens ascii images and print them'''
-
-    with open(filename, "r") as file:
-        ascii_art = ''.join([line for line in file])
-
-    if style:
-        console.print(ascii_art, style=style)
-    else:
-        console.print(ascii_art)
-
-
 def snake_ascii():
     ascii = Padding(r"""
    _    _
@@ -83,19 +71,15 @@ def start_menu_logic():
         print(selection)
 
         if selection == "p":
-            print("Play hame")
-            # get_ready_page()
-            break
+            game_loop()
         elif selection == "r":
-            print("Read rules")
-            # rules_page()
-            break
+            rules_page()
         elif selection == "h":
             print("pressed h")
             # top_ten()
             break
         else:
-            print("Please make a choice; 's', 'r', or 'h', and press Enter")
+            print("Please make a choice; 'p', 'r', or 'h', and press Enter")
 
 
 def start_page():
@@ -142,13 +126,14 @@ def enter_name():
         player_name = input(" " * margin + "Please enter your name (3-13 letters): \n" + " " * margin).capitalize()
         if validate_input(player_name):
             nice_to_see = Padding(f"Nice to see you {player_name}", (0, 20))
-            print(nice_to_see)
+            console.print(nice_to_see)
 
         return player_name
 
 
 def rules_page():
     ''' Present the rules for the user '''
+    clear_screen()
 
     rules_text = Padding("""
     Rules:
@@ -160,9 +145,22 @@ def rules_page():
     than before.
     Beware of yourself! Don't collide into yourself!
     Beware of the walls! Don't collide into the walls!
-    Easy peasy lemon squeezy! Right?\n""", (2,2))
+    Easy peasy lemon squeezy! Right?\n
+    To get to the game, press 'p'.
+    If you want to go back and look at the beautiful snake
+    at the start page, press 's'.""", (2,2))
 
     console.print(rules_text)
+
+    while True:
+        and_now = input().lower()
+
+        if and_now == "p":
+            game_loop()
+        elif and_now == "s":
+            start_page()
+        else:
+            print("Please make a choice; 'p' or 's', and press Enter")
 
 
 def get_ready_page():
@@ -172,10 +170,10 @@ def get_ready_page():
     snake_ascii()
     enter_name()
 
-    only_one = Padding("So, there is only one thing left to ask...", (1, 19, 2, 19))
+    only_one = Padding("So, there is only one thing left to ask...", (1, 19, 1, 19))
     console.print(only_one)
-    margin = 20
-    input(" " * margin + "Are you ready? If so, please press Enter\n")
+    margin = 13
+    input(" " * margin + "Are you ready? If so, buckle up and please press Enter\n")
    
 
 def create_apple(snake, play_area):
@@ -341,13 +339,7 @@ def thanks_for_playing():
 
     console.print(thanks_text)
 
-
-def main():
-    ''' The entire program loop'''
-
-    start_page()
-    clear_screen()
-    rules_page()
+def game_loop():
 
     while True:
         clear_screen()
@@ -363,6 +355,13 @@ def main():
             break
 
     thanks_for_playing()
+
+
+def main():
+    ''' The entire program loop'''
+
+    start_page()
+    game_loop()
     
 
 main()
