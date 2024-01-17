@@ -204,8 +204,6 @@ def main_game(stdscr, score):
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
     #win = curses.newwin(height, width, begin_y, begin_x)
-   
-    console.print(f"Score: {score}")
 
     stdscr.timeout(100)
 
@@ -215,9 +213,6 @@ def main_game(stdscr, score):
     play_area.keypad(1)
     play_area.timeout(100)
     play_area.border
-
-    score = 0
-    play_area.addstr(0, 50, "Score: {}".format(score))
     
     # To make sure the snake starts in the middle
     snake = [
