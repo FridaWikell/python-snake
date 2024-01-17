@@ -125,8 +125,9 @@ def enter_name():
         if validate_input(player_name):
             nice_to_see = Padding(f"Nice to see you {player_name}", (0, 20))
             console.print(nice_to_see)
+            break
 
-        #return player_name
+        return player_name
 
 
 def take_me_back_logic(and_now):
