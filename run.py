@@ -78,8 +78,6 @@ def start_menu():
 
 def start_menu_logic(stdscr):
 
-    stdscr.refresh()
-
     while True:
         key = stdscr.getch()
 
