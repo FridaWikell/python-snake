@@ -229,7 +229,6 @@ def main_game(stdscr):
 
     # vad gör första if?
     while True:
-        play_area.clear()
         play_area.box("|", "-")
         print(f"Score: {score}")
         next_direction = play_area.getch()
@@ -263,6 +262,7 @@ def main_game(stdscr):
                 play_area.addch(snake_tail[0], snake_tail[1], ' ')
 
             play_area.addch(snake[0][0], snake[0][1], "\u25a0")
+            play_area.refresh()
 
         else:
             break
