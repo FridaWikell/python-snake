@@ -8,6 +8,7 @@ import curses
 import cursor
 import re
 import rich
+import keyboard
 from rich.table import Table
 from rich.console import Console
 from rich.theme import Theme
@@ -79,19 +80,18 @@ def start_menu():
 def start_menu_logic(stdscr):
 
     while True:
-        key = stdscr.getch()
-
-        if key == ord('s') or key == ord('S'):
+        if keyboard.is_pressed('s'):
             #get_ready_page()
             print("You pressed s")
-        elif key == ord('r') or key == ord('R'):
+        elif keyboard.is_pressed('r'):
             #rules_page()
             print("You pressed r")
-        elif key == ord('h') or key == ord('H'):
+        elif keyboard.is_pressed('h'):
             #top_ten()
             print("You pressed h")
         else:
-            console.print("Please make a choice, 's', 'r' or 'h'")
+            console.print("Please make a choice, 's', 'r' or 'h'")            
+
 
 
 
