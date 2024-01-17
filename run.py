@@ -29,7 +29,7 @@ SHEET = GSPREAD_CLIENT.open("snake_highscore")
 
 # Global varibles
 console = Console()
-
+score = 0
 
 # Functions 
 
@@ -179,7 +179,7 @@ def main_game(stdscr):
     # Kanske ersätta med sh, sw = stdscr.getmaxyx() ?
     #new win sätts 20 in och 4 ner. Kanske ändra för att få äpplet rätT?
     #win = curses.newwin(height, width, begin_y, begin_x)
-    score = 0    
+       
 
     stdscr.timeout(100)
 
@@ -247,6 +247,7 @@ def main_game(stdscr):
 def wait_for_answer():
     ''' Makes the user decide if they want to play again '''
 
+    global score
     cursor.show()
 
     yes = {"yes","y", "ye", "", "ja"}
@@ -256,6 +257,7 @@ def wait_for_answer():
         margin = 10
         play_again_answer = input(" " * margin + "Do you want to play again?\n" + " " * margin).lower()
         if play_again_answer in yes:
+            score = 0
             return True     
         elif play_again_answer in no:
             return False
