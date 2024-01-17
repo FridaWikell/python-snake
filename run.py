@@ -263,7 +263,9 @@ def main_game(stdscr, score):
 
         else:
             break
-
+        
+    return score
+    
     curses.endwin()
 
 
