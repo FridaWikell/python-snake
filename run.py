@@ -77,7 +77,8 @@ def start_menu_logic():
         elif selection == "h":
             top_ten()
         else:
-            print("Please make a choice; 'p', 'r', or 'h', and press Enter")
+            make_a_chioce = Padding("Please make a choice; 'p', 'r', or 'h', and press Enter", (0, 7))
+            print(make_a_chioce)
 
 
 def start_page():
@@ -275,13 +276,13 @@ def wait_for_answer():
 
     while True:
         margin = 10
-        play_again_answer = input(" " * margin + "Do you want to play again?\n" + " " * margin).lower()
+        play_again_answer = input(" " * margin + "Do you want to play again? (yes/no)\n" + " " * margin).lower()
         if play_again_answer in yes:
             return True     
         elif play_again_answer in no:
             return False
         else:
-            yes_or_no = Padding("Please answer yes or no", (0, 6))
+            yes_or_no = Padding("Please answer yes or no", (0, 10))
             console.print(yes_or_no)
 
 
@@ -345,8 +346,8 @@ def top_ten():
 
     take_me_back = Padding("""
     To get to the game, press 'p'.
-    If you want to go back and look at the beautiful snake
-    at the start page, press 's'.""", (2,0))
+    If you want to go back and look at the 
+    beautiful snake at the start page, press 's'.""", (1, 15))
     console.print(take_me_back)
 
     take_me_back_logic()
