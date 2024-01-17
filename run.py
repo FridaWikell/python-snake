@@ -333,6 +333,8 @@ def main():
         curses.wrapper(main_game)
         add_to_highscore()    
         game_over()
+        global score
+        score = 0
         
         if not wait_for_answer(): 
             break
