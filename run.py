@@ -236,7 +236,8 @@ def main_game(stdscr, score):
             (direction == curses.KEY_RIGHT and snake[0][1] < sw -1) or
             (direction == curses.KEY_LEFT and snake[0][1] > 0) or
             (direction == curses.KEY_DOWN and snake[0][0] < sh-1) or
-            (direction == curses.KEY_UP and snake[0][0] > 0)
+            (direction == curses.KEY_UP and snake[0][0] > 0) or
+            (snake[0] in snake[1:])
         ):
             snake_new_head = [snake[0][0], snake[0][1]]
 
