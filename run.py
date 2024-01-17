@@ -204,6 +204,8 @@ def main_game(stdscr):
     direction = curses.KEY_RIGHT
 
 
+    global score
+
     # vad gör första if?
     while True:
         next_direction = play_area.getch()
@@ -247,7 +249,6 @@ def main_game(stdscr):
 def wait_for_answer():
     ''' Makes the user decide if they want to play again '''
 
-    global score
     cursor.show()
 
     yes = {"yes","y", "ye", "", "ja"}
@@ -257,7 +258,6 @@ def wait_for_answer():
         margin = 10
         play_again_answer = input(" " * margin + "Do you want to play again?\n" + " " * margin).lower()
         if play_again_answer in yes:
-            score = 0
             return True     
         elif play_again_answer in no:
             return False
