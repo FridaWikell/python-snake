@@ -206,7 +206,7 @@ def main_game(stdscr):
 
     sh, sw = 20, 40
     play_area = curses.newwin(sh, sw, 4, 20)
-    play_area.box("|", "-")
+    
     play_area.keypad(1)
     play_area.timeout(100)
     
@@ -229,6 +229,7 @@ def main_game(stdscr):
 
     # vad gör första if?
     while True:
+        play_area.box("|", "-")
         next_direction = play_area.getch()
         direction = direction if next_direction == -1 else next_direction
 
