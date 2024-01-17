@@ -229,7 +229,9 @@ def main_game(stdscr):
 
     # vad gör första if?
     while True:
+        play_area.clear()
         play_area.box("|", "-")
+        play_area.addstr(0, sw + 35, f"Score: {score}")
         next_direction = play_area.getch()
         direction = direction if next_direction == -1 else next_direction
 
