@@ -83,7 +83,7 @@ def start_page():
     cursor.hide()
     snake_ascii()
     welcome_ascii()
-    margin = 20
+    margin = 27
     input(" " * margin + "Press Enter to continue...")
 
 
@@ -118,8 +118,8 @@ def enter_name():
     global player_name
 
     while True:
-        margin = 4
-        player_name = input(" " * margin + "Please enter your name (3-13 letters): \n").capitalize()
+        margin = 6
+        player_name = input(" " * margin + "Please enter your name (3-13 letters): \n" + " " * margin).capitalize()
         if validate_input(player_name):
             break
 
@@ -139,7 +139,7 @@ def rules_page():
     than before.
     Beware of yourself! Don't collide into yourself!
     Beware of the walls! Don't collide into the walls!
-    Easy peasy lemon squeezy! Right?\n""", (2,4))
+    Easy peasy lemon squeezy! Right?\n""", (2,2))
 
     console.print(rules_text)
     enter_name()
@@ -150,8 +150,9 @@ def get_ready_page():
 
     cursor.hide()
     snake_ascii()
-    print("\nSo, there is only one thing left to ask...\n\n")
-    margin = 6
+    only_one = Padding("So, there is only one thing left to ask...", (1, 19, 2, 19))
+    console.print(only_one)
+    margin = 20
     input(" " * margin + "Are you ready? If so, please press Enter\n")
    
 
@@ -251,8 +252,8 @@ def wait_for_answer():
     no = {"no", "n", "nej"}
 
     while True:
-        margin = 6
-        play_again_answer = input(" " * margin + "\nDo you want to play again? \n").lower()
+        margin = 10
+        play_again_answer = input(" " * margin + "Do you want to play again? \n").lower()
         if play_again_answer in yes:
             return True     
         elif play_again_answer in no:
@@ -295,7 +296,7 @@ def game_over():
     for entry in top_five:
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
-    padded_highscore = Padding(highscore_list, (0, 26))
+    padded_highscore = Padding(highscore_list, (0, 26, 1, 0))
     console.print(padded_highscore)   
 
 
@@ -310,7 +311,7 @@ def thanks_for_playing():
     Well, it's up to you. You know where
     to find us when you want to conquer the highscore!
      
-    For now, so long and thank you for the fish!""", (4, 8))
+    For now, so long and thank you for the fish!""", (4, 11))
 
     console.print(thanks_text)
 
