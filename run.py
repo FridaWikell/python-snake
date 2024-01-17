@@ -75,9 +75,7 @@ def start_menu_logic():
         elif selection == "r":
             rules_page()
         elif selection == "h":
-            print("pressed h")
-            # top_ten()
-            break
+            top_ten()
         else:
             print("Please make a choice; 'p', 'r', or 'h', and press Enter")
 
@@ -318,6 +316,26 @@ def game_over():
     
 
     highscore_list = Table()
+    highscore_list.add_column("Name", width=15)
+    highscore_list.add_column("Points", width=6)
+
+    for entry in top_five:
+        highscore_list.add_row(entry['Name'], str(entry['Points']))
+
+    padded_highscore = Padding(highscore_list, (0, 0, 1, 26))
+    console.print(padded_highscore)   
+
+
+def top_ten():
+    ''' Present the top 10 highscore to the user '''
+
+    highscore = SHEET.worksheet("highscore")
+    
+    highscore_records = highscore.get_all_records()
+    sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
+    top_ten = sorted_highscore[:10]
+
+    highscore_list = Table(title="Top 10 highscore")
     highscore_list.add_column("Name", width=15)
     highscore_list.add_column("Points", width=6)
 
