@@ -34,6 +34,8 @@ score = 0
 # Functions 
 
 def snake_ascii():
+    ''' The snake in ASCII art '''
+
     ascii = Padding(r"""
    _    _
 ,-(|)--(|)-.
@@ -53,6 +55,7 @@ def snake_ascii():
 
 
 def start_menu():
+    ''' The three buttons at the start page '''
 
     play_game = Panel("Play Game (p)", width=19, padding=(0,2))
     console.print(Padding(play_game, (0, 30)))
@@ -65,6 +68,8 @@ def start_menu():
 
 
 def start_menu_logic():
+    ''' Makes the user to choose what they want to do; play game, 
+    read the rules or view the highscore'''
 
     while True:
         selection = input().lower()
@@ -82,7 +87,7 @@ def start_menu_logic():
 
 
 def start_page():
-    '''Views the start page with ascii images'''
+    '''Views the start page with ascii image'''
 
     cursor.hide()
     snake_ascii()
@@ -101,6 +106,7 @@ def clear_screen():
 
 def validate_input(input_string):
     ''' Validate the input to be only letters, between 3 and 13 letters '''
+
     letters_only = re.compile(r'^[a-zA-Z]+$')
 
     if 3 <= len(input_string) <= 13:
@@ -130,6 +136,8 @@ def enter_name():
 
 
 def take_me_back_logic():
+    ''' The logic to make the user to go to the game or start page '''
+
     while True:
         and_now = input().lower()
 
@@ -145,6 +153,7 @@ def take_me_back_logic():
 
 def rules_page():
     ''' Present the rules for the user '''
+
     clear_screen()
 
     rules_text = Padding("""
@@ -167,6 +176,7 @@ def rules_page():
 
 
 def get_ready_page():
+    ''' Makes the user to enter their name '''
 
     snake_ascii()
     enter_name()
@@ -179,7 +189,7 @@ def last_before_game():
     snake_ascii()
     only_one = Padding(f"So {player_name}, there is only one thing left to ask...", (1, 19, 1, 19))
     console.print(only_one)
-    margin = 12
+    margin = 11
     input(" " * margin + "Are you ready? If you are, buckle up and please press Enter\n")
    
 
@@ -201,7 +211,7 @@ def create_apple(snake, play_area):
 def main_game(stdscr):
     ''' The main game loop. It sets the playboard,
     make sure the snake starts in the middle, controls the snake, 
-    insert a new X when an apple is eaten '''
+    insert a new dot when an apple is eaten '''
        
     stdscr.timeout(100)
 
@@ -320,7 +330,6 @@ def game_over():
 
     console.print(highscore_text)
     
-
     highscore_list = Table()
     highscore_list.add_column("Name", width=15)
     highscore_list.add_column("Points", width=6)
@@ -379,6 +388,7 @@ def thanks_for_playing():
 
 
 def game_loop():
+    ''' The snake game loop '''
     
     while True:
         clear_screen()
