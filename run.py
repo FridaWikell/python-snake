@@ -249,7 +249,6 @@ def main_game(stdscr):
             (direction == curses.KEY_LEFT and snake[0][1] > 0) or
             (direction == curses.KEY_DOWN and snake[0][0] < sh-1) or
             (direction == curses.KEY_UP and snake[0][0] > 0) or
-            (snake[0] in snake[1:])
         ):
             snake_new_head = [snake[0][0], snake[0][1]]
 
@@ -361,15 +360,13 @@ def top_ten():
     with Progress() as progress:
         task = progress.add_task("[cyan]Loading Top Five...", total=100)
 
-                # Simulate loading the highscore data
-        for _ in progress.track(range(100), description="Processing entries..."):
-            highscore = SHEET.worksheet("highscore")
+        highscore = SHEET.worksheet("highscore")
     
-            highscore_records = highscore.get_all_records()
-            sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
-            top_ten = sorted_highscore[:10]
+        highscore_records = highscore.get_all_records()
+        sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
+        top_ten = sorted_highscore[:10]
 
-            progress.update(task, completed=100)  # Mark the task as completed
+    progress.update(task, completed=100)  # Mark the task as completed
 
     highscore_list = Table(title="Top 10 highscore")
     highscore_list.add_column("Name", width=15)
