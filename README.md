@@ -1,5 +1,3 @@
-Example Readme Layout
-
 # Snake Game - Python Edition
 
 ![image of site](link to image) - use an image from AmIResponsive that shows the site on multiple devices
@@ -11,38 +9,59 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
 ## Table of Contents
 
 - [Snake Game - Python Edition](#snake-game---python-edition)
-    - [Introduction](#introduction)
-    - [Table of Contents](#table-of-contents)
-    - [User Experience](#user-experience)
-        - [User Stories](#user-stories)
-    - [Design](#design)
-        - [Color Scheme](#color-scheme)
-        - [Typography](#typography)
-        - [Imagery](#imagery)
-        - [Wireframes](#wireframes)
-    - [Features](#features)
-        - [Feature title](#feature-title)
-    - [Features to be Added](#features-to-be-added)
-    - [Testing](#testing)
-        - [Validation of Code](#validation-of-code)
-        - [Lighthouse](#lighthouse)
-        - [Wave Webaim](#wave-webaim)
-        - [Manual Testing](#manual-testing)
-    - [Technologies Used](#technologies-used)
-    - [Deployment](#deployment)
-    - [Credits](#credits)
-    - [Acknowledgements](#acknowledgements)
+  - [Introduction](#introduction)
+  - [Table of Contents](#table-of-contents)
+  - [User Experience](#user-experience)
+    - [User Stories](#user-stories)
+      - [User Goals](#user-goals)
+      - [Site Owner Goals](#site-owner-goals)
+  - [Design](#design)
+    - [Color Scheme](#color-scheme)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+    - [Wireframes](#wireframes)
+  - [Features](#features)
+    - [Feature title](#feature-title)
+  - [Features to be Added](#features-to-be-added)
+  - [Testing](#testing)
+    - [Validation of Code](#validation-of-code)
+    - [Lighthouse](#lighthouse)
+    - [Wave Webaim](#wave-webaim)
+    - [Manual Testing](#manual-testing)
+  - [Technologies Used](#technologies-used)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
 
 
 ## User Experience
+
 ### User Stories
-- User Goals
-- Site Owner Goals
+
+#### User Goals
+
+The goal is to make the user have a good time. Maybe experience a flashback or two back until when your biggest entertainment was to play Snake at a Nokia 3310. The goal is also to get the user to challenge itself to beat its score.
+
+#### Site Owner Goals
+
+THe site owners goal is to provide an easy and fun place in the high technology enviroment with anvanced graphic we live in. 
 
 ## Design
+
 ### Color Scheme
+
+The white background makes the black terminal pop out. The high contrast it's providing makes it easier to see and play the game without getting distracted.
+
+The color at the snake is chosen to be eye-catching and pop out from the text. The colors in the button are chosen to be more neutral than the snake, since you need to look at the bottom when you are playing the game. They are green to bond to the green snake.
+
 ### Typography
+
+The font in the terminal is not changed, to give the true retro feeling. The font in the buttom is chosen to make it easy to read.
+
 ### Imagery
+
+The keyboard is chosen to be neutral but at the same enhance the retro feeling for the user. The retro feeling is even more enhanced thanks to it being and old Atari keyboard.
+
 ### Wireframes
 
 ## Features
@@ -60,7 +79,11 @@ Describe some additional features you could potentially add to the project that 
 ## Testing
 
 ### Validation of Code
-Insert screenshots of HTML, CSS and any other code files being tested in the relevant code validator - CSS validator might not validate newer CSS syntax - be careful to read and fully understand why it is giving you an error.
+
+![Screenshot of validation of HTML, without errors]()
+
+The validation of the HTML code at [W3C Markup Validation Service](https://validator.w3.org/) resulted without errors.
+
 
 ### Lighthouse
 You can perform a test of your website for performance, accessibility, best practices and SEO through the google chrome lighthouse test - it is in your Dev tools. Bear in mind that your internet connection speed plays a part in the performance figures obtained. Where it scores low, it will give you suggestions on how to improve the site - read the suggestions and think about how to implement them - it could be a good idea.
