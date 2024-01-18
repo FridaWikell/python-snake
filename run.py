@@ -74,7 +74,8 @@ def start_menu_logic():
     read the rules or view the highscore'''
 
     while True:
-        selection = input().lower()
+        margin = 15
+        selection = input(" " * margin).lower()
 
         if selection == "p":
             game_loop()
@@ -140,7 +141,8 @@ def take_me_back_logic():
     ''' The logic to make the user to go to the game or start page '''
 
     while True:
-        and_now = input().lower()
+        margin = 6
+        and_now = input(" " * margin).lower()
 
         if and_now == "p":
             game_loop()
@@ -149,7 +151,7 @@ def take_me_back_logic():
             start_page()
             break
         else:
-            easy_choice = Padding("Please make a choice; 'p' or 's', and press Enter", (0, 8))
+            easy_choice = Padding("Please make a choice; 'p' or 's', and press Enter", (0, 6))
             console.print(easy_choice)
 
 
@@ -286,17 +288,6 @@ def main_game(stdscr):
             break
 
     curses.endwin()
-
-
-def loading(execution):
-    # Create a progress bar
-    with Progress() as progress:
-        task = progress.add_task("Loading highscore...", total=1)
-
-        while not progress.finished:
-            # Update the progress bar until the task is completed
-            execution()  # Replace this with the actual function that loads
-            progress.update(task, advance=1)
 
 
 def wait_for_answer():
