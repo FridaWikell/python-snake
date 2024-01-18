@@ -124,11 +124,9 @@ def enter_name():
         margin = 20
         player_name = input(" " * margin + "Please enter your name (3-13 letters): \n" + " " * margin).capitalize()
         if validate_input(player_name):
-            nice_to_see = Padding(f"Nice to see you {player_name}", (0, 20))
-            console.print(nice_to_see)
             break
 
-        return player_name
+    return player_name
 
 
 def take_me_back_logic():
@@ -169,16 +167,20 @@ def rules_page():
 
 
 def get_ready_page():
+
+    snake_ascii()
+    enter_name()
+
+
+def last_before_game():
     ''' Let the user to press enter when they're ready to play '''
 
     cursor.hide()
     snake_ascii()
-    enter_name()
-
-    only_one = Padding("So, there is only one thing left to ask...", (1, 19, 1, 19))
+    only_one = Padding(f"So {player_name}, there is only one thing left to ask...", (1, 19, 1, 19))
     console.print(only_one)
-    margin = 13
-    input(" " * margin + "Are you ready? If so, buckle up and please press Enter\n")
+    margin = 12
+    input(" " * margin + "Are you ready? If you are, buckle up and please press Enter\n")
    
 
 def create_apple(snake, play_area):
@@ -203,6 +205,7 @@ def main_game(stdscr):
        
     stdscr.timeout(100)
     curses.curs_set(0)
+    stdscr.refresh()
 
     sh, sw = 24, 48
     play_area = curses.newwin(sh, sw, 0, 16)
@@ -375,6 +378,7 @@ def game_loop():
         clear_screen()
         get_ready_page()
         clear_screen()
+        last_before_game()
         curses.wrapper(main_game)
         add_to_highscore()    
         game_over()
