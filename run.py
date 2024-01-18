@@ -412,8 +412,6 @@ def game_loop():
     
     while True:
         clear_screen()
-        get_ready_page()
-        clear_screen()
         last_before_game()
         curses.wrapper(main_game)
         add_to_highscore()    
@@ -434,7 +432,6 @@ def main():
     game_loop()
     
 
-#if __name__ == "__main__":
- #   main()
+if __name__ == "__main__":
+    main()
     
-rules_page()
