@@ -259,11 +259,6 @@ def main_game(stdscr):
             elif direction == curses.KEY_UP:
                 snake_new_head[0] -= 1
 
-            # Clear the entire play area
-            for i in range(sh):
-                for j in range(sw):
-                    play_area.addch(i, j, ' ')
-
             snake.insert(0, snake_new_head)
 
             if snake[0] == apple:
