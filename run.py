@@ -165,7 +165,7 @@ def rules_page():
     The rules are simple. You are the snake. So far, so good. Right?
     You control the snake with your arrow keys. Up make the snake to
     turn up, right makes the snake to turn right. Well, you get the 
-    picture. The goal is to eat as many of the lovely apples (o) as 
+    picture. The goal is to eat as many of the lovely apples \u25cf as 
     you can. When you eat an apple, you grow and get one apple longer
     than before.
     Beware of yourself! Don't collide into yourself!
@@ -434,5 +434,7 @@ def main():
     game_loop()
     
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+ #   main()
+    
+rules_page()
