@@ -325,12 +325,17 @@ def add_to_highscore():
 def game_over():
     ''' Present the top 5 highscore to the user '''
 
-    highscore = SHEET.worksheet("highscore")
-    
-    highscore_records = highscore.get_all_records()
-    sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
-    top_five = sorted_highscore[:5]
-    
+    with Progress() as progress:
+        task = progress.add_task("Loading highscore...", total=100)
+
+        highscore = SHEET.worksheet("highscore")
+        
+        highscore_records = highscore.get_all_records()
+        sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
+        top_five = sorted_highscore[:5]
+
+        while not progress.finished:
+            progress.update(task, advance=1)  
 
     highscore_text = Padding(f"""
     Well... That was... Well played?
@@ -356,9 +361,8 @@ def top_ten():
 
     clear_screen()
 
-    # Use Progress to create a progress bar
     with Progress() as progress:
-        task = progress.add_task("[cyan]Loading Top Five...", total=100)
+        task = progress.add_task("Loading highscore...", total=100)
 
         highscore = SHEET.worksheet("highscore")
     
