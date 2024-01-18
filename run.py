@@ -33,6 +33,7 @@ SHEET = GSPREAD_CLIENT.open("snake_highscore")
 console = Console()
 score = 0
 
+
 # Functions 
 
 def snake_ascii():
@@ -51,26 +52,25 @@ def snake_ascii():
        \^^^^`._,-'^^`-._.'^^^^__^^^^ `--'^^^_/
         \^^^^^ ^^^_^^^^^^^_,-'  `.^^^^^^^^_/ 
          `.____,-' `-.__.'        `-.___.' 
-"""
-    , (0, 15), style="green")
+""", (0, 15), style="green")
     console.print(ascii)
 
 
 def start_menu():
     ''' The three buttons at the start page '''
 
-    play_game = Panel("Play Game (p)", width=19, padding=(0,2))
+    play_game = Panel("Play Game (p)", width=19, padding=(0, 2))
     console.print(Padding(play_game, (0, 30)))
 
-    rules = Panel("Rules (r)", width=19, padding=(0,4))
+    rules = Panel("Rules (r)", width=19, padding=(0, 4))
     console.print(Padding(rules, (0, 30)))
 
-    highscore = Panel("Highscore (h)", width=19, padding=(0,2))
+    highscore = Panel("Highscore (h)", width=19, padding=(0, 2))
     console.print(Padding(highscore, (0, 30)))
 
 
 def start_menu_logic():
-    ''' Makes the user to choose what they want to do; play game, 
+    ''' Makes the user to choose what they want to do; play game,
     read the rules or view the highscore'''
 
     while True:
@@ -84,8 +84,9 @@ def start_menu_logic():
         elif selection == "h":
             top_ten()
         else:
-            make_a_chioce = Padding("Please make a choice; 'p', 'r', or 'h', and press Enter", (0, 7))
-            console.print(make_a_chioce)
+            make_choice = Padding("Please make a choice;"
+                                  "'p', 'r', or 'h', and press Enter", (0, 7))
+            console.print(make_choice)
 
 
 def start_page():
