@@ -186,7 +186,7 @@ def get_ready_page():
     enter_name()
 
 
-def last_before_game():
+def last_before_game(player_name):
     ''' Let the user to press enter when they're ready to play '''
 
     cursor.hide()
@@ -412,7 +412,7 @@ def game_loop():
     
     while True:
         clear_screen()
-        last_before_game()
+        last_before_game(player_name)
         curses.wrapper(main_game)
         add_to_highscore()    
         game_over()
