@@ -309,7 +309,6 @@ def wait_for_answer():
 
     while True:
         margin = 10
-        time.sleep(1)
         play_again_answer = input(" " * margin + "Do you want to play again? (yes/no)\n" + " " * margin).lower()
         if play_again_answer in yes:
             return True     
