@@ -274,6 +274,9 @@ def main_game(stdscr):
 
             play_area.addch(snake[0][0], snake[0][1], "\u25a0")
 
+            # Redraw the border
+            play_area.box("|", "-")            
+
             # Refresh the screen
             play_area.refresh()
 
