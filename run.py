@@ -246,7 +246,8 @@ def main_game(stdscr):
             (direction == curses.KEY_RIGHT and snake[0][1] < sw -1) or
             (direction == curses.KEY_LEFT and snake[0][1] > 0) or
             (direction == curses.KEY_DOWN and snake[0][0] < sh-1) or
-            (direction == curses.KEY_UP and snake[0][0] > 0)
+            (direction == curses.KEY_UP and snake[0][0] > 0) or
+            snake[0] in snake[1:]
         ):
             snake_new_head = [snake[0][0], snake[0][1]]
 
@@ -258,10 +259,6 @@ def main_game(stdscr):
                 snake_new_head[0] += 1
             elif direction == curses.KEY_UP:
                 snake_new_head[0] -= 1
-
-            # Check if the head collides with the body
-            if snake[0] in snake[1:]:
-                break  # Snake has collided with itself, exit the loop  
 
             snake.insert(0, snake_new_head)
 
