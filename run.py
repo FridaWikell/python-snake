@@ -8,11 +8,13 @@ import curses
 import cursor
 import re
 import rich
+import time
 from rich.table import Table
 from rich.console import Console
 from rich.theme import Theme
 from rich.padding import Padding
 from rich.panel import Panel
+from rich.progress import Progress
 
 
 SCOPE = [
@@ -247,7 +249,7 @@ def main_game(stdscr):
             (direction == curses.KEY_LEFT and snake[0][1] > 0) or
             (direction == curses.KEY_DOWN and snake[0][0] < sh-1) or
             (direction == curses.KEY_UP and snake[0][0] > 0) or
-            snake[0] in snake[1:]
+            (snake[0] in snake[1:])
         ):
             snake_new_head = [snake[0][0], snake[0][1]]
 
@@ -282,6 +284,16 @@ def main_game(stdscr):
 
     curses.endwin()
 
+
+def loading(execution):
+    # Create a progress bar
+    with Progress() as progress:
+        task = progress.add_task("Loading highscore...", total=1)
+
+        while not progress.finished:
+            # Update the progress bar until the task is completed
+            execution()  # Replace this with the actual function that loads
+            progress.update(task, advance=1)
 
 
 def wait_for_answer():
@@ -345,11 +357,19 @@ def top_ten():
 
     clear_screen()
 
-    highscore = SHEET.worksheet("highscore")
+    # Use Progress to create a progress bar
+    with Progress() as progress:
+        task = progress.add_task("[cyan]Loading Top Five...", total=100)
+
+                # Simulate loading the highscore data
+        for _ in progress.track(range(100), description="Processing entries..."):
+            highscore = SHEET.worksheet("highscore")
     
-    highscore_records = highscore.get_all_records()
-    sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
-    top_ten = sorted_highscore[:10]
+            highscore_records = highscore.get_all_records()
+            sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
+            top_ten = sorted_highscore[:10]
+
+            progress.update(task, completed=100)  # Mark the task as completed
 
     highscore_list = Table(title="Top 10 highscore")
     highscore_list.add_column("Name", width=15)
