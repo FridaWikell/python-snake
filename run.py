@@ -75,7 +75,6 @@ def start_menu_logic():
 
     while True:
         selection = input().lower()
-        print(selection)
 
         if selection == "p":
             game_loop()
@@ -85,7 +84,7 @@ def start_menu_logic():
             top_ten()
         else:
             make_a_chioce = Padding("Please make a choice; 'p', 'r', or 'h', and press Enter", (0, 7))
-            print(make_a_chioce)
+            console.print(make_a_chioce)
 
 
 def start_page():
@@ -150,7 +149,8 @@ def take_me_back_logic():
             start_page()
             break
         else:
-            print("Please make a choice; 'p' or 's', and press Enter")
+            easy_choice = Padding("Please make a choice; 'p' or 's', and press Enter", (0, 8))
+            console.print(easy_choice)
 
 
 def rules_page():
