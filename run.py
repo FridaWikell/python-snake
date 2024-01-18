@@ -261,6 +261,10 @@ def main_game(stdscr):
             elif direction == curses.KEY_UP:
                 snake_new_head[0] -= 1
 
+            # Check if the snake's head collides with its body
+            if snake_new_head in snake:
+                break  # Snake has collided with itself, exit the loop
+
             snake.insert(0, snake_new_head)
 
             if snake[0] == apple:
@@ -336,6 +340,8 @@ def game_over():
 
         while not progress.finished:
             progress.update(task, advance=1)  
+
+    clear_screen()         
 
     highscore_text = Padding(f"""
     Well... That was... Well played?
