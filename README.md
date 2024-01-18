@@ -5,9 +5,34 @@ Example Readme Layout
 ![image of site](link to image) - use an image from AmIResponsive that shows the site on multiple devices
 
 ## Introduction
-What is the project about, why did you make it
+
+The project is all about having fun and maybe increase your reflexes. It is a way of going back in time to when Nokia 3310 was the most hightec phone at the market. 
 
 ## Table of Contents
+
+- [Snake Game - Python Edition](#snake-game---python-edition)
+- [Introduction](#introduction)
+- [Table of Contents](#table-of-contents)
+- [User Experience](#user-experience)
+- [User Stories](#user-stories)
+- [Design](#design)
+- [Color Scheme](#color-scheme)
+- [Typography](#typography)
+- [Imagery](#imagery)
+- [Wireframes](#wireframes)
+- [Features](#features)
+- [Feature title](#feature-title)
+- [Features to be Added](#features-to-be-added)
+- [Testing](#testing)
+- [Validation of Code](#validation-of-code)
+- [Lighthouse](#lighthouse)
+- [Wave Webaim](#wave-webaim)
+- [Manual Testing](#manual-testing)
+- [Technologies Used](#technologies-used)
+- [Deployment](#deployment)
+- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
+
 
 ## User Experience
 ### User Stories
@@ -15,15 +40,14 @@ What is the project about, why did you make it
 - Site Owner Goals
 
 ## Design
-### Colour Scheme
+### Color Scheme
 ### Typography
 ### Imagery
 ### Wireframes
-### Figma/Full color mockup if produced
 
 ## Features
 
-### Feature title - e.g. Navigation
+### Feature title
 Screenshot of implemented feature
 Description of the value this feature has for the users
 
@@ -42,7 +66,7 @@ Insert screenshots of HTML, CSS and any other code files being tested in the rel
 You can perform a test of your website for performance, accessibility, best practices and SEO through the google chrome lighthouse test - it is in your Dev tools. Bear in mind that your internet connection speed plays a part in the performance figures obtained. Where it scores low, it will give you suggestions on how to improve the site - read the suggestions and think about how to implement them - it could be a good idea.
 Do this for both Desktop and Mobile.
 
-### Wave Webaim - accessibility testing
+### Wave Webaim
 You can test your site for accessibility through the wave.webaim site - it needs to be deployed in order for it to test it. Fix any errors that it gives
 
 ### Manual Testing
