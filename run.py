@@ -204,8 +204,6 @@ def main_game(stdscr):
     insert a new X when an apple is eaten '''
        
     stdscr.timeout(100)
-    curses.curs_set(0)
-    stdscr.refresh()
 
     sh, sw = 24, 48
     play_area = curses.newwin(sh, sw, 0, 16)
