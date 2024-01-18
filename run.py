@@ -259,6 +259,10 @@ def main_game(stdscr):
             elif direction == curses.KEY_UP:
                 snake_new_head[0] -= 1
 
+            # Check if the head collides with the body
+            if snake[0] in snake[1:]:
+                break  # Snake has collided with itself, exit the loop  
+
             snake.insert(0, snake_new_head)
 
             if snake[0] == apple:
@@ -266,7 +270,7 @@ def main_game(stdscr):
                 score += 1
             else:
                 snake_tail = snake.pop()
-                play_area.addch(snake_tail[0], snake_tail[1], ' ')
+                play_area.addch(snake_tail[0], snake_tail[1], ' ')          
 
             play_area.addch(snake[0][0], snake[0][1], "\u25a0")
 
