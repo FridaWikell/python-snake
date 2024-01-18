@@ -1,32 +1,81 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Example Readme Layout
 
-Welcome,
+# Snake Game - Python Edition
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+![image of site](link to image) - use an image from AmIResponsive that shows the site on multiple devices
 
-## Reminders
+## Introduction
+What is the project about, why did you make it
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## Table of Contents
 
-## Creating the Heroku app
+## User Experience
+### User Stories
+- User Goals
+- Site Owner Goals
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Design
+### Colour Scheme
+### Typography
+### Imagery
+### Wireframes
+### Figma/Full color mockup if produced
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Features
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### Feature title - e.g. Navigation
+Screenshot of implemented feature
+Description of the value this feature has for the users
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+Repeat for each feature
 
-Connect your GitHub repository and deploy as normal.
+## Features to be Added
+Describe some additional features you could potentially add to the project that would increase user value - could be things linked to technologies not yet covered by the course but would be a benefit to the user for example, the ability to save an article, or add an article to the site, leave a review.
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Testing
 
----
+### Validation of Code
+Insert screenshots of HTML, CSS and any other code files being tested in the relevant code validator - CSS validator might not validate newer CSS syntax - be careful to read and fully understand why it is giving you an error.
 
-Happy coding!
+### Lighthouse
+You can perform a test of your website for performance, accessibility, best practices and SEO through the google chrome lighthouse test - it is in your Dev tools. Bear in mind that your internet connection speed plays a part in the performance figures obtained. Where it scores low, it will give you suggestions on how to improve the site - read the suggestions and think about how to implement them - it could be a good idea.
+Do this for both Desktop and Mobile.
+
+### Wave Webaim - accessibility testing
+You can test your site for accessibility through the wave.webaim site - it needs to be deployed in order for it to test it. Fix any errors that it gives
+
+### Manual Testing
+
+You need to perform, and document everything you did to manually test your site.
+At a minimum - you need to check every link on every page works as intended.
+So that is check every link in the nav bar (do this on every single page because its a link in a different file) and any other links that appear on your site.
+Test the responsiveness of the site - you can do this in the dev tools in responsive mode.
+You should also load the site once deployed on as many devices you have access to. What is different from one device to the next? why is it different?
+
+Test the user stories that you created earlier in the readme - did you satisfy the goal, how?
+
+To write up the tests you can use a table,
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| enter details here | enter details here | enter details here | enter details here | enter details here |
+
+You should have tests for every section of every page.. individually.
+
+## Technologies Used
+
+Detail what technologies you used. So what code languages, what frameworks, libraries, what software did you use to develop the site - Balsamic for your wireframes, Figma for a mockup?
+
+## Deployment
+
+Detail how to clone the repository, how to fork the repository - how to run the site locally and how to deploy it.
+
+
+## Credits
+
+You need to credit where you got anything for your site from.. where are the images from, are they all from the same site? where did you get the content from, if you wrote it yourself, did you fact check anywhere? did you get code from anywhere? if so, it needs to be clearly marked in both the code and the readme.
+
+## Acknowledgements
+Any special acknowledgements you'd like to leave
+
+Back to top link to return to the top of the readme.
