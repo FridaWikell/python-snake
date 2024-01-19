@@ -84,13 +84,19 @@ Describe some additional features you could potentially add to the project that 
 
 The validation of the HTML code at [W3C Markup Validation Service](https://validator.w3.org/) resulted without errors.
 
+![Screenshot of validation of Python code, without errors]()
+
+The validation of the Python code at [CI Python Linter](https://pep8ci.herokuapp.com/) resulted without errors.
 
 ### Lighthouse
 You can perform a test of your website for performance, accessibility, best practices and SEO through the google chrome lighthouse test - it is in your Dev tools. Bear in mind that your internet connection speed plays a part in the performance figures obtained. Where it scores low, it will give you suggestions on how to improve the site - read the suggestions and think about how to implement them - it could be a good idea.
 Do this for both Desktop and Mobile.
 
 ### Wave Webaim
-You can test your site for accessibility through the wave.webaim site - it needs to be deployed in order for it to test it. Fix any errors that it gives
+
+![Screenshot of validation of accessibility, without errors]()
+
+The validation of the accessibility at [Wave Webaim](https://wave.webaim.org/) resulted without errors.
 
 ### Manual Testing
 
@@ -120,7 +126,19 @@ Detail how to clone the repository, how to fork the repository - how to run the 
 
 ## Credits
 
-You need to credit where you got anything for your site from.. where are the images from, are they all from the same site? where did you get the content from, if you wrote it yourself, did you fact check anywhere? did you get code from anywhere? if so, it needs to be clearly marked in both the code and the readme.
+The snake favicon is from [Favicon](https://favicon.io/emoji-favicons/snake). The keyboard image is a free image from [Pixabay](https://pixabay.com/). It is resized at [ResizePixel](https://www.resizepixel.com/). The favicon, the image at the site and the images in the README are converted to webp at [Convertio](https://convertio.co/) and compressed at [Tinify](https://tinypng.com/). The Ascii snake is based at the snake from [Asciiart](https://asciiart.cc/view/11831). The Unicode characters for the [apple](https://www.compart.com/en/unicode/U+25CF) and [snake body](https://www.compart.com/en/unicode/U+25A0) are from [Compart](https://www.compart.com/en/unicode).
+
+Knowledge about parts of the code were gathered from different sources.
+
+| Knowledge about | Source |
+| -------------------------- | --------------- |
+| Clear screen | [Tutorialspoint](https://www.tutorialspoint.com/how-to-clear-python-shell) |
+| Randint (in Random Module) | [Prepbytes](https://www.prepbytes.com/blog/python/python-random-module/) |
+| Curses module | [Python](https://docs.python.org/3/howto/curses.html) |
+| Using .format() | [Pyformat](https://pyformat.info/#string_pad_align) |
+| Cursor package | [PyPi](https://pypi.org/project/cursor/) |
+| RegEx Module | [W3Schools](https://www.w3schools.com/python/python_regex.asp) |
+| Rich Package | [Real Python](https://realpython.com/python-rich-package/)  \n [Read the docs](https://rich.readthedocs.io/en/stable/index.html) |
 
 ## Acknowledgements
 Any special acknowledgements you'd like to leave
