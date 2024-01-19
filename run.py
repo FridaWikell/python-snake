@@ -287,7 +287,7 @@ def main_game(stdscr):
 
             # Check if the snake's head collides with its body
             if snake_new_head in snake:
-                break  # Snake has collided with itself, exit the loop
+                break 
 
             snake.insert(0, snake_new_head)
 
@@ -303,7 +303,7 @@ def main_game(stdscr):
             # Redraw the border
             play_area.box("|", "-")
 
-            play_area.addstr(0, int(sw * 0.8), "Score: {} ".format(score))
+            play_area.addstr(0, int(sw * 0.6), "Score: {} ".format(score))
 
             # Refresh the screen
             play_area.refresh()
