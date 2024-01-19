@@ -52,6 +52,8 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
     - [Wave Webaim](#wave-webaim)
     - [Contrast Grid](#contrast-grid)
     - [Manual Testing](#manual-testing)
+      - [Start page](#start-page-1)
+      - [Rules page](#rules-page-1)
   - [Technologies Used](#technologies-used)
   - [Deployment](#deployment)
   - [Credits](#credits)
@@ -256,26 +258,27 @@ The contrast test at [Contrast Grid](https://contrast-grid.eightshapes.com/?vers
 
 ### Manual Testing
 
-Every page at the website has been manually tested. It is done in Google Chrome DevTools and on different devices. The devices used were one mobile phone, one laptop and one external screen:
+Every page at the website has been manually tested. It is done on one laptop and one external screen:
 
-- Samsung Galaxy A52s (1080 x 2400)
 - HP 250 G4 Notebook PC (1366 x 768)
 - HP 2309v LCD Screen (1920 x 1080)
 
-You need to perform, and document everything you did to manually test your site.
-At a minimum - you need to check every link on every page works as intended.
-So that is check every link in the nav bar (do this on every single page because its a link in a different file) and any other links that appear on your site.
-Test the responsiveness of the site - you can do this in the dev tools in responsive mode.
-You should also load the site once deployed on as many devices you have access to. What is different from one device to the next? why is it different?
+#### Start page
 
-Test the user stories that you created earlier in the readme - did you satisfy the goal, how?
-
-To write up the tests you can use a table,
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| enter details here | enter details here | enter details here | enter details here | enter details here |
+| Start menu - Play Game | Direct to enter name page | Write 'p' and press Enter <br> Write 'P' and press Enter | Got directed to enter name page | Pass |
+| Start menu - Rules | Direct to rules page | Write 'r' and press Enter <br> Write 'R' and press Enter | Got directed to rules page | Pass |
+| Start menu - Highscore | Direct to highscore top ten page | Write 'h' and press Enter <br> Write 'H' and press Enter | Got directed to highscore top ten page | Pass |
+| Invalid input | Message of "Please make a choice; 'p', 'r', or 'h', and press Enter" appears, allowing the user to try again | Write 'j' and press Enter <br>Write '3' and press Enter | Message "Please make a choice; 'p', 'r', or 'h', and press Enter" appeared and was open for another input | Pass |
+| New input after invalid input | Reset input field to accept new try | Enter invalid input and press Enter. Enter valid input and press Enter | The entered valid input was accepted | Pass |
 
-You should have tests for every section of every page.. individually.
+#### Rules page
+
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Readable rules | All rules are visible and easy to read | Read through the rules and see that all rules are included | All rules were included and visible | Pass
+| Go back option - play game | Direct to enter name page | Write 'p' and press Enter<br> Write 'P' and press Enter | Got directed to enter name page | Pass |
 
 ## Technologies Used
 
