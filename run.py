@@ -203,7 +203,7 @@ def last_before_game():
     margin = 11
     input(" " * margin + "Are you ready? If you are, "
           "buckle up and please press Enter\n")
-   
+
 
 def create_apple(snake, play_area):
     ''' Create the apples which the snake is hunting for
@@ -224,7 +224,7 @@ def main_game(stdscr):
     ''' The main game loop. It sets the playboard,
     make sure the snake starts in the middle, controls the snake,
     insert a new dot when an apple is eaten '''
-       
+
     stdscr.timeout(100)
 
     sh, sw = 24, 48
@@ -232,7 +232,6 @@ def main_game(stdscr):
     play_area.box("|", "-")
     play_area.keypad(1)
     play_area.timeout(100)
-    
 
     # To make sure the snake starts in the middle
     snake = [
@@ -248,7 +247,6 @@ def main_game(stdscr):
 
     global score
 
-    # vad gör första if?
     while True:
         next_direction = play_area.getch()
         direction = direction if next_direction == -1 else next_direction
@@ -351,7 +349,7 @@ def game_over():
     and shoot for the stars!""", (2, 6))
 
     console.print(highscore_text)
-    
+
     highscore_list = Table()
     highscore_list.add_column("Name", width=15)
     highscore_list.add_column("Points", width=6)
@@ -372,7 +370,6 @@ def top_ten():
         task = progress.add_task("Loading highscore...", total=100)
 
         highscore = SHEET.worksheet("highscore")
-    
         highscore_records = highscore.get_all_records()
         sorted_highscore = sorted(highscore_records, key=lambda
                                   x: x['Points'], reverse=True)
@@ -412,7 +409,7 @@ def thanks_for_playing():
     So you don't want to play anymore?
     Well, it's up to you. You know where
     to find us when you want to conquer the highscore!
-     
+
     For now, so long and thank you for the fish!""", (4, 11))
 
     console.print(thanks_text)
@@ -420,7 +417,7 @@ def thanks_for_playing():
 
 def game_loop():
     ''' The snake game loop '''
-    
+
     while True:
         clear_screen()
         get_ready_page()
@@ -431,7 +428,7 @@ def game_loop():
         game_over()
         global score
         score = 0
-        
+
         if not wait_for_answer():
             break
 
@@ -443,7 +440,7 @@ def main():
 
     start_page()
     game_loop()
-    
+
 
 if __name__ == "__main__":
     main()
