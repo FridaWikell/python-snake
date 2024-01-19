@@ -1,5 +1,3 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 import gspread
 from google.oauth2.service_account import Credentials
 from os import system, name
@@ -11,7 +9,6 @@ import rich
 import time
 from rich.table import Table
 from rich.console import Console
-from rich.theme import Theme
 from rich.padding import Padding
 from rich.panel import Panel
 from rich.progress import Progress
