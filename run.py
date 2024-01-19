@@ -117,10 +117,12 @@ def validate_input(input_string):
         if letters_only.match(input_string):
             return True
         else:
-            contain_only_letters = Padding("Your name should only contain letters. Please try again.", (0, 4))
-            console.print(contain_only_letters)
+            contain_letters = Padding("Your name should only contain"
+                                           "letters. Please try again.", (0, 4))
+            console.print(contain_letters)
     else:
-        between_three = Padding("Your name should be between 3 and 13 letters. Please try again.", (0, 4))
+        between_three = Padding("Your name should be between 3 and 13 letters."
+                                " Please try again.", (0, 4))
         console.print(between_three)
 
 
@@ -132,7 +134,8 @@ def enter_name():
 
     while True:
         margin = 20
-        player_name = input(" " * margin + "Please enter your name (3-13 letters): \n" + " " * margin).capitalize()
+        player_name = input(" " * margin + "Please enter your name "
+                            "(3-13 letters): \n" + " " * margin).capitalize()
         if validate_input(player_name):
             break
 
@@ -153,7 +156,8 @@ def take_me_back_logic():
             start_page()
             break
         else:
-            easy_choice = Padding("Please make a choice; 'p' or 's', and press Enter", (0, 6))
+            easy_choice = Padding("Please make a choice; 'p' or 's', and "
+                                  "press Enter", (0, 6))
             console.print(easy_choice)
 
 
@@ -175,7 +179,7 @@ def rules_page():
     Easy peasy lemon squeezy! Right?\n
     To get to the game, press 'p'.
     If you want to go back and look at the beautiful snake
-    at the start page, press 's'.""", (2,2))
+    at the start page, press 's'.""", (2, 2))
 
     console.print(rules_text)
     take_me_back_logic()
@@ -193,10 +197,12 @@ def last_before_game():
 
     cursor.hide()
     snake_ascii()
-    only_one = Padding(f"So {player_name}, there is only one thing left to ask...", (1, 19, 1, 19))
+    only_one = Padding(f"So {player_name}, there is only one thing "
+                       "left to ask...", (1, 19, 1, 19))
     console.print(only_one)
     margin = 11
-    input(" " * margin + "Are you ready? If you are, buckle up and please press Enter\n")
+    input(" " * margin + "Are you ready? If you are, "
+          "buckle up and please press Enter\n")
    
 
 def create_apple(snake, play_area):
@@ -248,7 +254,8 @@ def main_game(stdscr):
         direction = direction if next_direction == -1 else next_direction
 
         if (
-            direction in [curses.KEY_RIGHT, curses.KEY_LEFT, curses.KEY_DOWN, curses.KEY_UP] and
+            direction in [curses.KEY_RIGHT, curses.KEY_LEFT, curses.KEY_DOWN,
+                          curses.KEY_UP] and
             (direction == curses.KEY_RIGHT and snake[0][1] < sw -1) or
             (direction == curses.KEY_LEFT and snake[0][1] > 0) or
             (direction == curses.KEY_DOWN and snake[0][0] < sh-1) or
@@ -302,7 +309,8 @@ def wait_for_answer():
 
     while True:
         margin = 10
-        play_again_answer = input(" " * margin + "Do you want to play again? (yes/no)\n" + " " * margin).lower()
+        play_again_answer = input(" " * margin + "Do you want to play again? "
+                                  "(yes/no)\n" + " " * margin).lower()
         if play_again_answer in yes:
             return True
         elif play_again_answer in no:
@@ -327,7 +335,8 @@ def game_over():
 
         highscore = SHEET.worksheet("highscore")        
         highscore_records = highscore.get_all_records()
-        sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
+        sorted_highscore = sorted(highscore_records, key=lambda
+                                  x: x['Points'], reverse=True)
         top_five = sorted_highscore[:5]
 
         while not progress.finished:
@@ -365,7 +374,8 @@ def top_ten():
         highscore = SHEET.worksheet("highscore")
     
         highscore_records = highscore.get_all_records()
-        sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
+        sorted_highscore = sorted(highscore_records, key=lambda
+                                  x: x['Points'], reverse=True)
         top_ten = sorted_highscore[:10]
 
         while not progress.finished:
