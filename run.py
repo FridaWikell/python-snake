@@ -32,6 +32,26 @@ score = 0
 
 # Functions
 
+def welcome_snake():
+    ''' Ascii art of welcome snake '''
+
+    ascii = Padding(r"""
+   _    _
+,-(|)--(|)-.
+\_   ..   _/
+  \______/      .-. . . .-. . . .-. 
+    V  V        `-. |\| |-| |<  |-         ____
+    `.^^`.      `-' ' ` ` ' ' ` `-'      (^,--`
+      \^^^\                             (^^)
+      |^^^|                  _,-._       \^^)
+      (^^^^\      __      _,-'^^^^^`.    _,'^^)
+       \^^^^`._,-'^^`-._.'^^^^__^^^^ `--'^^^_/
+        \^^^^^ ^^^_^^^^^^^_,-'  `.^^^^^^^^_/
+         `.____,-' `-.__.'        `-.___.'
+""", (0, 15), style="green")
+    console.print(ascii)
+
+
 def snake_ascii():
     ''' The snake in ASCII art '''
 
@@ -89,7 +109,7 @@ def start_page():
     '''Views the start page with ascii image'''
 
     cursor.hide()
-    snake_ascii()
+    welcome_snake()
     start_menu()
     start_menu_logic()
 
