@@ -1,6 +1,6 @@
 # Snake Game - Python Edition
 
-![image of site](link to image) - use an image from AmIResponsive that shows the site on multiple devices
+![Snake Game - Python Edition site on different devices](doc/amiresponsive.webp) - use an image from AmIResponsive that shows the site on multiple devices
 
 ## Introduction
 
@@ -65,41 +65,145 @@ The keyboard is chosen to be neutral but at the same enhance the retro feeling f
 
 ### Wireframes
 
-![Screenshot of the wireframe of the start page]()
+![Screenshot of the wireframe of the start page](doc/wireframe-start-page.webp)
 
 The wireframe of the start page.
 
-![Screenshot of the wireframe of the game area]()
+![Screenshot of the wireframe of the game area](doc/wireframe-game-area.webp)
 
 The wireframe of the game area.
 
 ### Flowcharts
 
-![Screenshot of the flowchart of the game]()
+![Screenshot of the flowchart of the game](doc/lucid-flowchart.webp)
 
 The flowchart of the logic of the Snake game.
 
 ## Features
 
-### Feature title
-Screenshot of implemented feature
-Description of the value this feature has for the users
+### Outside the terminal
 
-Repeat for each feature
+#### Run program button
+
+![Screenshot of the run program button](doc/button.webp)
+
+The Run program button allows the user to restart the game whenever they want to.
+
+#### Keyboard
+
+![Screenshot of the keyboard](doc/keyboard-atari.webp)
+
+The keyboard provides a retro feeling and are consistent during the entire game. 
+
+### Start page
+
+The first page which gives the user a welcome.
+
+#### Start snake
+
+![Screenshot of the start snake](doc/welcome-snake.webp)
+
+The snake at the start page is supposed to welcome the user and present which game the user are welcome to play.
+
+#### Start menu
+
+![Screenshot of start menu](doc/start-menu.webp)
+
+The start menu gives the user opportunity to select what they want to do. They get to choose from start the game, read the rules or see the highscore.
+
+### Rules page
+
+#### Rules
+
+![Screenshot of the rules](doc/rules.webp)
+
+The rules explain to the user how they are supposed to play the game.
+
+#### Go back options
+
+![Screenshot of the go back options](doc/rules-go-back.webp)
+
+The user gets the option to navigate back to the start page or to start the game. This choice prevents a need to restart the game to be able to play the game.
+
+### Highscore page - top ten
+
+#### Progress bar
+
+![Screenshot of progress bar]()
+
+The progress bar let the user know that something is happening and the highscore is calculating.
+
+#### Highscore top ten
+
+![Screenshot of the highscore top ten](doc/top-ten-highscore.webp)
+
+Top ten highscore is presented to motivate the user to play and beat the highscore. They may find their friend (or enemy) on the list, to know which score they have to beat!
+
+#### Go back options
+
+![Screenshot of the go back options](doc/rules-go-back.webp)
+
+The user gets the option to navigate back to the start page or to start the game. This choice prevents a need to restart the game to be able to play the game.
+
+### Get ready page
+
+#### Enter name
+
+![Screenshot of enter name section](doc/enter-name.webp)
+
+The user have to enter their name to be ready for entering the highscore list.
+
+#### Are you ready?
+
+![Screenshot of are you ready section](doc/are-you-ready.webp)
+
+This text allows the user to prepare themself and start the game when they are ready.
+
+### Game page
+
+![Screenshot of the game area]()
+
+The game area is where the magic happens. The snake moves around to collect the apples. The snake are made out of blocks and the apples are dots. They are different shapes to help the user to easier see the difference between the snake and the apple.
+
+### Highscore page - top five
+
+#### Progress bar
+
+![Screenshot of progress bar]()
+
+The progress bar let the user know that something is happening and the highscore is calculating.
+
+#### Highscore top five
+
+![Screenshot of top five highscore](doc/top-five-highscore.webp)
+
+Top five highscore is presented to see if the player could beat the highscore. They may find their friend (or enemy) on the list, to know which score they have to beat next time they play!
+
+#### Play again?
+
+![Screenshot of play again question](doc/play-again.webp)
+
+The user gets a question if they want to play again or if they want to quit. This allows the user to play again to beat their score.
+
+### Goodbye page
+
+![Screenshot of goodbye text](doc/so-long.webp)
+
+The user gets a thank you for playing and a reminder that they are always welcome back.
 
 ## Features to be Added
-Describe some additional features you could potentially add to the project that would increase user value - could be things linked to technologies not yet covered by the course but would be a benefit to the user for example, the ability to save an article, or add an article to the site, leave a review.
 
+One feature to be added is a live score during the game. This to update the user how they are doing. Another feature to be added is to select which color you want the snake to have. Someone may play better with a pink snake, who knows?
 
 ## Testing
 
 ### Validation of Code
 
-![Screenshot of validation of HTML, without errors]()
+![Screenshot of validation of HTML, without errors](doc/valid-html.webp)
 
 The validation of the HTML code at [W3C Markup Validation Service](https://validator.w3.org/) resulted without errors.
 
-![Screenshot of validation of Python code, without errors]()
+![Screenshot of validation of Python code, without errors](doc/python-linter.webp)
 
 The validation of the Python code at [CI Python Linter](https://pep8ci.herokuapp.com/) resulted without errors.
 
@@ -109,13 +213,13 @@ Do this for both Desktop and Mobile.
 
 ### Wave Webaim
 
-![Screenshot of validation of accessibility, without errors]()
+![Screenshot of validation of accessibility, without errors](doc/wave-webaim.webp)
 
 The validation of the accessibility at [Wave Webaim](https://wave.webaim.org/) resulted without errors.
 
 ### Contrast Grid
 
-![Screenshot of contrast grid]()
+![Screenshot of contrast grid](doc/contrast-grid.webp)
 
 The contrast test at [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20%20Text%0D%0A%23013220%2C%20Button%0D%0A%23000000%2C%20Terminal%0D%0A%23008000%2C%20Snake&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) resulted in AAA values for all combination used in the game except for one. The combination of the black terminal background and the green ascii-snake resulted in only a AA18 value (4). Even though the bad contrast result, the combination is kept since the combination is never used to present any text.
 
