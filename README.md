@@ -113,6 +113,12 @@ Do this for both Desktop and Mobile.
 
 The validation of the accessibility at [Wave Webaim](https://wave.webaim.org/) resulted without errors.
 
+### Contrast Grid
+
+![Screenshot of contrast grid]()
+
+The contrast test at [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20%20Text%0D%0A%23013220%2C%20Button%0D%0A%23000000%2C%20Terminal%0D%0A%23008000%2C%20Snake&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) resulted in AAA values for all combination used in the game except for one. The combination of the black terminal background and the green ascii-snake resulted in only a AA18 value (4). Even though the bad contrast result, the combination is kept since the combination is never used to present any text.
+
 ### Manual Testing
 
 Every page at the website has been manually tested. It is done in Google Chrome DevTools and on different devices. The devices used were one mobile phone, one laptop and one external screen:
