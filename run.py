@@ -39,7 +39,7 @@ def welcome_snake():
    _    _
 ,-(|)--(|)-.
 \_   ..   _/
-  \______/      .-. . . .-. . . .-. 
+  \______/      .-. . . .-. . . .-.
     V  V        `-. |\| |-| |<  |-         ____
     `.^^`.      `-' ' ` ` ' ' ` `-'      (^,--`
       \^^^\                             (^^)
@@ -302,6 +302,8 @@ def main_game(stdscr):
 
             # Redraw the border
             play_area.box("|", "-")
+
+            play_area.addstr(0, int(sw * 0.8), "Score: {} ".format(score))
 
             # Refresh the screen
             play_area.refresh()
