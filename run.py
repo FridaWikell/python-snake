@@ -30,11 +30,12 @@ SHEET = GSPREAD_CLIENT.open("snake_highscore")
 
 
 # Global varibles
+
 console = Console()
 score = 0
 
 
-# Functions 
+# Functions
 
 def snake_ascii():
     ''' The snake in ASCII art '''
@@ -50,8 +51,8 @@ def snake_ascii():
       |^^^|                  _,-._       \^^)
       (^^^^\      __      _,-'^^^^^`.    _,'^^)
        \^^^^`._,-'^^`-._.'^^^^__^^^^ `--'^^^_/
-        \^^^^^ ^^^_^^^^^^^_,-'  `.^^^^^^^^_/ 
-         `.____,-' `-.__.'        `-.___.' 
+        \^^^^^ ^^^_^^^^^^^_,-'  `.^^^^^^^^_/
+         `.____,-' `-.__.'        `-.___.'
 """, (0, 15), style="green")
     console.print(ascii)
 
@@ -84,8 +85,8 @@ def start_menu_logic():
         elif selection == "h":
             top_ten()
         else:
-            make_choice = Padding("Please make a choice;"
-                                  "'p', 'r', or 'h', and press Enter", (0, 7))
+            make_choice = Padding("Please make a choice; "
+                                  "'p', 'r', or 'h', and press Enter", (0, 12))
             console.print(make_choice)
 
 
@@ -165,8 +166,8 @@ def rules_page():
     Rules:
     The rules are simple. You are the snake. So far, so good. Right?
     You control the snake with your arrow keys. Up make the snake to
-    turn up, right makes the snake to turn right. Well, you get the 
-    picture. The goal is to eat as many of the lovely apples \u25cf as 
+    turn up, right makes the snake to turn right. Well, you get the
+    picture. The goal is to eat as many of the lovely apples \u25cf as
     you can. When you eat an apple, you grow and get one apple longer
     than before.
     Beware of yourself! Don't collide into yourself!
@@ -215,7 +216,7 @@ def create_apple(snake, play_area):
 
 def main_game(stdscr):
     ''' The main game loop. It sets the playboard,
-    make sure the snake starts in the middle, controls the snake, 
+    make sure the snake starts in the middle, controls the snake,
     insert a new dot when an apple is eaten '''
        
     stdscr.timeout(100)
@@ -275,12 +276,12 @@ def main_game(stdscr):
                 score += 1
             else:
                 snake_tail = snake.pop()
-                play_area.addch(snake_tail[0], snake_tail[1], ' ')          
+                play_area.addch(snake_tail[0], snake_tail[1], ' ')
 
             play_area.addch(snake[0][0], snake[0][1], "\u25a0")
 
             # Redraw the border
-            play_area.box("|", "-")            
+            play_area.box("|", "-")
 
             # Refresh the screen
             play_area.refresh()
@@ -303,7 +304,7 @@ def wait_for_answer():
         margin = 10
         play_again_answer = input(" " * margin + "Do you want to play again? (yes/no)\n" + " " * margin).lower()
         if play_again_answer in yes:
-            return True     
+            return True
         elif play_again_answer in no:
             return False
         else:
@@ -324,16 +325,15 @@ def game_over():
     with Progress() as progress:
         task = progress.add_task("Loading highscore...", total=100)
 
-        highscore = SHEET.worksheet("highscore")
-        
+        highscore = SHEET.worksheet("highscore")        
         highscore_records = highscore.get_all_records()
         sorted_highscore = sorted(highscore_records, key=lambda x: x['Points'], reverse=True)
         top_five = sorted_highscore[:5]
 
         while not progress.finished:
-            progress.update(task, advance=1)  
+            progress.update(task, advance=1)
 
-    clear_screen()         
+    clear_screen()
 
     highscore_text = Padding(f"""
     Well... That was... Well played?
@@ -351,7 +351,7 @@ def game_over():
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
     padded_highscore = Padding(highscore_list, (0, 0, 1, 26))
-    console.print(padded_highscore)   
+    console.print(padded_highscore)
 
 
 def top_ten():
@@ -381,11 +381,11 @@ def top_ten():
         highscore_list.add_row(entry['Name'], str(entry['Points']))
 
     padded_highscore = Padding(highscore_list, (1, 0, 0, 26))
-    console.print(padded_highscore)   
+    console.print(padded_highscore)
 
     take_me_back = Padding("""
     To get to the game, press 'p'.
-    If you want to go back and look at the 
+    If you want to go back and look at the
     beautiful snake at the start page, press 's'.""", (1, 15))
     console.print(take_me_back)
 
@@ -417,12 +417,12 @@ def game_loop():
         clear_screen()
         last_before_game()
         curses.wrapper(main_game)
-        add_to_highscore()    
+        add_to_highscore()
         game_over()
         global score
         score = 0
         
-        if not wait_for_answer(): 
+        if not wait_for_answer():
             break
 
     thanks_for_playing()
