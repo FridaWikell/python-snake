@@ -5,8 +5,6 @@ import random
 import curses
 import cursor
 import re
-import rich
-import time
 from rich.table import Table
 from rich.console import Console
 from rich.padding import Padding
