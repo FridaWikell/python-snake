@@ -100,6 +100,12 @@ The validation of the accessibility at [Wave Webaim](https://wave.webaim.org/) r
 
 ### Manual Testing
 
+Every page at the website has been manually tested. It is done in Google Chrome DevTools and on different devices. The devices used were one mobile phone, one laptop and one external screen:
+
+- Samsung Galaxy A52s (1080 x 2400)
+- HP 250 G4 Notebook PC (1366 x 768)
+- HP 2309v LCD Screen (1920 x 1080)
+
 You need to perform, and document everything you did to manually test your site.
 At a minimum - you need to check every link on every page works as intended.
 So that is check every link in the nav bar (do this on every single page because its a link in a different file) and any other links that appear on your site.
@@ -121,8 +127,30 @@ Detail what technologies you used. So what code languages, what frameworks, libr
 
 ## Deployment
 
-Detail how to clone the repository, how to fork the repository - how to run the site locally and how to deploy it.
+The site was deployed at Heroku by doing the following steps.
 
+- Open Heroku and log in
+- Click on "New" and choose the option "Create new app"
+- Choose an appname and which region (Europe or United States) you are located in
+- Press "Create app"
+- When the app is created, choose the Settings tab
+- Under "Config Vars", press "Reveal Config Vars"
+- In keys, write CREDS
+- In value, insert the code from the creds.json file
+- Press "Add"
+- In keys, write PORT
+- In value, write 8000
+- Press "Add"
+- Under "Buildpacks", press "Add buildpack"
+- Choose "Python, press "Add buildpack"
+- Choose "Nodejs", press "Add buildpack"
+- Change tab to the Deploy tab
+- Choose deploy method - GitHub
+- Search for the correct repository name at your connected GitHub account
+- Press "Connect"
+- Under "Manual deploy", choose which branch to deploy and press "Deploy Branch"
+
+Link to the website <https://python-snake-57da97dc4eec.herokuapp.com/>
 
 ## Credits
 
