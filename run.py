@@ -254,7 +254,7 @@ def main_game(stdscr):
         if (
             direction in [curses.KEY_RIGHT, curses.KEY_LEFT, curses.KEY_DOWN,
                           curses.KEY_UP] and
-            (direction == curses.KEY_RIGHT and snake[0][1] < sw -1) or
+            (direction == curses.KEY_RIGHT and snake[0][1] < sw-1) or
             (direction == curses.KEY_LEFT and snake[0][1] > 0) or
             (direction == curses.KEY_DOWN and snake[0][0] < sh-1) or
             (direction == curses.KEY_UP and snake[0][0] > 0)
@@ -302,7 +302,7 @@ def wait_for_answer():
 
     cursor.show()
 
-    yes = {"yes","y", "ye", "", "ja"}
+    yes = {"yes", "y", "ye", "", "ja"}
     no = {"no", "n", "nej"}
 
     while True:
