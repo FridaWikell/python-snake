@@ -20,6 +20,7 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
     - [Typography](#typography)
     - [Imagery](#imagery)
     - [Wireframes](#wireframes)
+    - [Flowcharts](#flowcharts)
   - [Features](#features)
     - [Feature title](#feature-title)
   - [Features to be Added](#features-to-be-added)
@@ -63,6 +64,20 @@ The font in the terminal is not changed, to give the true retro feeling. The fon
 The keyboard is chosen to be neutral but at the same enhance the retro feeling for the user. The retro feeling is even more enhanced thanks to it being and old Atari keyboard.
 
 ### Wireframes
+
+![Screenshot of the wireframe of the start page]()
+
+The wireframe of the start page.
+
+![Screenshot of the wireframe of the game area]()
+
+The wireframe of the game area.
+
+### Flowcharts
+
+![Screenshot of the flowchart of the game]()
+
+The flowchart of the logic of the Snake game.
 
 ## Features
 
@@ -125,7 +140,7 @@ You should have tests for every section of every page.. individually.
 
 The code language used were Python, CSS, and HTML. The main code is written in Python. The repository is created at [GitHub](https://github.com/), the code is written in VS Code and it is deployed at [Heroku](https://dashboard.heroku.com/apps).
 
-Detail what technologies you used. So what code languages, what frameworks, libraries, what software did you use to develop the site - Balsamic for your wireframes, Figma for a mockup?
+The flowchart is made at [Lucid](https://lucid.app/). The wireframes are made at [Figma](https://www.figma.com/)
 
 ## Deployment
 
