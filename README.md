@@ -123,6 +123,8 @@ You should have tests for every section of every page.. individually.
 
 ## Technologies Used
 
+The code language used were Python, CSS, and HTML. The main code is written in Python. The repository is created at [GitHub](https://github.com/), the code is written in VS Code and it is deployed at [Heroku](https://dashboard.heroku.com/apps).
+
 Detail what technologies you used. So what code languages, what frameworks, libraries, what software did you use to develop the site - Balsamic for your wireframes, Figma for a mockup?
 
 ## Deployment
@@ -166,9 +168,10 @@ Knowledge about parts of the code were gathered from different sources.
 | Using .format() | [Pyformat](https://pyformat.info/#string_pad_align) |
 | Cursor package | [PyPi](https://pypi.org/project/cursor/) |
 | RegEx Module | [W3Schools](https://www.w3schools.com/python/python_regex.asp) |
-| Rich Package | [Real Python](https://realpython.com/python-rich-package/)  \n [Read the docs](https://rich.readthedocs.io/en/stable/index.html) |
+| Rich Package | [Real Python](https://realpython.com/python-rich-package/) <br> [Read the docs](https://rich.readthedocs.io/en/stable/index.html) |
 
 ## Acknowledgements
-Any special acknowledgements you'd like to leave
 
-Back to top link to return to the top of the readme.
+Big thanks to Matt Bodden for great coding support! Also a big thanks to Linus Wikell for testing the game during the development and thanks for the proofreading! 
+
+[Back to top](#snake-game---python-edition)
