@@ -38,6 +38,8 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
       - [Enter name](#enter-name)
       - [Are you ready?](#are-you-ready)
     - [Game page](#game-page)
+      - [Game area](#game-area)
+      - [Live score](#live-score)
     - [Highscore page - top five](#highscore-page---top-five)
       - [Progress bar](#progress-bar-1)
       - [Highscore top five](#highscore-top-five)
@@ -182,9 +184,17 @@ This text allows the user to prepare themself and start the game when they are r
 
 ### Game page
 
-![Screenshot of the game area](doc/play-area.webp)
+#### Game area
+
+![Screenshot of the game area](doc/game-area.webp)
 
 The game area is where the magic happens. The snake moves around to collect the apples. The snake are made out of blocks and the apples are dots. They are different shapes to help the user to easier see the difference between the snake and the apple.
+
+#### Live score
+
+![Screenshot of the score](doc/score.webp)
+
+The score is located at the top of the game area and is updating every time the snake eats an apple. This helps the user to keep track of their current score during the game.
 
 ### Highscore page - top five
 
@@ -214,7 +224,7 @@ The user gets a thank you for playing and a reminder that they are always welcom
 
 ## Features to be Added
 
-One feature to be added is a live score during the game. This to update the user how they are doing. Another feature to be added is to select which color you want the snake to have. Someone may play better with a pink snake, who knows?
+One feature to be added is to select which color you want the snake to have. Someone may play better with a pink snake, who knows? Some other features that could be added is that the game area will be smaller after x number of points and make it smaller and smaller until it is impossible to navigate the snake.
 
 ## Testing
 
