@@ -118,7 +118,7 @@ def validate_input(input_string):
             return True
         else:
             contain_letters = Padding("Your name should only contain"
-                                           "letters. Please try again.", (0, 4))
+                                      "letters. Please try again.", (0, 4))
             console.print(contain_letters)
     else:
         between_three = Padding("Your name should be between 3 and 13 letters."
@@ -331,7 +331,7 @@ def game_over():
     with Progress() as progress:
         task = progress.add_task("Loading highscore...", total=100)
 
-        highscore = SHEET.worksheet("highscore")        
+        highscore = SHEET.worksheet("highscore")
         highscore_records = highscore.get_all_records()
         sorted_highscore = sorted(highscore_records, key=lambda
                                   x: x['Points'], reverse=True)
