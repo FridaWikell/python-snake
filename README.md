@@ -1,6 +1,6 @@
 # Snake Game - Python Edition
 
-![Snake Game - Python Edition site on different devices](doc/amiresponsive.webp) - use an image from AmIResponsive that shows the site on multiple devices
+![Snake Game - Python Edition site on different devices](doc/amiresponsive.webp)
 
 ## Introduction
 
@@ -22,12 +22,33 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
     - [Wireframes](#wireframes)
     - [Flowcharts](#flowcharts)
   - [Features](#features)
-    - [Feature title](#feature-title)
+    - [Outside the terminal](#outside-the-terminal)
+      - [Run program button](#run-program-button)
+      - [Keyboard](#keyboard)
+    - [Start page](#start-page)
+      - [Start snake](#start-snake)
+      - [Start menu](#start-menu)
+    - [Rules page](#rules-page)
+      - [Rules](#rules)
+      - [Go back options](#go-back-options)
+    - [Highscore page - top ten](#highscore-page---top-ten)
+      - [Progress bar](#progress-bar)
+      - [Highscore top ten](#highscore-top-ten)
+    - [Get ready page](#get-ready-page)
+      - [Enter name](#enter-name)
+      - [Are you ready?](#are-you-ready)
+    - [Game page](#game-page)
+    - [Highscore page - top five](#highscore-page---top-five)
+      - [Progress bar](#progress-bar-1)
+      - [Highscore top five](#highscore-top-five)
+      - [Play again?](#play-again)
+    - [Goodbye page](#goodbye-page)
   - [Features to be Added](#features-to-be-added)
   - [Testing](#testing)
     - [Validation of Code](#validation-of-code)
     - [Lighthouse](#lighthouse)
     - [Wave Webaim](#wave-webaim)
+    - [Contrast Grid](#contrast-grid)
     - [Manual Testing](#manual-testing)
   - [Technologies Used](#technologies-used)
   - [Deployment](#deployment)
@@ -129,7 +150,7 @@ The user gets the option to navigate back to the start page or to start the game
 
 #### Progress bar
 
-![Screenshot of progress bar]()
+![Screenshot of progress bar](doc/loading-highscore.webp)
 
 The progress bar let the user know that something is happening and the highscore is calculating.
 
@@ -161,7 +182,7 @@ This text allows the user to prepare themself and start the game when they are r
 
 ### Game page
 
-![Screenshot of the game area]()
+![Screenshot of the game area](doc/play-area.webp)
 
 The game area is where the magic happens. The snake moves around to collect the apples. The snake are made out of blocks and the apples are dots. They are different shapes to help the user to easier see the difference between the snake and the apple.
 
@@ -169,7 +190,7 @@ The game area is where the magic happens. The snake moves around to collect the 
 
 #### Progress bar
 
-![Screenshot of progress bar]()
+![Screenshot of progress bar](doc/loading-highscore.webp)
 
 The progress bar let the user know that something is happening and the highscore is calculating.
 
@@ -250,7 +271,7 @@ You should have tests for every section of every page.. individually.
 
 The code language used were Python, CSS, and HTML. The main code is written in Python. The repository is created at [GitHub](https://github.com/), the code is written in VS Code and it is deployed at [Heroku](https://dashboard.heroku.com/apps).
 
-The flowchart is made at [Lucid](https://lucid.app/). The wireframes are made at [Figma](https://www.figma.com/)
+The flowchart is made at [Lucid](https://lucid.app/). The wireframes are made at [Figma](https://www.figma.com/).
 
 ## Deployment
 
