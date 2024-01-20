@@ -12,6 +12,7 @@ from rich.panel import Panel
 from rich.progress import Progress
 
 
+# Constant variables 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -23,15 +24,12 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("snake_highscore")
 
-
 # Global varibles
-
 console = Console()
 score = 0
 
 
 # Functions
-
 def welcome_snake():
     ''' Ascii art of welcome snake '''
 
@@ -92,7 +90,6 @@ def start_menu_logic():
     while True:
         margin = 15
         selection = input(" " * margin).lower()
-
         if selection == "p":
             game_loop()
         elif selection == "r":
@@ -153,7 +150,6 @@ def enter_name():
                             "(3-13 letters): \n" + " " * margin).capitalize()
         if validate_input(player_name):
             break
-
     return player_name
 
 
@@ -163,7 +159,6 @@ def take_me_back_logic():
     while True:
         margin = 6
         and_now = input(" " * margin).lower()
-
         if and_now == "p":
             game_loop()
             break
@@ -180,7 +175,6 @@ def rules_page():
     ''' Present the rules for the user '''
 
     clear_screen()
-
     rules_text = Padding("""
     Rules:
     The rules are simple. You are the snake. So far, so good. Right?
@@ -195,7 +189,6 @@ def rules_page():
     To get to the game, press 'p'.
     If you want to go back and look at the beautiful snake
     at the start page, press 's'.""", (2, 2))
-
     console.print(rules_text)
     take_me_back_logic()
 
@@ -226,12 +219,9 @@ def create_apple(snake, play_area):
 
     sh, sw = 20, 40
     apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
-
     while apple in snake:
         apple = [random.randint(1, sh-2), random.randint(1, sw-2)]
-
     play_area.addch(apple[0], apple[1], "\u25cf")
-
     return apple
 
 
@@ -248,7 +238,6 @@ def main_game(stdscr):
     play_area.keypad(1)
     play_area.timeout(100)
 
-    # To make sure the snake starts in the middle
     snake = [
         [sh//2, sw//2+1],
         [sh//2, sw//2],
@@ -256,16 +245,12 @@ def main_game(stdscr):
     ]
 
     apple = create_apple(snake, play_area)
-
-    # Makes the snake start to the right
     direction = curses.KEY_RIGHT
-
     global score
 
     while True:
         next_direction = play_area.getch()
         direction = direction if next_direction == -1 else next_direction
-
         if (
             direction in [curses.KEY_RIGHT, curses.KEY_LEFT, curses.KEY_DOWN,
                           curses.KEY_UP] and
@@ -285,7 +270,6 @@ def main_game(stdscr):
             elif direction == curses.KEY_UP:
                 snake_new_head[0] -= 1
 
-            # Check if the snake's head collides with its body
             if snake_new_head in snake:
                 break 
 
@@ -299,15 +283,9 @@ def main_game(stdscr):
                 play_area.addch(snake_tail[0], snake_tail[1], ' ')
 
             play_area.addch(snake[0][0], snake[0][1], "\u25a0")
-
-            # Redraw the border
             play_area.box("|", "-")
-
             play_area.addstr(0, int(sw * 0.6), "Score: {} ".format(score))
-
-            # Refresh the screen
             play_area.refresh()
-
         else:
             break
 
@@ -321,7 +299,6 @@ def wait_for_answer():
 
     yes = {"yes", "y", "ye", "", "ja"}
     no = {"no", "n", "nej"}
-
     while True:
         margin = 10
         play_again_answer = input(" " * margin + "Do you want to play again? "
@@ -353,7 +330,6 @@ def game_over():
         sorted_highscore = sorted(highscore_records, key=lambda
                                   x: x['Points'], reverse=True)
         top_five = sorted_highscore[:5]
-
         while not progress.finished:
             progress.update(task, advance=1)
 
@@ -364,7 +340,6 @@ def game_over():
     Come on {player_name}, you can do better than {score} points...
     Take a look at the highscore below, take a deep breath
     and shoot for the stars!""", (2, 6))
-
     console.print(highscore_text)
 
     highscore_list = Table()
@@ -391,7 +366,6 @@ def top_ten():
         sorted_highscore = sorted(highscore_records, key=lambda
                                   x: x['Points'], reverse=True)
         top_ten = sorted_highscore[:10]
-
         while not progress.finished:
             progress.update(task, advance=1)
 
@@ -406,7 +380,6 @@ def top_ten():
 
     padded_highscore = Padding(highscore_list, (1, 0, 0, 26))
     console.print(padded_highscore)
-
     take_me_back = Padding("""
     To get to the game, press 'p'.
     If you want to go back and look at the
@@ -428,7 +401,6 @@ def thanks_for_playing():
     to find us when you want to conquer the highscore!
 
     For now, so long and thank you for the fish!""", (4, 11))
-
     console.print(thanks_text)
 
 
@@ -445,10 +417,8 @@ def game_loop():
         game_over()
         global score
         score = 0
-
         if not wait_for_answer():
             break
-
     thanks_for_playing()
 
 
