@@ -133,8 +133,8 @@ def validate_input(input_string):
                                       "letters. Please try again.", (0, 4))
             console.print(contain_letters)
     else:
-        between_three = Padding("Your name should be between 3 and 13 letters."
-                                " Please try again.", (0, 4))
+        between_three = Padding("Your name should be between 3 and 13 letters. "
+                                "Please try again.", (0, 4))
         console.print(between_three)
 
 
