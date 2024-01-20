@@ -129,7 +129,7 @@ def validate_input(input_string):
         if letters_only.match(input_string):
             return True
         else:
-            contain_letters = Padding("Your name should only contain"
+            contain_letters = Padding("Your name should only contain "
                                       "letters. Please try again.", (0, 4))
             console.print(contain_letters)
     else:
