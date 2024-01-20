@@ -334,28 +334,28 @@ def game_over():
             while not progress.finished:
                 progress.update(task, advance=1)
             clear_screen()
+
+        highscore_text = Padding(f"""
+                                  Well... That was... Well played?
+                                  Come on {player_name}, you can do better than {score} points...
+                                  Take a look at the highscore below, take a deep breath
+                                  and shoot for the stars!""", (2, 6))
+        console.print(highscore_text)
+
+        highscore_list = Table()
+        highscore_list.add_column("Name", width=15)
+        highscore_list.add_column("Points", width=6)
+
+        for entry in top_five:
+            highscore_list.add_row(entry['Name'], str(entry['Points']))
+        padded_highscore = Padding(highscore_list, (0, 0, 1, 26))
+        console.print(padded_highscore)
     except:
+        clear_screen()
         not_working = Padding("Oopsie daisy... It seems like the highscore list is "
                               "unavaliable at the moment. Maybe it has a coffee break, "
                               "who knows? Please come back and try again later.", (0, 8))
         console.print(not_working)
-
-    highscore_text = Padding(f"""
-    Well... That was... Well played?
-    Come on {player_name}, you can do better than {score} points...
-    Take a look at the highscore below, take a deep breath
-    and shoot for the stars!""", (2, 6))
-    console.print(highscore_text)
-
-    highscore_list = Table()
-    highscore_list.add_column("Name", width=15)
-    highscore_list.add_column("Points", width=6)
-
-    for entry in top_five:
-        highscore_list.add_row(entry['Name'], str(entry['Points']))
-
-    padded_highscore = Padding(highscore_list, (0, 0, 1, 26))
-    console.print(padded_highscore)
 
 
 def top_ten():
@@ -374,29 +374,28 @@ def top_ten():
             top_ten = sorted_highscore[:10]
             while not progress.finished:
                 progress.update(task, advance=1)
+
+            clear_screen()
+
+            highscore_list = Table(title="Top 10 highscore")
+            highscore_list.add_column("Name", width=15)
+            highscore_list.add_column("Points", width=6)
+            for entry in top_ten:
+                highscore_list.add_row(entry['Name'], str(entry['Points']))
+            padded_highscore = Padding(highscore_list, (1, 0, 0, 26))
+            console.print(padded_highscore)
     except:
         not_working = Padding("Oopsie daisy... It seems like the highscore list is "
-                "unavaliable at the moment. Maybe it has a coffee break, "
-                "who knows? Please come back and try again later.", (0, 8))
+                              "unavaliable at the moment. Maybe it has a coffee break, "
+                              "who knows? Please come back and try again later.", (0, 8))
         console.print(not_working)
 
-    clear_screen()
-
-    highscore_list = Table(title="Top 10 highscore")
-    highscore_list.add_column("Name", width=15)
-    highscore_list.add_column("Points", width=6)
-
-    for entry in top_ten:
-        highscore_list.add_row(entry['Name'], str(entry['Points']))
-
-    padded_highscore = Padding(highscore_list, (1, 0, 0, 26))
-    console.print(padded_highscore)
     take_me_back = Padding("""
     To get to the game, press 'p'.
     If you want to go back and look at the
     beautiful snake at the start page, press 's'.""", (1, 15))
     console.print(take_me_back)
-
+    
     take_me_back_logic()
 
 
