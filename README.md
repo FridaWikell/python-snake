@@ -54,6 +54,7 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
     - [Manual Testing](#manual-testing)
       - [Start page](#start-page-1)
       - [Rules page](#rules-page-1)
+      - [Highscore page - top ten](#highscore-page---top-ten-1)
   - [Technologies Used](#technologies-used)
   - [Deployment](#deployment)
   - [Credits](#credits)
@@ -270,7 +271,7 @@ Every page at the website has been manually tested. It is done on one laptop and
 | Start menu - Play Game | Direct to enter name page | Write 'p' and press Enter <br> Write 'P' and press Enter | Got directed to enter name page | Pass |
 | Start menu - Rules | Direct to rules page | Write 'r' and press Enter <br> Write 'R' and press Enter | Got directed to rules page | Pass |
 | Start menu - Highscore | Direct to highscore top ten page | Write 'h' and press Enter <br> Write 'H' and press Enter | Got directed to highscore top ten page | Pass |
-| Invalid input | Message of "Please make a choice; 'p', 'r', or 'h', and press Enter" appears, allowing the user to try again | Write 'j' and press Enter <br>Write '3' and press Enter | Message "Please make a choice; 'p', 'r', or 'h', and press Enter" appeared and was open for another input | Pass |
+| Invalid input | Message of "Please make a choice; 'p', 'r', or 'h', and press Enter" appears, allowing the user to try again | Write 'j' and press Enter <br>Write '3' and press Enter | Message "Please make a choice; 'p', 'r', or 'h', and press Enter" appeared | Pass |
 | New input after invalid input | Reset input field to accept new try | Enter invalid input and press Enter. Enter valid input and press Enter | The entered valid input was accepted | Pass |
 
 #### Rules page
@@ -279,6 +280,15 @@ Every page at the website has been manually tested. It is done on one laptop and
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
 | Readable rules | All rules are visible and easy to read | Read through the rules and see that all rules are included | All rules were included and visible | Pass
 | Go back option - play game | Direct to enter name page | Write 'p' and press Enter<br> Write 'P' and press Enter | Got directed to enter name page | Pass |
+| Go back option - start page | Direct to start page | Write 's' and press Enter<br> Write 'S' and press Enter | Got directed to start page | Pass |
+| Invalid input | Message of "Please make a choice; 'p' or 's', and press Enter" appears, allowing the user to try again | Write 'j' and press Enter <br>Write '7' and press Enter | Message "Please make a choice; 'p' or 's', and press Enter" appeared | Pass |
+| New input after invalid input | Reset input field to accept new try | Enter invalid input and press Enter. Enter valid input and press Enter | The entered valid input was accepted | Pass |
+
+#### Highscore page - top ten
+
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Correct highscore | 
 
 ## Technologies Used
 
