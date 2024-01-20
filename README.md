@@ -237,6 +237,10 @@ One feature to be added is to select which color you want the snake to have. Som
 
 The validation of the HTML code at [W3C Markup Validation Service](https://validator.w3.org/) resulted without errors.
 
+![Screenshot of validation of CSS, without error](doc/valid-css.webp)
+
+The validation of the CSS code at [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) resulted without errors.
+
 ![Screenshot of validation of Python code, without errors](doc/python-linter.webp)
 
 The validation of the Python code at [CI Python Linter](https://pep8ci.herokuapp.com/) resulted without errors.
