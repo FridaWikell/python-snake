@@ -284,6 +284,11 @@ def main_game(stdscr):
 
             play_area.addch(snake[0][0], snake[0][1], "\u25a0")
             play_area.box("|", "-")
+
+            ''' To add live score, code row below is from 
+            https://github.com/DanyYax/MisionCodigoRepo/blob/b1a45cc590dcfe0f00b01516eb1f22ef58b752a2/Snake/snake.py
+            with modified placement '''
+             
             play_area.addstr(0, int(sw * 0.6), "Score: {} ".format(score))
             play_area.refresh()
         else:
@@ -395,7 +400,7 @@ def top_ten():
     If you want to go back and look at the
     beautiful snake at the start page, press 's'.""", (1, 15))
     console.print(take_me_back)
-    
+
     take_me_back_logic()
 
 
