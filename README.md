@@ -331,6 +331,8 @@ Link to the website <https://python-snake-57da97dc4eec.herokuapp.com/>
 
 The snake favicon is from [Favicon](https://favicon.io/emoji-favicons/snake). The keyboard image is a free image from [Pixabay](https://pixabay.com/). It is resized at [ResizePixel](https://www.resizepixel.com/). The favicon, the image at the site and the images in the README are converted to webp at [Convertio](https://convertio.co/) and [Pixelied](https://pixelied.com/) and compressed at [Tinify](https://tinypng.com/). The Ascii snake is based at the snake from [Asciiart](https://asciiart.cc/view/11831). The ascii text is generated at [ascii-generator](https://ascii-generator.site/t/) with the font "amc3line". The Unicode characters for the [apple](https://www.compart.com/en/unicode/U+25CF) and [snake body](https://www.compart.com/en/unicode/U+25A0) are from [Compart](https://www.compart.com/en/unicode).
 
+To create live score during the game, code snippet from [DanyYax](https://github.com/DanyYax/MisionCodigoRepo/blob/b1a45cc590dcfe0f00b01516eb1f22ef58b752a2/Snake/snake.py) was used.
+
 Knowledge about parts of the code were gathered from different sources.
 
 | Knowledge about | Source |
