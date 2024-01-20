@@ -322,18 +322,23 @@ def add_to_highscore():
 def game_over():
     ''' Present the top 5 highscore to the user '''
 
-    with Progress() as progress:
-        task = progress.add_task("Loading highscore...", total=100)
+    try:
+        with Progress() as progress:
+            task = progress.add_task("Loading highscore...", total=100)
 
-        highscore = SHEET.worksheet("highscore")
-        highscore_records = highscore.get_all_records()
-        sorted_highscore = sorted(highscore_records, key=lambda
-                                  x: x['Points'], reverse=True)
-        top_five = sorted_highscore[:5]
-        while not progress.finished:
-            progress.update(task, advance=1)
-
-    clear_screen()
+            highscore = SHEET.worksheet("highscore")
+            highscore_records = highscore.get_all_records()
+            sorted_highscore = sorted(highscore_records, key=lambda
+                                    x: x['Points'], reverse=True)
+            top_five = sorted_highscore[:5]
+            while not progress.finished:
+                progress.update(task, advance=1)
+            clear_screen()
+    except:
+        not_working = Padding("Oopsie daisy... It seems like the highscore list is "
+                              "unavaliable at the moment. Maybe it has a coffee break, "
+                              "who knows? Please come back and try again later.", (0, 8))
+        console.print(not_working)
 
     highscore_text = Padding(f"""
     Well... That was... Well played?
@@ -358,16 +363,22 @@ def top_ten():
 
     clear_screen()
 
-    with Progress() as progress:
-        task = progress.add_task("Loading highscore...", total=100)
+    try:
+        with Progress() as progress:
+            task = progress.add_task("Loading highscore...", total=100)
 
-        highscore = SHEET.worksheet("highscore")
-        highscore_records = highscore.get_all_records()
-        sorted_highscore = sorted(highscore_records, key=lambda
-                                  x: x['Points'], reverse=True)
-        top_ten = sorted_highscore[:10]
-        while not progress.finished:
-            progress.update(task, advance=1)
+            highscore = SHEET.worksheet("highscore")
+            highscore_records = highscore.get_all_records()
+            sorted_highscore = sorted(highscore_records, key=lambda
+                                    x: x['Points'], reverse=True)
+            top_ten = sorted_highscore[:10]
+            while not progress.finished:
+                progress.update(task, advance=1)
+    except:
+        not_working = Padding("Oopsie daisy... It seems like the highscore list is "
+                "unavaliable at the moment. Maybe it has a coffee break, "
+                "who knows? Please come back and try again later.", (0, 8))
+        console.print(not_working)
 
     clear_screen()
 
