@@ -401,7 +401,7 @@ def top_ten():
             while not progress.finished:
                 progress.update(task, advance=1)
 
-            clear_screen()
+        clear_screen()
 
         highscore_list = Table(title="Top 10 highscore")
         highscore_list.add_column("Name", width=15)
