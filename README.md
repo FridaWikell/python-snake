@@ -83,7 +83,7 @@ The goal is to make the user have fun and a good time. Maybe experience a flashb
 
 #### Site Owner Goals
 
-THe site owners goal is to provide an easy and fun place in the high technology enviroment with anvanced graphic we live in. 
+The site owners goal is to provide an easy and fun place in the high technology enviroment with anvanced graphic we live in. 
 
 ## Design
 
