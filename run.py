@@ -88,7 +88,7 @@ def start_menu_logic():
     read the rules or view the highscore'''
 
     while True:
-        margin = 15
+        margin = 12
         selection = input(" " * margin).lower()
         if selection == "p":
             game_loop()
@@ -157,7 +157,7 @@ def take_me_back_logic():
     ''' The logic to make the user to go to the game or start page '''
 
     while True:
-        margin = 6
+        margin = 15
         and_now = input(" " * margin).lower()
         if and_now == "p":
             game_loop()
@@ -206,7 +206,7 @@ def last_before_game():
     cursor.hide()
     snake_ascii()
     only_one = Padding(f"So {player_name}, there is only one thing "
-                       "left to ask...", (1, 19, 1, 19))
+                       "left to ask...", (1, 19))
     console.print(only_one)
     margin = 11
     input(" " * margin + "Are you ready? If you are, "
@@ -305,7 +305,7 @@ def wait_for_answer():
     yes = {"yes", "y", "ye", "", "ja"}
     no = {"no", "n", "nej"}
     while True:
-        margin = 10
+        margin = 15
         play_again_answer = input(" " * margin + "Do you want to play again? "
                                   "(yes/no)\n" + " " * margin).lower()
         if play_again_answer in yes:
@@ -313,7 +313,7 @@ def wait_for_answer():
         elif play_again_answer in no:
             return False
         else:
-            yes_or_no = Padding("Please answer 'yes' or 'no'", (0, 10))
+            yes_or_no = Padding("Please answer 'yes' or 'no'", (0, 15))
             console.print(yes_or_no)
 
 
@@ -346,27 +346,27 @@ def game_over():
             Well... That was... Well played?
             Come on {player_name}, you can do better than {score} points...
             Take a look at the highscore below, take a deep breath
-            and shoot for the stars!""", (2, 6))
+            and shoot for the stars!""", (2, 3))
             console.print(ten)
         elif score < 20:
             twenty = Padding(f"""
             Not too bad, not too bad!
             {player_name}, I must admit that I'm pretty impressed with
             you scoring {score} points.
-            Are you maybe a new leader? Take a look below!""", (2, 6))
+            Are you maybe on the highscore list? Take a look below!""", (2, 3))
             console.print(twenty)
         elif score < 30:
             thirty = Padding(f"""
             Are you born to play Snake {player_name}?
             You scored {score} points, that's really good!
-            I must admit that you made my jaw drop...""", (2, 6))
+            I must admit that you made my jaw drop...""", (2, 3))
             console.print(thirty)
         else:
             top_score = Padding(f"""
             Are you kidding with me {player_name}!?
             Did you really score {score} points!?
             Wow. Maybe it is time to sign up for the world 
-            champoinship in Snake?""", (2, 6))
+            champoinship in Snake?""", (2, 3))
             console.print(top_score)
 
         highscore_list = Table()
