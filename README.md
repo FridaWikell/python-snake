@@ -34,6 +34,7 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
     - [Highscore page - top ten](#highscore-page---top-ten)
       - [Progress bar](#progress-bar)
       - [Highscore top ten](#highscore-top-ten)
+      - [Go back options](#go-back-options-1)
     - [Get ready page](#get-ready-page)
       - [Enter name](#enter-name)
       - [Are you ready?](#are-you-ready)
@@ -65,7 +66,6 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
   - [Deployment](#deployment)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
-
 
 ## User Experience
 
