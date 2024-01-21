@@ -130,11 +130,11 @@ def validate_input(input_string):
             return True
         else:
             contain_letters = Padding("Your name should only contain "
-                                      "letters. Please try again.", (0, 4))
+                                      "letters. Please try again.", (0, 8))
             console.print(contain_letters)
     else:
         between_three = Padding("Your name should be between 3 and 13 letters. "
-                                "Please try again.", (0, 4))
+                                "Please try again.", (0, 8))
         console.print(between_three)
 
 
@@ -167,7 +167,7 @@ def take_me_back_logic():
             break
         else:
             easy_choice = Padding("Please make a choice; 'p' or 's', and "
-                                  "press Enter", (0, 6))
+                                  "press Enter", (0, 15))
             console.print(easy_choice)
 
 
@@ -313,7 +313,7 @@ def wait_for_answer():
         elif play_again_answer in no:
             return False
         else:
-            yes_or_no = Padding("Please answer yes or no", (0, 10))
+            yes_or_no = Padding("Please answer 'yes' or 'no'", (0, 10))
             console.print(yes_or_no)
 
 
@@ -338,27 +338,28 @@ def game_over():
             top_five = sorted_highscore[:5]
             while not progress.finished:
                 progress.update(task, advance=1)
-            clear_screen()
+
+        clear_screen()
 
         if score < 10:
             ten = Padding(f"""
-                           Well... That was... Well played?
-                           Come on {player_name}, you can do better than {score} points...
-                           Take a look at the highscore below, take a deep breath
-                           and shoot for the stars!""", (2, 6))
+            Well... That was... Well played?
+            Come on {player_name}, you can do better than {score} points...
+            Take a look at the highscore below, take a deep breath
+            and shoot for the stars!""", (2, 6))
             console.print(ten)
         elif score < 20:
             twenty = Padding(f"""
-                             Not too bad, not too bad!
-                             {player_name}, I must admit that I'm pretty impressed with
-                             you scoring {score} points.
-                             Are you maybe a new leader? Take a look below!""", (2, 6))
+            Not too bad, not too bad!
+            {player_name}, I must admit that I'm pretty impressed with
+            you scoring {score} points.
+            Are you maybe a new leader? Take a look below!""", (2, 6))
             console.print(twenty)
         elif score < 30:
             thirty = Padding(f"""
-                              Are you born to play Snake {player_name}?
-                              You scored {score} points, that's really good!
-                              I must admit that you made my jaw drop...""", (2, 6))
+            Are you born to play Snake {player_name}?
+            You scored {score} points, that's really good!
+            I must admit that you made my jaw drop...""", (2, 6))
             console.print(thirty)
         else:
             top_score = Padding(f"""
