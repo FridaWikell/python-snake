@@ -55,6 +55,10 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
       - [Start page](#start-page-1)
       - [Rules page](#rules-page-1)
       - [Highscore page - top ten](#highscore-page---top-ten-1)
+      - [Get ready page](#get-ready-page-1)
+      - [Game page](#game-page-1)
+      - [Highscore page - top five](#highscore-page---top-five-1)
+      - [Goodbye page](#goodbye-page-1)
   - [Technologies Used](#technologies-used)
   - [Deployment](#deployment)
   - [Credits](#credits)
@@ -272,10 +276,10 @@ Every page at the website has been manually tested. It is done on one laptop and
 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| Start menu - Play Game | Direct to enter name page | Write 'p' and press Enter <br> Write 'P' and press Enter | Got directed to enter name page | Pass |
+| Start menu - Play Game | Direct to get ready page | Write 'p' and press Enter <br> Write 'P' and press Enter | Got directed to get ready page | Pass |
 | Start menu - Rules | Direct to rules page | Write 'r' and press Enter <br> Write 'R' and press Enter | Got directed to rules page | Pass |
 | Start menu - Highscore | Direct to highscore top ten page | Write 'h' and press Enter <br> Write 'H' and press Enter | Got directed to highscore top ten page | Pass |
-| Invalid input | Message of "Please make a choice; 'p', 'r', or 'h', and press Enter" appears, allowing the user to try again | Write 'j' and press Enter <br>Write '3' and press Enter | Message "Please make a choice; 'p', 'r', or 'h', and press Enter" appeared | Pass |
+| Invalid input | Message of "Please make a choice; 'p', 'r', or 'h', and press Enter" appears | Write 'j' and press Enter <br>Write '3' and press Enter | Message "Please make a choice; 'p', 'r', or 'h', and press Enter" appeared | Pass |
 | New input after invalid input | Reset input field to accept new try | Enter invalid input and press Enter. Enter valid input and press Enter | The entered valid input was accepted | Pass |
 
 #### Rules page
@@ -283,16 +287,60 @@ Every page at the website has been manually tested. It is done on one laptop and
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
 | Readable rules | All rules are visible and easy to read | Read through the rules and see that all rules are included | All rules were included and visible | Pass
-| Go back option - play game | Direct to enter name page | Write 'p' and press Enter<br> Write 'P' and press Enter | Got directed to enter name page | Pass |
+| Go back option - play game | Direct to get ready page | Write 'p' and press Enter<br> Write 'P' and press Enter | Got directed to get ready page | Pass |
 | Go back option - start page | Direct to start page | Write 's' and press Enter<br> Write 'S' and press Enter | Got directed to start page | Pass |
-| Invalid input | Message of "Please make a choice; 'p' or 's', and press Enter" appears, allowing the user to try again | Write 'j' and press Enter <br>Write '7' and press Enter | Message "Please make a choice; 'p' or 's', and press Enter" appeared | Pass |
+| Invalid input | Message of "Please make a choice; 'p' or 's', and press Enter" appears | Write 'j' and press Enter <br>Write '7' and press Enter | Message "Please make a choice; 'p' or 's', and press Enter" appeared | Pass |
 | New input after invalid input | Reset input field to accept new try | Enter invalid input and press Enter. Enter valid input and press Enter | The entered valid input was accepted | Pass |
 
 #### Highscore page - top ten
 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| Correct highscore | 
+| Correct highscore | Highest score at the top | Compare highscore in Snake game to Google spreadsheet which contains the highscore | The highscore in the Snake toplist and in the Google spreadsheet matches | Pass |
+| Go back option - play game | Direct to get ready page | Write 'p' and press Enter<br> Write 'P' and press Enter | Got directed to get ready page | Pass |
+| Go back option - start page | Direct to start page | Write 's' and press Enter<br> Write 'S' and press Enter | Got directed to start page | Pass |
+| Invalid input | Message of "Please make a choice; 'p' or 's', and press Enter" appears | Write 'b' and press Enter <br>Write '4' and press Enter | Message "Please make a choice; 'p' or 's', and press Enter" appeared | Pass |
+| New input after invalid input | Reset input field to accept new try | Enter invalid input and press Enter. Enter valid input and press Enter | The entered valid input was accepted | Pass |
+
+#### Get ready page
+
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Validate input | Accept 3-13 letters | Enter 'Frida' | Input accepted | Pass |
+| Invalid input | Message 'Your name should be between 3 and 13 letters. Please try again.' appears | Write 'gg' and press Enter <br>Write 'gg55' and press Enter | Message 'Your name should be between 3 and 13 letters. Please try again.' appeared | Pass |
+| New input after invalid input | Reset input field to accept new try | Enter invalid input and press Enter. Enter valid input and press Enter | The entered valid input was accepted | Pass |
+| Response | Entered name are presented in the text | Enter a valid input, 'Frida' | Entered name are presented | Pass |
+| Uppercase at first letter in response | Present name with uppercase at first letter | Enter 'frida' | Entered name presented with uppercase at first letter, 'Frida' | Pass |
+| Direct to next page | Direct to game page when enter is pressed | Press Enter | Got directed to game page | Pass |
+
+#### Game page
+
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Live score | Score increases with 1 point when an eating an apple | Make the snake eat an apple | Score increases by 1 when an apple is eaten | Pass |
+| Eaten by itself | Game over when the snakes head crashes into its body | Direct the snakes head into its body | Game over | Pass |
+| No 180 degrees turn | Game over when you make a 180 degrees turn | Make a 180 degrees turn (left when the snake is going to the right) | Game over | Pass |
+| Snake growth | Snake grows with one square when an apple is eaten | Let the snake eat one apple | Snake grows with one square | Pass |
+| Death by crashing | Game over when the snake crashes into whe walls | Navigate into the wall | Game over | Pass | 
+| New apple | A new apple is placed in the game area when an apple is eaten | Eat an apple with the snake | A new apple is placed in the game area | Pass |
+
+#### Highscore page - top five
+
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Correct highscore | Highest score at the top | Compare highscore in Snake game to Google spreadsheet which contains the highscore | The highscore in the Snake toplist and in the Google spreadsheet matches | Pass |
+| Different response | Different response message depending on score | Get different score and look at the response | Different messages were presented | Pass |
+| Validate input | Only 'yes' and 'no' (with some variations) are accepted | Write 'y' and press Enter <br>Write 'n' and press Enter | Answers were valid | Pass |
+| Invalid input | Invalid input will present the message 'Please answer 'yes' or 'no'' | Write 'h' and press Enter | Message 'Please answer yes or no' was presented | Pass |
+| New input after invalid input | Reset input field to accept new try | Enter invalid input and press Enter. Enter valid input and press Enter | The entered valid input was accepted | Pass |
+| Direct to get ready page | When 'yes' is entered, direct to get ready page | Write 'yes' and press at Enter | Got directed to get ready page | Pass |
+| Direct to goodbye page | When 'no' is entered, direct to goodbye page | Write 'no' and press Enter | Got directed to goodbye page | Pass |
+
+#### Goodbye page
+
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Readable text | The text is visible and easy to read | Read through the text | The text was readable | Pass
 
 ## Technologies Used
 
