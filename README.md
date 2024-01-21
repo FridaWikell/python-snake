@@ -42,6 +42,7 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
       - [Live score](#live-score)
     - [Highscore page - top five](#highscore-page---top-five)
       - [Progress bar](#progress-bar-1)
+      - [Score text](#score-text)
       - [Highscore top five](#highscore-top-five)
       - [Play again?](#play-again)
     - [Goodbye page](#goodbye-page)
@@ -70,9 +71,15 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
 
 ### User Stories
 
+1. As a user, I can play a game I have missed to play for several years.
+2. As a user, I can challenge my friends in a game that is easy to understand.
+3. As a user, I can improve my reflexes.
+4. As a user, I can experience a retro feeling.
+5. As a user, I can challenge myself in improving my score.
+
 #### User Goals
 
-The goal is to make the user have a good time. Maybe experience a flashback or two back until when your biggest entertainment was to play Snake at a Nokia 3310. The goal is also to get the user to challenge itself to beat its score.
+The goal is to make the user have fun and a good time. Maybe experience a flashback or two back until when your biggest entertainment was to play Snake at a Nokia 3310. The goal is also to get the user to challenge itself or a friend to beat its score. Another goal is to practice the users reflexes.
 
 #### Site Owner Goals
 
@@ -212,6 +219,12 @@ The score is located at the top of the game area and is updating every time the 
 
 The progress bar let the user know that something is happening and the highscore is calculating.
 
+#### Score text
+
+![Screenshot of the score text](doc/well-played.webp)
+
+The user gets to now what score they had. They also get a motivational text depending on their score.
+
 #### Highscore top five
 
 ![Screenshot of top five highscore](doc/top-five-highscore.webp)
@@ -349,9 +362,9 @@ During testing and developing several bugs were discovered.
 
 When the [Contrast Grid](#contrast-grid) was made, an AA value was raised at the "run program" button. The colors at the button and the border of the button was inverted, an AAA value was then conquered.
 
-During the validation at the Python Linter, several errors were found. Most of them were "trailing whitespace" but also several "line too long" occured. These error were fixed.
+During the validation at the Python Linter, several errors were found. Most of them were "trailing whitespace" but also several "line too long" occured. Some other errors were "blank lines contain whitespace", "missing whitespace araound operator", "missing whitespace after ','" and "too many blanklines". These errors were fixed.
 
-During one game session it was discovered that you could "eat" the border lines with the snake. This was fixed by redraw the border every game loop.
+During one game session it was discovered that you could "eat" the border lines with the snake. This was fixed by redraw the border lines every game loop. It was also noticed tat the snake left some thin lines when it moved from right to left. This was fixed by refreshing the game area every game loop.
 
 None found bugs were left unfixed.
 
@@ -360,6 +373,18 @@ None found bugs were left unfixed.
 The code language used were Python, CSS, and HTML. The main code is written in Python. The repository is created at [GitHub](https://github.com/), the code is written in VS Code and it is deployed at [Heroku](https://dashboard.heroku.com/apps).
 
 The flowchart is made at [Lucid](https://lucid.app/). The wireframes are made at [Figma](https://www.figma.com/).
+
+Some different libraries/modules was used.
+
+| Library/module | Used for |
+| --------------- | -------------------------- |
+| Gspread | Open spreadsheet, read and write cells. This is used for managing the highscore |
+| Google.oauth2.service_account | Service account to managing the highscore |
+| OS | For handeling to clear screen for Windows, Mac and Linux systems |
+| Curses | Screen-painting to create the game area |
+| Cursor | To show and hide the cursor when curses isn't used |
+| RegEx | Used to validate inputs |
+| Rich | Makes the text prettier in form of example colors, tables and padding |
 
 ## Deployment
 
