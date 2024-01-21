@@ -363,10 +363,10 @@ def game_over():
             console.print(thirty)
         else:
             top_score = Padding(f"""
-                                 Are you kidding with me {player_name}!?
-                                 Did you really score {score} points!?
-                                 Wow. Maybe it is time to sign up for the world 
-                                 champoinship in Snake?""", (2, 6))
+            Are you kidding with me {player_name}!?
+            Did you really score {score} points!?
+            Wow. Maybe it is time to sign up for the world 
+            champoinship in Snake?""", (2, 6))
             console.print(top_score)
 
         highscore_list = Table()
