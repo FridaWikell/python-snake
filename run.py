@@ -288,7 +288,7 @@ def main_game(stdscr):
             ''' To add live score, code row below is from 
             https://github.com/DanyYax/MisionCodigoRepo/blob/b1a45cc590dcfe0f00b01516eb1f22ef58b752a2/Snake/snake.py
             with modified placement '''
-             
+
             play_area.addstr(0, int(sw * 0.6), "Score: {} ".format(score))
             play_area.refresh()
         else:
@@ -340,12 +340,33 @@ def game_over():
                 progress.update(task, advance=1)
             clear_screen()
 
-        highscore_text = Padding(f"""
-                                  Well... That was... Well played?
-                                  Come on {player_name}, you can do better than {score} points...
-                                  Take a look at the highscore below, take a deep breath
-                                  and shoot for the stars!""", (2, 6))
-        console.print(highscore_text)
+        if score < 10:
+            ten = Padding(f"""
+                           Well... That was... Well played?
+                           Come on {player_name}, you can do better than {score} points...
+                           Take a look at the highscore below, take a deep breath
+                           and shoot for the stars!""", (2, 6))
+            console.print(ten)
+        elif score < 20:
+            twenty = Padding(f"""
+                             Not too bad, not too bad!
+                             {player_name}, I must admit that I'm pretty impressed with
+                             you scoring {score} points.
+                             Are you maybe a new leader? Take a look below!""", (2, 6))
+            console.print(twenty)
+        elif score < 30:
+            thirty = Padding(f"""
+                              Are you born to play Snake {player_name}?
+                              You scored {score} points, that's really good!
+                              I must admit that you made my jaw drop...""", (2, 6))
+            console.print(thirty)
+        else:
+            top_score = Padding(f"""
+                                 Are you kidding with me {player_name}!?
+                                 Did you really score {score} points!?
+                                 Wow. Maybe it is time to sign up for the world 
+                                 champoinship in Snake?""", (2, 6))
+            console.print(top_score)
 
         highscore_list = Table()
         highscore_list.add_column("Name", width=15)
