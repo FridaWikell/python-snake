@@ -59,6 +59,7 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
       - [Game page](#game-page-1)
       - [Highscore page - top five](#highscore-page---top-five-1)
       - [Goodbye page](#goodbye-page-1)
+    - [Bugs](#bugs)
   - [Technologies Used](#technologies-used)
   - [Deployment](#deployment)
   - [Credits](#credits)
@@ -340,7 +341,19 @@ Every page at the website has been manually tested. It is done on one laptop and
 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| Readable text | The text is visible and easy to read | Read through the text | The text was readable | Pass
+| Readable text | The text is visible and easy to read | Read through the text | The text was readable | Pass |
+
+### Bugs
+
+During testing and developing several bugs were discovered.
+
+When the [Contrast Grid](#contrast-grid) was made, an AA value was raised at the "run program" button. The colors at the button and the border of the button was inverted, an AAA value was then conquered.
+
+During the validation at the Python Linter, several errors were found. Most of them were "trailing whitespace" but also several "line too long" occured. These error were fixed.
+
+During one game session it was discovered that you could "eat" the border lines with the snake. This was fixed by redraw the border every game loop.
+
+None found bugs were left unfixed.
 
 ## Technologies Used
 
