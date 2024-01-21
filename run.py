@@ -403,13 +403,13 @@ def top_ten():
 
             clear_screen()
 
-            highscore_list = Table(title="Top 10 highscore")
-            highscore_list.add_column("Name", width=15)
-            highscore_list.add_column("Points", width=6)
-            for entry in top_ten:
-                highscore_list.add_row(entry['Name'], str(entry['Points']))
-            padded_highscore = Padding(highscore_list, (1, 0, 0, 26))
-            console.print(padded_highscore)
+        highscore_list = Table(title="Top 10 highscore")
+        highscore_list.add_column("Name", width=15)
+        highscore_list.add_column("Points", width=6)
+        for entry in top_ten:
+            highscore_list.add_row(entry['Name'], str(entry['Points']))
+        padded_highscore = Padding(highscore_list, (1, 0, 0, 26))
+        console.print(padded_highscore)
     except:
         not_working = Padding("Oopsie daisy... It seems like the highscore list is "
                               "unavaliable at the moment. Maybe it has a coffee break, "
