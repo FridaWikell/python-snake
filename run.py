@@ -12,7 +12,7 @@ from rich.panel import Panel
 from rich.progress import Progress
 
 
-# Constant variables 
+# Constant variables
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -133,8 +133,8 @@ def validate_input(input_string):
                                       "letters. Please try again.", (0, 8))
             console.print(contain_letters)
     else:
-        between_three = Padding("Your name should be between 3 and 13 letters. "
-                                "Please try again.", (0, 8))
+        between_three = Padding("Your name should be between 3 and 13 letters."
+                                " Please try again.", (0, 8))
         console.print(between_three)
 
 
@@ -271,7 +271,7 @@ def main_game(stdscr):
                 snake_new_head[0] -= 1
 
             if snake_new_head in snake:
-                break 
+                break
 
             snake.insert(0, snake_new_head)
 
@@ -285,8 +285,9 @@ def main_game(stdscr):
             play_area.addch(snake[0][0], snake[0][1], "\u25a0")
             play_area.box("|", "-")
 
-            ''' To add live score, code row below is from 
-            https://github.com/DanyYax/MisionCodigoRepo/blob/b1a45cc590dcfe0f00b01516eb1f22ef58b752a2/Snake/snake.py
+            ''' To add live score, code row below is from
+            https://github.com/DanyYax/MisionCodigoRepo/blob/
+            b1a45cc590dcfe0f00b01516eb1f22ef58b752a2/Snake/snake.py
             with modified placement '''
 
             play_area.addstr(0, int(sw * 0.6), "Score: {} ".format(score))
@@ -334,11 +335,18 @@ def game_over():
             highscore = SHEET.worksheet("highscore")
             highscore_records = highscore.get_all_records()
             sorted_highscore = sorted(highscore_records, key=lambda
-                                    x: x['Points'], reverse=True)
+                                      x: x['Points'], reverse=True)
             top_five = sorted_highscore[:5]
             while not progress.finished:
                 progress.update(task, advance=1)
-
+    except Exception:
+        clear_screen()
+        not_working = Padding("Oopsie daisy... It seems like the highscore "
+                              "list is unavaliable at the moment. Maybe it has"
+                              " a coffee break, who knows? Please come back "
+                              " and try again later.", (0, 8))
+        console.print(not_working)
+    else:
         clear_screen()
 
         if score < 10:
@@ -365,7 +373,7 @@ def game_over():
             top_score = Padding(f"""
             Are you kidding with me {player_name}!?
             Did you really score {score} points!?
-            Wow. Maybe it is time to sign up for the world 
+            Wow. Maybe it is time to sign up for the world
             champoinship in Snake?""", (2, 3))
             console.print(top_score)
 
@@ -377,12 +385,6 @@ def game_over():
             highscore_list.add_row(entry['Name'], str(entry['Points']))
         padded_highscore = Padding(highscore_list, (0, 0, 1, 26))
         console.print(padded_highscore)
-    except:
-        clear_screen()
-        not_working = Padding("Oopsie daisy... It seems like the highscore list is "
-                              "unavaliable at the moment. Maybe it has a coffee break, "
-                              "who knows? Please come back and try again later.", (0, 8))
-        console.print(not_working)
 
 
 def top_ten():
@@ -397,11 +399,17 @@ def top_ten():
             highscore = SHEET.worksheet("highscore")
             highscore_records = highscore.get_all_records()
             sorted_highscore = sorted(highscore_records, key=lambda
-                                    x: x['Points'], reverse=True)
+                                      x: x['Points'], reverse=True)
             top_ten = sorted_highscore[:10]
             while not progress.finished:
                 progress.update(task, advance=1)
-
+    except Exception:
+        not_working = Padding("Oopsie daisy... It seems like the highscore "
+                              "list is unavaliable at the moment. Maybe it has"
+                              " a coffee break, who knows? Please come back "
+                              " and try again later.", (0, 8))
+        console.print(not_working)
+    else:
         clear_screen()
 
         highscore_list = Table(title="Top 10 highscore")
@@ -411,11 +419,6 @@ def top_ten():
             highscore_list.add_row(entry['Name'], str(entry['Points']))
         padded_highscore = Padding(highscore_list, (1, 0, 0, 26))
         console.print(padded_highscore)
-    except:
-        not_working = Padding("Oopsie daisy... It seems like the highscore list is "
-                              "unavaliable at the moment. Maybe it has a coffee break, "
-                              "who knows? Please come back and try again later.", (0, 8))
-        console.print(not_working)
 
     take_me_back = Padding("""
     To get to the game, press 'p'.
