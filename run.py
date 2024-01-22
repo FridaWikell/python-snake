@@ -31,7 +31,7 @@ score = 0
 
 # Functions
 def welcome_snake():
-    ''' Ascii art of welcome snake '''
+    ''' ASCII art of welcome snake '''
 
     ascii = Padding(r"""
    _    _
@@ -103,7 +103,7 @@ def start_menu_logic():
 
 
 def start_page():
-    '''Views the start page with ascii image'''
+    '''Views the start page with ASCII image'''
 
     cursor.hide()
     welcome_snake()
