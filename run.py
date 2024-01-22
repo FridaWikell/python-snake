@@ -124,7 +124,6 @@ def validate_input(input_string):
     ''' Validate the input to be only letters, between 3 and 13 letters '''
 
     letters_only = re.compile(r'^[a-zA-Z]+$')
-
     if 3 <= len(input_string) <= 13:
         if letters_only.match(input_string):
             return True
@@ -214,7 +213,7 @@ def last_before_game():
 
 
 def create_apple(snake, play_area):
-    ''' Create the apples which the snake is hunting for
+    ''' Creates the apples which the snake is hunting for,
     -2 is used to not get the apples to close to the edges '''
 
     sh, sw = 20, 40
@@ -380,7 +379,6 @@ def game_over():
         highscore_list = Table()
         highscore_list.add_column("Name", width=15)
         highscore_list.add_column("Points", width=6)
-
         for entry in top_five:
             highscore_list.add_row(entry['Name'], str(entry['Points']))
         padded_highscore = Padding(highscore_list, (0, 0, 1, 26))
