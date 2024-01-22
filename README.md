@@ -264,8 +264,16 @@ The validation of the CSS code at [W3C CSS Validation Service](https://jigsaw.w3
 The validation of the Python code at [CI Python Linter](https://pep8ci.herokuapp.com/) resulted without errors.
 
 ### Lighthouse
-You can perform a test of your website for performance, accessibility, best practices and SEO through the google chrome lighthouse test - it is in your Dev tools. Bear in mind that your internet connection speed plays a part in the performance figures obtained. Where it scores low, it will give you suggestions on how to improve the site - read the suggestions and think about how to implement them - it could be a good idea.
-Do this for both Desktop and Mobile.
+
+A test at Lighthouse was performed at for both desktop and mobile.
+
+![Screenshot of test at Lighthouse for desktop](doc/lighthouse-desktop.webp)
+
+The test for desktop resulted in 98 in performance and 100 in accessibility.
+
+![Screenshot of test at Lighthouse for mobile](doc/lighthouse-mobile.webp)
+
+The test for mobile resulted in 83 in performance and 100 in accessibility. The low score in performance were left unfixed since the site isn't able to run on mobile devices.
 
 ### Wave Webaim
 
