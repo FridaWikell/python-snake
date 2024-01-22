@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The project is all about having fun and maybe increase your reflexes. It is a way of going back in time to when Nokia 3310 was the most hightec phone at the market. 
+The project is all about having fun and maybe increase your reflexes. It is a way of going back in time to when Nokia 3310 was the most high tech phone on the market. 
 
 ## Table of Contents
 
@@ -71,7 +71,7 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
 
 ### User Stories
 
-1. As a user, I can play a game I have missed to play for several years.
+1. As a user, I can play a game I have missed playing for several years.
 2. As a user, I can challenge my friends in a game that is easy to understand.
 3. As a user, I can improve my reflexes.
 4. As a user, I can experience a retro feeling.
@@ -79,11 +79,11 @@ The project is all about having fun and maybe increase your reflexes. It is a wa
 
 #### User Goals
 
-The goal is to make the user have fun and a good time. Maybe experience a flashback or two back until when your biggest entertainment was to play Snake at a Nokia 3310. The goal is also to get the user to challenge itself or a friend to beat its score. Another goal is to practice the users reflexes.
+The goal is to make the user have a good time. Maybe the user will experience a flashback or two back til when your biggest entertainment was to play Snake at a Nokia 3310. The goal is also to get the user to challenge itself or a friend to beat its score. Another user goal is to practice the reflexes.
 
 #### Site Owner Goals
 
-The site owners goal is to provide an easy and fun place in the high technology enviroment with anvanced graphic we live in. 
+The site owners goal is to provide an easy and fun place. This is made by going back to the roots with simple graphic and ASCII-art as its biggest design. 
 
 ## Design
 
@@ -91,15 +91,15 @@ The site owners goal is to provide an easy and fun place in the high technology 
 
 The white background makes the black terminal pop out. The high contrast it's providing makes it easier to see and play the game without getting distracted.
 
-The color at the snake is chosen to be eye-catching and pop out from the text. The colors in the button are chosen to be more neutral than the snake, since you need to look at the bottom when you are playing the game. They are green to bond to the green snake.
+The snakes color is chosen to be eye-catching and pop out from the text. The colors of the button are chosen to be more neutral than the snake, since the button is visible when you are playing the game. It is green to bond to the green snake.
 
 ### Typography
 
-The font in the terminal is not changed, to give the true retro feeling. The font in the buttom is chosen to make it easy to read.
+The font in the terminal is not changed, this to give the true retro feeling. The font in the button is chosen to make it easy to read.
 
 ### Imagery
 
-The keyboard is chosen to be neutral but at the same enhance the retro feeling for the user. The retro feeling is even more enhanced thanks to it being and old Atari keyboard.
+The keyboard is chosen to be neutral but at the same time to enhance the retro feeling for the user. The retro feeling is even more enhanced thanks to it being an old Atari keyboard.
 
 ### Wireframes
 
@@ -131,7 +131,7 @@ The Run program button allows the user to restart the game whenever they want to
 
 ![Screenshot of the keyboard](doc/keyboard-atari.webp)
 
-The keyboard provides a retro feeling and are consistent during the entire game. 
+The keyboard provides a retro feeling and is consistent during the entire game. 
 
 ### Start page
 
@@ -141,7 +141,7 @@ The first page which gives the user a welcome.
 
 ![Screenshot of the start snake](doc/welcome-snake.webp)
 
-The snake at the start page is supposed to welcome the user and present which game the user are welcome to play.
+The snake at the start page is supposed to welcome the user and present which game the user is welcome to play.
 
 #### Start menu
 
@@ -161,7 +161,7 @@ The rules explain to the user how they are supposed to play the game.
 
 ![Screenshot of the go back options](doc/rules-go-back.webp)
 
-The user gets the option to navigate back to the start page or to start the game. This choice prevents a need to restart the game to be able to play the game.
+The user gets the option to navigate back to the start page or to start the game. These choices prevents a need to restart the game to be able to play the game.
 
 ### Highscore page - top ten
 
@@ -169,7 +169,7 @@ The user gets the option to navigate back to the start page or to start the game
 
 ![Screenshot of progress bar](doc/loading-highscore.webp)
 
-The progress bar let the user know that something is happening and the highscore is calculating.
+The progress bar lets the user know that something is happening and the highscore is calculating.
 
 #### Highscore top ten
 
@@ -181,7 +181,7 @@ Top ten highscore is presented to motivate the user to play and beat the highsco
 
 ![Screenshot of the go back options](doc/rules-go-back.webp)
 
-The user gets the option to navigate back to the start page or to start the game. This choice prevents a need to restart the game to be able to play the game.
+The user gets the option to navigate back to the start page or to start the game. These choices prevents a need to restart the game to be able to play the game.
 
 ### Get ready page
 
@@ -189,13 +189,13 @@ The user gets the option to navigate back to the start page or to start the game
 
 ![Screenshot of enter name section](doc/enter-name.webp)
 
-The user have to enter their name to be ready for entering the highscore list.
+The user has to enter their name to be ready for entering the highscore list.
 
 #### Are you ready?
 
 ![Screenshot of are you ready section](doc/are-you-ready.webp)
 
-This text allows the user to prepare themself and start the game when they are ready.
+This text allows the users to prepare themselves and start the game when they are ready.
 
 ### Game page
 
@@ -203,7 +203,7 @@ This text allows the user to prepare themself and start the game when they are r
 
 ![Screenshot of the game area](doc/game-area.webp)
 
-The game area is where the magic happens. The snake moves around to collect the apples. The snake are made out of blocks and the apples are dots. They are different shapes to help the user to easier see the difference between the snake and the apple.
+The game area is where the magic happens. The snake moves around to collect the apples. The snake is made out of blocks and the apples are dots. They are different shapes to help the user to easily see the difference between the snake and the apple.
 
 #### Live score
 
@@ -217,13 +217,13 @@ The score is located at the top of the game area and is updating every time the 
 
 ![Screenshot of progress bar](doc/loading-highscore.webp)
 
-The progress bar let the user know that something is happening and the highscore is calculating.
+The progress bar lets the user know that something is happening and the highscore is calculating.
 
 #### Score text
 
 ![Screenshot of the score text](doc/well-played.webp)
 
-The user gets to now what score they had. They also get a motivational text depending on their score.
+The user gets to know what score they had. They also get a motivational text depending on their score.
 
 #### Highscore top five
 
@@ -245,7 +245,7 @@ The user gets a thank you for playing and a reminder that they are always welcom
 
 ## Features to be Added
 
-One feature to be added is to select which color you want the snake to have. Someone may play better with a pink snake, who knows? Some other features that could be added is that the game area will be smaller after x number of points and make it smaller and smaller until it is impossible to navigate the snake.
+One feature to be added is to select which color you want the snake to have. Someone may play better with a pink snake, who knows? Some other features that could be added is that the game area will be smaller after x number of points and make it smaller and smaller until it is impossible to navigate the snake. Another possible feature is to make the snake move faster after each apple.
 
 ## Testing
 
@@ -265,7 +265,7 @@ The validation of the Python code at [CI Python Linter](https://pep8ci.herokuapp
 
 ### Lighthouse
 
-A test at Lighthouse was performed at for both desktop and mobile.
+A test at Lighthouse was performed for both desktop and mobile.
 
 ![Screenshot of test at Lighthouse for desktop](doc/lighthouse-desktop.webp)
 
@@ -285,7 +285,7 @@ The validation of the accessibility at [Wave Webaim](https://wave.webaim.org/) r
 
 ![Screenshot of contrast grid](doc/contrast-grid.webp)
 
-The contrast test at [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20%20Text%0D%0A%23013220%2C%20Button%0D%0A%23000000%2C%20Terminal%0D%0A%23008000%2C%20Snake&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) resulted in AAA values for all combination used in the game except for one. The combination of the black terminal background and the green ascii-snake resulted in only a AA18 value (4). Even though the bad contrast result, the combination is kept since the combination is never used to present any text.
+The contrast test at [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20%20Text%0D%0A%23013220%2C%20Button%0D%0A%23000000%2C%20Terminal%0D%0A%23008000%2C%20Snake&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) resulted in AAA values for all combinations used in the game except for one. The combination of the black terminal background and the green ascii-snake resulted in only a AA18 value (4). Even though there was a bad result for contrast, the combination is kept since the combination is never used to present any text.
 
 ### Manual Testing
 
@@ -331,19 +331,19 @@ Every page at the website has been manually tested. It is done on one laptop and
 | Validate input | Accept 3-13 letters | Enter 'Frida' | Input accepted | Pass |
 | Invalid input | Message 'Your name should be between 3 and 13 letters. Please try again.' appears | Write 'gg' and press Enter <br>Write 'gg55' and press Enter | Message 'Your name should be between 3 and 13 letters. Please try again.' appeared | Pass |
 | New input after invalid input | Reset input field to accept new try | Enter invalid input and press Enter. Enter valid input and press Enter | The entered valid input was accepted | Pass |
-| Response | Entered name are presented in the text | Enter a valid input, 'Frida' | Entered name are presented | Pass |
-| Uppercase at first letter in response | Present name with uppercase at first letter | Enter 'frida' | Entered name presented with uppercase at first letter, 'Frida' | Pass |
+| Response | Entered name is presented in the text | Enter a valid input, 'Frida' | Entered name is presented | Pass |
+| Uppercase first letter in response | Present name with uppercase first letter | Enter 'frida' | Entered name presented with uppercase first letter, 'Frida' | Pass |
 | Direct to next page | Direct to game page when enter is pressed | Press Enter | Got directed to game page | Pass |
 
 #### Game page
 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| Live score | Score increases with 1 point when an eating an apple | Make the snake eat an apple | Score increases by 1 when an apple is eaten | Pass |
+| Live score | Score increases with 1 point when eating an apple | Make the snake eat an apple | Score increases by 1 when an apple is eaten | Pass |
 | Eaten by itself | Game over when the snakes head crashes into its body | Direct the snakes head into its body | Game over | Pass |
-| No 180 degrees turn | Game over when you make a 180 degrees turn | Make a 180 degrees turn (left when the snake is going to the right) | Game over | Pass |
+| No 180 degree turn | Game over when you make a 180 degree turn | Make a 180 degree turn (press left when the snake is going to the right) | Game over | Pass |
 | Snake growth | Snake grows with one square when an apple is eaten | Let the snake eat one apple | Snake grows with one square | Pass |
-| Death by crashing | Game over when the snake crashes into whe walls | Navigate into the wall | Game over | Pass | 
+| Death by crashing | Game over when the snake crashes into whe wall | Navigate into the wall | Game over | Pass | 
 | New apple | A new apple is placed in the game area when an apple is eaten | Eat an apple with the snake | A new apple is placed in the game area | Pass |
 
 #### Highscore page - top five
@@ -351,11 +351,11 @@ Every page at the website has been manually tested. It is done on one laptop and
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
 | Correct highscore | Highest score at the top | Compare highscore in Snake game to Google spreadsheet which contains the highscore | The highscore in the Snake toplist and in the Google spreadsheet matches | Pass |
-| Different response | Different response message depending on score | Get different score and look at the response | Different messages were presented | Pass |
+| Different response | Different response message depending on score | Get different scores and look at the response | Different messages were presented | Pass |
 | Validate input | Only 'yes' and 'no' (with some variations) are accepted | Write 'y' and press Enter <br>Write 'n' and press Enter | Answers were valid | Pass |
 | Invalid input | Invalid input will present the message 'Please answer 'yes' or 'no'' | Write 'h' and press Enter | Message 'Please answer yes or no' was presented | Pass |
 | New input after invalid input | Reset input field to accept new try | Enter invalid input and press Enter. Enter valid input and press Enter | The entered valid input was accepted | Pass |
-| Direct to get ready page | When 'yes' is entered, direct to get ready page | Write 'yes' and press at Enter | Got directed to get ready page | Pass |
+| Direct to get ready page | When 'yes' is entered, direct to get ready page | Write 'yes' and press Enter | Got directed to get ready page | Pass |
 | Direct to goodbye page | When 'no' is entered, direct to goodbye page | Write 'no' and press Enter | Got directed to goodbye page | Pass |
 
 #### Goodbye page
@@ -368,13 +368,13 @@ Every page at the website has been manually tested. It is done on one laptop and
 
 During testing and developing several bugs were discovered.
 
-When the [Contrast Grid](#contrast-grid) was made, an AA value was raised at the "run program" button. The colors at the button and the border of the button was inverted, an AAA value was then conquered.
+When the [Contrast Grid](#contrast-grid) was made, an AA value was raised at the "run program" button. The color of the button and the border of the button was inverted, an AAA value was then conquered.
 
-During the validation at the Python Linter, several errors were found. Most of them were "trailing whitespace" but also several "line too long" occured. Some other errors were "blank lines contain whitespace", "missing whitespace araound operator", "missing whitespace after ','" and "too many blanklines". These errors were fixed.
+During the validation at the Python Linter, several errors were found. Most of them were "trailing whitespace" but also several "line too long" occured. Some other errors were "blank lines contain whitespace", "missing whitespace around operator", "missing whitespace after ','" and "too many blank lines". These errors were fixed.
 
-During one game session it was discovered that you could "eat" the border lines with the snake. This was fixed by redraw the border lines every game loop. It was also noticed tat the snake left some thin lines when it moved from right to left. This was fixed by refreshing the game area every game loop.
+During one game session it was discovered that you could "eat" the border lines with the snake. This was fixed by redrawing the border lines every game loop. It was also noticed that the snake left some thin lines when it moved from right to left. This was fixed by refreshing the game area every game loop.
 
-None found bugs were left unfixed.
+No found bugs were left unfixed.
 
 ## Technologies Used
 
@@ -382,17 +382,17 @@ The code language used were Python, CSS, and HTML. The main code is written in P
 
 The flowchart is made at [Lucid](https://lucid.app/). The wireframes are made at [Figma](https://www.figma.com/).
 
-Some different libraries/modules was used.
+Some different libraries/modules were used.
 
 | Library/module | Used for |
 | --------------- | -------------------------- |
 | Gspread | Open spreadsheet, read and write cells. This is used for managing the highscore |
-| Google.oauth2.service_account | Service account to managing the highscore |
-| OS | For handeling to clear screen for Windows, Mac and Linux systems |
+| Google.oauth2.service_account | Service account to manage the highscore |
+| OS | To clear the screen for Windows, Mac and Linux systems |
 | Curses | Screen-painting to create the game area |
 | Cursor | To show and hide the cursor when curses isn't used |
 | RegEx | Used to validate inputs |
-| Rich | Makes the text prettier in form of example colors, tables and padding |
+| Rich | Makes the text prettier for example colors, tables and padding |
 
 ## Deployment
 
@@ -400,7 +400,7 @@ The site was deployed at Heroku by doing the following steps.
 
 - Open Heroku and log in
 - Click on "New" and choose the option "Create new app"
-- Choose an appname and which region (Europe or United States) you are located in
+- Choose an app name and which region (Europe or United States) you are located in
 - Press "Create app"
 - When the app is created, choose the Settings tab
 - Under "Config Vars", press "Reveal Config Vars"
@@ -411,7 +411,7 @@ The site was deployed at Heroku by doing the following steps.
 - In value, write 8000
 - Press "Add"
 - Under "Buildpacks", press "Add buildpack"
-- Choose "Python, press "Add buildpack"
+- Choose "Python", press "Add buildpack"
 - Choose "Nodejs", press "Add buildpack"
 - Change tab to the Deploy tab
 - Choose deploy method - GitHub
@@ -423,7 +423,7 @@ Link to the website <https://python-snake-57da97dc4eec.herokuapp.com/>
 
 ## Credits
 
-The snake favicon is from [Favicon](https://favicon.io/emoji-favicons/snake). The keyboard image is a free image from [Pixabay](https://pixabay.com/). It is resized at [ResizePixel](https://www.resizepixel.com/). The favicon, the image at the site and the images in the README are converted to webp at [Convertio](https://convertio.co/) and [Pixelied](https://pixelied.com/) and compressed at [Tinify](https://tinypng.com/). The Ascii snake is based at the snake from [Asciiart](https://asciiart.cc/view/11831). The ascii text is generated at [ascii-generator](https://ascii-generator.site/t/) with the font "amc3line". The Unicode characters for the [apple](https://www.compart.com/en/unicode/U+25CF) and [snake body](https://www.compart.com/en/unicode/U+25A0) are from [Compart](https://www.compart.com/en/unicode).
+The snake favicon is from [Favicon](https://favicon.io/emoji-favicons/snake). The keyboard image is a free image from [Pixabay](https://pixabay.com/). It is resized at [ResizePixel](https://www.resizepixel.com/). The favicon, the image at the site and the images in the README are converted to webp at [Convertio](https://convertio.co/) and [Pixelied](https://pixelied.com/) and compressed at [Tinify](https://tinypng.com/). The Ascii snake is based on the snake from [Asciiart](https://asciiart.cc/view/11831). The ascii text is generated at [ascii-generator](https://ascii-generator.site/t/) with the font "amc3line". The Unicode characters for the [apple](https://www.compart.com/en/unicode/U+25CF) and [snake body](https://www.compart.com/en/unicode/U+25A0) are found at [Compart](https://www.compart.com/en/unicode).
 
 To create live score during the game, code snippet from [DanyYax](https://github.com/DanyYax/MisionCodigoRepo/blob/b1a45cc590dcfe0f00b01516eb1f22ef58b752a2/Snake/snake.py) was used.
 
