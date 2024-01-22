@@ -83,7 +83,7 @@ The goal is to make the user have a good time. Maybe the user will experience a 
 
 #### Site Owner Goals
 
-The site owners goal is to provide an easy and fun place. This is made by going back to the roots with simple graphic and ASCII-art as its biggest design. 
+The site owners goal is to provide an easy and fun place. This is made by going back to the roots with simple graphic and ASCII art as its biggest design. 
 
 ## Design
 
@@ -285,7 +285,7 @@ The validation of the accessibility at [Wave Webaim](https://wave.webaim.org/) r
 
 ![Screenshot of contrast grid](doc/contrast-grid.webp)
 
-The contrast test at [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20%20Text%0D%0A%23013220%2C%20Button%0D%0A%23000000%2C%20Terminal%0D%0A%23008000%2C%20Snake&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) resulted in AAA values for all combinations used in the game except for one. The combination of the black terminal background and the green ascii-snake resulted in only a AA18 value (4). Even though there was a bad result for contrast, the combination is kept since the combination is never used to present any text.
+The contrast test at [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20%20Text%0D%0A%23013220%2C%20Button%0D%0A%23000000%2C%20Terminal%0D%0A%23008000%2C%20Snake&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) resulted in AAA values for all combinations used in the game except for one. The combination of the black terminal background and the green ASCII snake resulted in only a AA18 value (4). Even though there was a bad result for contrast, the combination is kept since the combination is never used to present any text.
 
 ### Manual Testing
 
@@ -423,7 +423,7 @@ Link to the website <https://python-snake-57da97dc4eec.herokuapp.com/>
 
 ## Credits
 
-The snake favicon is from [Favicon](https://favicon.io/emoji-favicons/snake). The keyboard image is a free image from [Pixabay](https://pixabay.com/). It is resized at [ResizePixel](https://www.resizepixel.com/). The favicon, the image at the site and the images in the README are converted to webp at [Convertio](https://convertio.co/) and [Pixelied](https://pixelied.com/) and compressed at [Tinify](https://tinypng.com/). The Ascii snake is based on the snake from [Asciiart](https://asciiart.cc/view/11831). The ascii text is generated at [ascii-generator](https://ascii-generator.site/t/) with the font "amc3line". The Unicode characters for the [apple](https://www.compart.com/en/unicode/U+25CF) and [snake body](https://www.compart.com/en/unicode/U+25A0) are found at [Compart](https://www.compart.com/en/unicode).
+The snake favicon is from [Favicon](https://favicon.io/emoji-favicons/snake). The keyboard image is a free image from [Pixabay](https://pixabay.com/). It is resized at [ResizePixel](https://www.resizepixel.com/). The favicon, the image at the site and the images in the README are converted to webp at [Convertio](https://convertio.co/) and [Pixelied](https://pixelied.com/) and compressed at [Tinify](https://tinypng.com/). The ASCII snake is based on the snake from [Asciiart](https://asciiart.cc/view/11831). The ASCII text is generated at [ascii-generator](https://ascii-generator.site/t/) with the font "amc3line". The Unicode characters for the [apple](https://www.compart.com/en/unicode/U+25CF) and [snake body](https://www.compart.com/en/unicode/U+25A0) are found at [Compart](https://www.compart.com/en/unicode).
 
 To create live score during the game, code snippet from [DanyYax](https://github.com/DanyYax/MisionCodigoRepo/blob/b1a45cc590dcfe0f00b01516eb1f22ef58b752a2/Snake/snake.py) was used.
 
